@@ -1,0 +1,11 @@
+directory: ~/musik
+color: yes
+threaded: yes
+paths:
+    default: $albumartist/$album%aunique{}/$track $title
+    singleton: $artist/title
+    comp: compilations/$album%aunique{}/$track $title
+    albumtype:soundtrack: soundtracks/$album/$track $title
+plugins: chroma
+acoustid:
+    apikey: cMh6x0zY

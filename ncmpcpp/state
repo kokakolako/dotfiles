@@ -1,0 +1,26 @@
+sw_volume: 16
+audio_device_state:1:MPD PulseAudio Ausgabe
+state: play
+current: 1
+time: 120
+random: 1
+repeat: 0
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:30 Seconds to Mars/Love Lust Faith + Dreams/01 Birth.mp3
+1:30 Seconds to Mars/Love Lust Faith + Dreams/02 Conquistador.mp3
+2:30 Seconds to Mars/Love Lust Faith + Dreams/03 Up in the Air.mp3
+3:30 Seconds to Mars/Love Lust Faith + Dreams/04 City of Angels.mp3
+4:30 Seconds to Mars/Love Lust Faith + Dreams/05 The Race.mp3
+5:30 Seconds to Mars/Love Lust Faith + Dreams/06 End of All Days.mp3
+6:30 Seconds to Mars/Love Lust Faith + Dreams/07 Pyres of Varanasi.mp3
+7:30 Seconds to Mars/Love Lust Faith + Dreams/08 Bright Lights.mp3
+8:30 Seconds to Mars/Love Lust Faith + Dreams/09 Do or Die.mp3
+9:30 Seconds to Mars/Love Lust Faith + Dreams/10 Convergence.mp3
+10:30 Seconds to Mars/Love Lust Faith + Dreams/11 Northern Lights.mp3
+11:30 Seconds to Mars/Love Lust Faith + Dreams/12 Depuis le début.mp3
+playlist_end

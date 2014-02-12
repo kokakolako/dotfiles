@@ -1,0 +1,20 @@
+# Cool tipps and commands for vim
+
+<C-a>               # Increment a number (++)
+<C-x>               # Decrement a number (--)
+gU                  # Uppercase something
+:m                  # Move line
+:t                  # Copy to
+:normal             # Executing "normal-mode" commands in ex-mode
+@:                  # Repeat the last ex-mode command
+q:                  # Open the command-mode with history "support"
+:lcd                # Set working directory
+:set path+=app/**   # Manipulate the path (for :find)
+``                  # Position before the last jump within current file
+`.                  # Location of last change
+`^                  # Location of last insertion
+`[                  # Start of last change or yank
+`]                  # End of last change or yank
+`<                  # Start of last visual selection
+`>                  # End of last visual selection
+

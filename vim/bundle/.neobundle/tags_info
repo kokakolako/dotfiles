@@ -1,0 +1,14 @@
+YouCompleteMe
+ctrlp.vim
+neobundle.vim
+nerdtree
+syntastic
+ultisnips
+vim-airline
+vim-colors-solarized
+vim-easymotion
+vim-lint
+vim-markdown
+vim-multiple-cursors
+vim-repeat
+vim-surround

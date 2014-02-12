@@ -1,0 +1,72 @@
+# Conky Config File from Niklas Köhler
+# Parts are copied from:
+# * Modified: 27.11.2011 - mseed : http://www.fastlinux.eu
+# * Modified: 10.09.2012 - Sagar Behere
+
+# General settings
+# ----------------------------------------------------
+
+# No output to X <yes/no>
+out_to_x no
+
+# Create own window to draw <yes/no>
+own_window no
+
+# Print everything to console?
+out_to_console yes
+
+# Use double buffering (reduces flicker, not needed for console output)
+double_buffer no
+
+# Set to yes if you want Conky to be forked in the background
+background no
+
+# Update interval in seconds
+update_interval 0.2
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+# Shortens units to a single character (kiB->k, GiB->G, etc.). Default is off.
+short_units yes
+
+# How strict should if_up be when testing an interface for being up?
+# The value is one of up, link or address, to check for the interface
+# being solely up, being up and having link or being up, having link
+# and an assigned IP address.
+if_up_strictness address
+
+# Add spaces to keep things from moving about?  This only affects certain objects.
+# use_spacer should have an argument of left, right, or none
+use_spacer left
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale no
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+
+use_xft yes
+xftfont SourceCode Pro for Powerline:size=12
+
+# Conky Output
+# ----------------------------------------------------
+
+# CPU: ${cpubar}  RAM: ${membar}\
+
+# ${if_running cmus}${exec /home/niklas/bin/cmus_conky.sh}${endif}  \
+#🔊
+# { 'full_text' : '${if_mpd_playing}"${mpd_title}" von ${mpd_artist}${endif}', 'color' : '\#93a1a1'}
+
+
+TEXT
+${if_mpd_playing}"${mpd_title}" von ${mpd_artist}${endif} \
+🔥 ${acpitemp}°  \
+${if_up wlp8s0}📶 ${wireless_essid wlp8s0} ${endif} \
+${if_up enp7s0}🔌 ${addr enp7s0}${endif}\
+⚡ ${battery BAT1}  \
+⛭ ${time %a, %d.%m.%Y}  \
+⌚ ${time %H:%M}  \
+
