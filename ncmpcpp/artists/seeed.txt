@@ -1,366 +1,0 @@
-hip hop, reggae, and dancehall.  The group consists of 11 people:  Alfi Trowers (percussions)
-Based (drums)
-Moritz Delgado (sax)
-Enuff aka Peter Fox aka Pierre Baigorry (vocals)
-Ear aka Boundzound aka Demba Nabé (vocals)
-Eased aka Dell&eacute; aka Frank A. Dellé (vocals)
-DJ Luke (DJ)
-Jerome "Tchamp" Bugnon (trombone)
-"Dubmaster" Reibold (keyboard)
-"Rudeboy" Rudy (guitar)
-Tobsen Cordes (bass)  
-
-        Read more about Seeed on Last.fm.
-    
-    
-User-contributed text is available under the Creative Commons By-SA License and may also be available under the GNU FDL.]]>
-
-Similar artists:
-
- * Alfi Trowers (http://www.last.fm/music/Peter+Fox)
- * Based (http://www.last.fm/music/Seeed+Feat.+Lady+Saw)
- * Moritz Delgado (http://www.last.fm/music/Boundzound)
- * Peter Fox (http://www.last.fm/music/Dell%C3%A9)
- * Ear (http://www.last.fm/music/Ohrbooten)
- * Boundzound (http://www.last.fm/tag/reggae)
- * Eased (http://www.last.fm/tag/dancehall)
- * Dellé (http://www.last.fm/tag/german)
- * DJ Luke (http://www.last.fm/tag/german%20reggae)
- * Jerome "Tchamp" Bugnon (http://www.last.fm/tag/berlin)
- * "Dubmaster" Reibold (l version="1.0" encoding="utf-8"?>
-<lfm status="ok">
-<artist>
-  <name>Seeed</name>
-          <mbid>49c43c49-328d-4b14-8a1d-be99cafaec14</mbid>
-            <bandmembers>
-                    <member>
-                <name>Alfi Trowers</name>
-                                            </member>
-                    <member>
-                <name>Based</name>
-                                            </member>
-                    <member>
-                <name>Moritz Delgado</name>
-                                            </member>
-                    <member>
-                <name>Peter Fox</name>
-                                            </member>
-                    <member>
-                <name>Ear</name>
-                                            </member>
-                    <member>
-                <name>Boundzound</name>
-                                            </member>
-                    <member>
-                <name>Eased</name>
-                                            </member>
-                    <member>
-                <name>Dellé</name>
-                                            </member>
-                    <member>
-                <name>DJ Luke</name>
-                                            </member>
-                    <member>
-                <name>Jerome &quot;Tchamp&quot; Bugnon</name>
-                                            </member>
-                    <member>
-                <name>&quot;Dubmaster&quot; Reibold</name>
-                                            </member>
-                    <member>
-                <name>&quot;Rudeboy&quot; Rudy</name>
-                                            </member>
-                    <member>
-                <name>Tobsen Cordes</name>
-                                            </member>
-            </bandmembers>
-        <url>http://www.last.fm/music/Seeed</url>
-  <image size="small">http://userserve-ak.last.fm/serve/34/23502.jpg</image>
-  <image size="medium">http://userserve-ak.last.fm/serve/64/23502.jpg</image>
-  <image size="large">http://userserve-ak.last.fm/serve/126/23502.jpg</image>
-  <image size="extralarge">http://userserve-ak.last.fm/serve/252/23502.jpg</image>
-  <image size="mega">http://userserve-ak.last.fm/serve/_/23502/Seeed.jpg</image>
-  <streamable>1</streamable>
-  <ontour>0</ontour>
-  <stats>
-    <listeners>404711</listeners>
-    <playcount>10201775</playcount>
-      </stats>
-
-  <similar>
-	    <artist>
-	  <name>Peter Fox</name>
-	  <url>http://www.last.fm/music/Peter+Fox</url>
-	  <image size="small">http://userserve-ak.last.fm/serve/34/12461287.jpg</image>
-	  <image size="medium">http://userserve-ak.last.fm/serve/64/12461287.jpg</image>
-	  <image size="large">http://userserve-ak.last.fm/serve/126/12461287.jpg</image>
-	  <image size="extralarge">http://userserve-ak.last.fm/serve/252/12461287.jpg</image>
-	  <image size="mega">http://userserve-ak.last.fm/serve/500/12461287/Peter+Fox.jpg</image>
-	  
-	        	</artist>
-    <artist>
-	  <name>Seeed Feat. Lady Saw</name>
-	  <url>http://www.last.fm/music/Seeed+Feat.+Lady+Saw</url>
-	  <image size="small">http://userserve-ak.last.fm/serve/34/39055731.png</image>
-	  <image size="medium">http://userserve-ak.last.fm/serve/64/39055731.png</image>
-	  <image size="large">http://userserve-ak.last.fm/serve/126/39055731.png</image>
-	  <image size="extralarge">http://userserve-ak.last.fm/serve/252/39055731.png</image>
-	  <image size="mega">http://userserve-ak.last.fm/serve/_/39055731/Seeed+Feat+Lady+Saw+WrongTags.png</image>
-	  
-	        	</artist>
-    <artist>
-	  <name>Boundzound</name>
-	  <url>http://www.last.fm/music/Boundzound</url>
-	  <image size="small">http://userserve-ak.last.fm/serve/34/254537.jpg</image>
-	  <image size="medium">http://userserve-ak.last.fm/serve/64/254537.jpg</image>
-	  <image size="large">http://userserve-ak.last.fm/serve/126/254537.jpg</image>
-	  <image size="extralarge">http://userserve-ak.last.fm/serve/252/254537.jpg</image>
-	  <image size="mega">http://userserve-ak.last.fm/serve/_/254537/Boundzound.jpg</image>
-	  
-	        	</artist>
-    <artist>
-	  <name>Dellé</name>
-	  <url>http://www.last.fm/music/Dell%C3%A9</url>
-	  <image size="small">http://userserve-ak.last.fm/serve/34/45346757.jpg</image>
-	  <image size="medium">http://userserve-ak.last.fm/serve/64/45346757.jpg</image>
-	  <image size="large">http://userserve-ak.last.fm/serve/126/45346757.jpg</image>
-	  <image size="extralarge">http://userserve-ak.last.fm/serve/252/45346757.jpg</image>
-	  <image size="mega">http://userserve-ak.last.fm/serve/500/45346757/Dell+PROFIL_FRANK.jpg</image>
-	  
-	        	</artist>
-    <artist>
-	  <name>Ohrbooten</name>
-	  <url>http://www.last.fm/music/Ohrbooten</url>
-	  <image size="small">http://userserve-ak.last.fm/serve/34/4216996.jpg</image>
-	  <image size="medium">http://userserve-ak.last.fm/serve/64/4216996.jpg</image>
-	  <image size="large">http://userserve-ak.last.fm/serve/126/4216996.jpg</image>
-	  <image size="extralarge">http://userserve-ak.last.fm/serve/252/4216996.jpg</image>
-	  <image size="mega">http://userserve-ak.last.fm/serve/500/4216996/Ohrbooten.jpg</image>
-	  
-	        	</artist>
-  </similar>
-    <tags>
-        <tag>
-	  <name>reggae</name>
-	  <url>http://www.last.fm/tag/reggae</url>
-	</tag>
-        <tag>
-	  <name>dancehall</name>
-	  <url>http://www.last.fm/tag/dancehall</url>
-	</tag>
-        <tag>
-	  <name>german</name>
-	  <url>http://www.last.fm/tag/german</url>
-	</tag>
-        <tag>
-	  <name>german reggae</name>
-	  <url>http://www.last.fm/tag/german%20reggae</url>
-	</tag>
-        <tag>
-	  <name>berlin</name>
-	  <url>http://www.last.fm/tag/berlin</url>
-	</tag>
-      </tags>
-      <bio>
-        <links>
-        <link rel="original" href="http://www.last.fm/music/Seeed/+wiki" />
-    </links>
-                                    <published>Sat, 15 Oct 2011 16:17:30 +0000</published>
-    <summary>
-        <![CDATA[        Seeed, formed in 1998 in Berlin, Germany, plays <a href="http://www.last.fm/tag/hip%20hop" class="bbcode_tag" rel="tag">hip hop</a>, <a href="http://www.last.fm/tag/reggae" class="bbcode_tag" rel="tag">reggae</a>, and <a href="http://www.last.fm/tag/dancehall" class="bbcode_tag" rel="tag">dancehall</a>.  The group consists of 11 people:  Alfi Trowers (percussions) Based (drums) Moritz Delgado (sax) Enuff aka <a href="http://www.last.fm/music/Peter+Fox" class="bbcode_artist">Peter Fox</a> aka Pierre Baigorry (vocals) Ear aka <a href="http://www.last.fm/music/Boundzound" class="bbcode_artist">Boundzound</a> aka Demba Nabé (vocals) Eased aka <a href="http://www.last.fm/music/Dell%C3%A9" class="bbcode_artist">Dell&eacute;</a> aka Frank A. Dellé (vocals) DJ Luke (DJ) Jerome &quot;Tchamp&quot; Bugnon (trombone) &quot;Dubmaster&quot; Reibold (keyboard) &quot;Rudeboy&quot; Rudy (guitar) Tobsen Cordes (bass)  
-
-        <a href="http://www.last.fm/music/Seeed">Read more about Seeed on Last.fm</a>.
-    ]]>
-    </summary>
-    <content>
-            <![CDATA[        Seeed, formed in 1998 in Berlin, Germany, plays <a href="http://www.last.fm/tag/hip%20hop" class="bbcode_tag" rel="tag">hip hop</a>, <a href="http://www.last.fm/tag/reggae" class="bbcode_tag" rel="tag">reggae</a>, and <a href="http://www.last.fm/tag/dancehall" class="bbcode_tag" rel="tag">dancehall</a>.  The group consists of 11 people:  Alfi Trowers (percussions) Based (drums) Moritz Delgado (sax) Enuff aka <a href="http://www.last.fm/music/Peter+Fox" class="bbcode_artist">Peter Fox</a> aka Pierre Baigorry (vocals) Ear aka <a href="http://www.last.fm/music/Boundzound" class="bbcode_artist">Boundzound</a> aka Demba Nabé (vocals) Eased aka <a href="http://www.last.fm/music/Dell%C3%A9" class="bbcode_artist">Dell&eacute;</a> aka Frank A. Dellé (vocals) DJ Luke (DJ) Jerome &quot;Tchamp&quot; Bugnon (trombone) &quot;Dubmaster&quot; Reibold (keyboard) &quot;Rudeboy&quot; Rudy (guitar) Tobsen Cordes (bass)  
-
-        <a href="http://www.last.fm/music/Seeed">Read more about Seeed on Last.fm</a>.
-    
-    
-User-contributed text is available under the Creative Commons By-SA License and may also be available under the GNU FDL.]]>
-    </content>
-            <placeformed>Berlin, Germany</placeformed>                        <yearformed>1998</yearformed>
-            <formationlist>
-                    <formation>
-                <yearfrom>1998</yearfrom>
-                <yearto></yearto>
-            </formation>
-            </formationlist>
-      </bio>
-  </artist></lfm>
-)
- * "Rudeboy" Rudy (http://www.last.fm/music/Seeed)
- * Tobsen Cordes (http://www.last.fm/music/Peter+Fox)
- * Peter Fox (http://www.last.fm/music/Seeed+Feat.+Lady+Saw)
- * Seeed Feat. Lady Saw (http://www.last.fm/music/Boundzound)
- * Boundzound (http://www.last.fm/music/Dell%C3%A9)
- * Dellé (http://www.last.fm/music/Ohrbooten)
- * Ohrbooten (http://www.last.fm/tag/reggae)
- * reggae (http://www.last.fm/tag/dancehall)
- * dancehall (http://www.last.fm/tag/german)
- * german (http://www.last.fm/tag/german%20reggae)
- * german reggae (http://www.last.fm/tag/berlin)
- * berlin (l version="1.0" encoding="utf-8"?>
-<lfm status="ok">
-<artist>
-  <name>Seeed</name>
-          <mbid>49c43c49-328d-4b14-8a1d-be99cafaec14</mbid>
-            <bandmembers>
-                    <member>
-                <name>Alfi Trowers</name>
-                                            </member>
-                    <member>
-                <name>Based</name>
-                                            </member>
-                    <member>
-                <name>Moritz Delgado</name>
-                                            </member>
-                    <member>
-                <name>Peter Fox</name>
-                                            </member>
-                    <member>
-                <name>Ear</name>
-                                            </member>
-                    <member>
-                <name>Boundzound</name>
-                                            </member>
-                    <member>
-                <name>Eased</name>
-                                            </member>
-                    <member>
-                <name>Dellé</name>
-                                            </member>
-                    <member>
-                <name>DJ Luke</name>
-                                            </member>
-                    <member>
-                <name>Jerome &quot;Tchamp&quot; Bugnon</name>
-                                            </member>
-                    <member>
-                <name>&quot;Dubmaster&quot; Reibold</name>
-                                            </member>
-                    <member>
-                <name>&quot;Rudeboy&quot; Rudy</name>
-                                            </member>
-                    <member>
-                <name>Tobsen Cordes</name>
-                                            </member>
-            </bandmembers>
-        <url>http://www.last.fm/music/Seeed</url>
-  <image size="small">http://userserve-ak.last.fm/serve/34/23502.jpg</image>
-  <image size="medium">http://userserve-ak.last.fm/serve/64/23502.jpg</image>
-  <image size="large">http://userserve-ak.last.fm/serve/126/23502.jpg</image>
-  <image size="extralarge">http://userserve-ak.last.fm/serve/252/23502.jpg</image>
-  <image size="mega">http://userserve-ak.last.fm/serve/_/23502/Seeed.jpg</image>
-  <streamable>1</streamable>
-  <ontour>0</ontour>
-  <stats>
-    <listeners>404711</listeners>
-    <playcount>10201775</playcount>
-      </stats>
-
-  <similar>
-	    <artist>
-	  <name>Peter Fox</name>
-	  <url>http://www.last.fm/music/Peter+Fox</url>
-	  <image size="small">http://userserve-ak.last.fm/serve/34/12461287.jpg</image>
-	  <image size="medium">http://userserve-ak.last.fm/serve/64/12461287.jpg</image>
-	  <image size="large">http://userserve-ak.last.fm/serve/126/12461287.jpg</image>
-	  <image size="extralarge">http://userserve-ak.last.fm/serve/252/12461287.jpg</image>
-	  <image size="mega">http://userserve-ak.last.fm/serve/500/12461287/Peter+Fox.jpg</image>
-	  
-	        	</artist>
-    <artist>
-	  <name>Seeed Feat. Lady Saw</name>
-	  <url>http://www.last.fm/music/Seeed+Feat.+Lady+Saw</url>
-	  <image size="small">http://userserve-ak.last.fm/serve/34/39055731.png</image>
-	  <image size="medium">http://userserve-ak.last.fm/serve/64/39055731.png</image>
-	  <image size="large">http://userserve-ak.last.fm/serve/126/39055731.png</image>
-	  <image size="extralarge">http://userserve-ak.last.fm/serve/252/39055731.png</image>
-	  <image size="mega">http://userserve-ak.last.fm/serve/_/39055731/Seeed+Feat+Lady+Saw+WrongTags.png</image>
-	  
-	        	</artist>
-    <artist>
-	  <name>Boundzound</name>
-	  <url>http://www.last.fm/music/Boundzound</url>
-	  <image size="small">http://userserve-ak.last.fm/serve/34/254537.jpg</image>
-	  <image size="medium">http://userserve-ak.last.fm/serve/64/254537.jpg</image>
-	  <image size="large">http://userserve-ak.last.fm/serve/126/254537.jpg</image>
-	  <image size="extralarge">http://userserve-ak.last.fm/serve/252/254537.jpg</image>
-	  <image size="mega">http://userserve-ak.last.fm/serve/_/254537/Boundzound.jpg</image>
-	  
-	        	</artist>
-    <artist>
-	  <name>Dellé</name>
-	  <url>http://www.last.fm/music/Dell%C3%A9</url>
-	  <image size="small">http://userserve-ak.last.fm/serve/34/45346757.jpg</image>
-	  <image size="medium">http://userserve-ak.last.fm/serve/64/45346757.jpg</image>
-	  <image size="large">http://userserve-ak.last.fm/serve/126/45346757.jpg</image>
-	  <image size="extralarge">http://userserve-ak.last.fm/serve/252/45346757.jpg</image>
-	  <image size="mega">http://userserve-ak.last.fm/serve/500/45346757/Dell+PROFIL_FRANK.jpg</image>
-	  
-	        	</artist>
-    <artist>
-	  <name>Ohrbooten</name>
-	  <url>http://www.last.fm/music/Ohrbooten</url>
-	  <image size="small">http://userserve-ak.last.fm/serve/34/4216996.jpg</image>
-	  <image size="medium">http://userserve-ak.last.fm/serve/64/4216996.jpg</image>
-	  <image size="large">http://userserve-ak.last.fm/serve/126/4216996.jpg</image>
-	  <image size="extralarge">http://userserve-ak.last.fm/serve/252/4216996.jpg</image>
-	  <image size="mega">http://userserve-ak.last.fm/serve/500/4216996/Ohrbooten.jpg</image>
-	  
-	        	</artist>
-  </similar>
-    <tags>
-        <tag>
-	  <name>reggae</name>
-	  <url>http://www.last.fm/tag/reggae</url>
-	</tag>
-        <tag>
-	  <name>dancehall</name>
-	  <url>http://www.last.fm/tag/dancehall</url>
-	</tag>
-        <tag>
-	  <name>german</name>
-	  <url>http://www.last.fm/tag/german</url>
-	</tag>
-        <tag>
-	  <name>german reggae</name>
-	  <url>http://www.last.fm/tag/german%20reggae</url>
-	</tag>
-        <tag>
-	  <name>berlin</name>
-	  <url>http://www.last.fm/tag/berlin</url>
-	</tag>
-      </tags>
-      <bio>
-        <links>
-        <link rel="original" href="http://www.last.fm/music/Seeed/+wiki" />
-    </links>
-                                    <published>Sat, 15 Oct 2011 16:17:30 +0000</published>
-    <summary>
-        <![CDATA[        Seeed, formed in 1998 in Berlin, Germany, plays <a href="http://www.last.fm/tag/hip%20hop" class="bbcode_tag" rel="tag">hip hop</a>, <a href="http://www.last.fm/tag/reggae" class="bbcode_tag" rel="tag">reggae</a>, and <a href="http://www.last.fm/tag/dancehall" class="bbcode_tag" rel="tag">dancehall</a>.  The group consists of 11 people:  Alfi Trowers (percussions) Based (drums) Moritz Delgado (sax) Enuff aka <a href="http://www.last.fm/music/Peter+Fox" class="bbcode_artist">Peter Fox</a> aka Pierre Baigorry (vocals) Ear aka <a href="http://www.last.fm/music/Boundzound" class="bbcode_artist">Boundzound</a> aka Demba Nabé (vocals) Eased aka <a href="http://www.last.fm/music/Dell%C3%A9" class="bbcode_artist">Dell&eacute;</a> aka Frank A. Dellé (vocals) DJ Luke (DJ) Jerome &quot;Tchamp&quot; Bugnon (trombone) &quot;Dubmaster&quot; Reibold (keyboard) &quot;Rudeboy&quot; Rudy (guitar) Tobsen Cordes (bass)  
-
-        <a href="http://www.last.fm/music/Seeed">Read more about Seeed on Last.fm</a>.
-    ]]>
-    </summary>
-    <content>
-            <![CDATA[        Seeed, formed in 1998 in Berlin, Germany, plays <a href="http://www.last.fm/tag/hip%20hop" class="bbcode_tag" rel="tag">hip hop</a>, <a href="http://www.last.fm/tag/reggae" class="bbcode_tag" rel="tag">reggae</a>, and <a href="http://www.last.fm/tag/dancehall" class="bbcode_tag" rel="tag">dancehall</a>.  The group consists of 11 people:  Alfi Trowers (percussions) Based (drums) Moritz Delgado (sax) Enuff aka <a href="http://www.last.fm/music/Peter+Fox" class="bbcode_artist">Peter Fox</a> aka Pierre Baigorry (vocals) Ear aka <a href="http://www.last.fm/music/Boundzound" class="bbcode_artist">Boundzound</a> aka Demba Nabé (vocals) Eased aka <a href="http://www.last.fm/music/Dell%C3%A9" class="bbcode_artist">Dell&eacute;</a> aka Frank A. Dellé (vocals) DJ Luke (DJ) Jerome &quot;Tchamp&quot; Bugnon (trombone) &quot;Dubmaster&quot; Reibold (keyboard) &quot;Rudeboy&quot; Rudy (guitar) Tobsen Cordes (bass)  
-
-        <a href="http://www.last.fm/music/Seeed">Read more about Seeed on Last.fm</a>.
-    
-    
-User-contributed text is available under the Creative Commons By-SA License and may also be available under the GNU FDL.]]>
-    </content>
-            <placeformed>Berlin, Germany</placeformed>                        <yearformed>1998</yearformed>
-            <formationlist>
-                    <formation>
-                <yearfrom>1998</yearfrom>
-                <yearto></yearto>
-            </formation>
-            </formationlist>
-      </bio>
-  </artist></lfm>
-)
-
-http://www.last.fm/music/Seeed

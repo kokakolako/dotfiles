@@ -1,0 +1,16 @@
+set adblocker-filterlist /home/niklas/.config/dwb/adblock_lists
+start_page
+o https://addons.mozilla.org/de/firefox/addon/reddit-enhancement-suite/
+dwb:settings
+http://portix.bitbucket.org/dwb/
+d
+toggle enable-private-browsing
+open_editor
+~/downloads
+€Ág
+%s/#ffffff/#839496/g
+set speeddial true
+set adblock true
+adblock true
+history
+clear_tab

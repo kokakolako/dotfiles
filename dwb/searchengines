@@ -1,0 +1,5 @@
+g https://www.google.de/search?q=XXX
+a https://wiki.archlinux.org/index.php?title=Special:Search&search=XXX
+w https://de.wikipedia.org/w/index.php?search=XXX&title=Special:Search
+we https://en.wikipedia.org/w/index.php?search=XXX&title=Special:Search
+y http://www.youtube.com/results?search_query=XXX&sm=

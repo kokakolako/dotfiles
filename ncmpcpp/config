@@ -9,24 +9,26 @@ ncmpcpp_directory                             = "/home/niklas/.config/ncmpcpp"
 # Visualizer
 # -------------------------------------------
 
-# visualizer_fifo_path                        = "/home/niklas/.config/ncmpcpp/fifo"
-# visualizer_output_name                      = "mpd.fifo"
-# visualizer_sync_interval                    = "1"
-# visualizer_type                             = "spectrum" (spectrum/wave)
-# visualizer_in_stereo                        = "yes"
-# visualizer_type                             = "spectrum"
-# visualizer_look                             = "◆▋"
+visualizer_sync_interval                      = "1"
+visualizer_fifo_path                          = "/home/niklas/.config/ncmpcpp/mpd.fifo"
+visualizer_type                               = "spectrum" (spectrum/wave)
+visualizer_look                               = "◆▋"
+visualizer_color                              = "blue"
+
+# UI
+# -------------------------------------------
 
 song_list_format                              = "$3{%A }|{%a }$7{%b }$0{%t}| $4$R{%7l}$9"
 now_playing_prefix                            = "$r"
 now_playing_suffix                            = "$/r"
-song_columns_list_format                      = "(30)[green]{a} (40)[]{t|f} (30)[cyan]{b}"
+song_columns_list_format                      = "(30)[green]{A} (40)[]{t|f} (30)[cyan]{b}"
 playlist_display_mode                         = "columns"
 browser_display_mode                          = "columns"
 search_engine_display_mode                    = "columns"
 autocenter_mode                               = "yes"
 centered_cursor                               = "yes"
 progressbar_look                              = "██▒"
+progressbar_color                             = "cyan"
 user_interface                                = "alternative"
 default_space_mode                            = "select"
 header_visibility                             = "no"
@@ -42,10 +44,5 @@ allow_physical_files_deletion                 = "yes"
 allow_physical_directories_deletion           = "yes"
 main_window_color                             = "default"
 main_window_highlight_color                   = "default"
-visualizer_color                              = "blue"
-
-# Keymappings
-# -------------------------------------------
-
-#key_prev_column = "h"
-#key_next_column = "l"
+media_library_left_column                     = "A"
+active_column_color                           = "green"

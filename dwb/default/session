@@ -1,0 +1,50 @@
+g:*default
+-48 http://sourceforge.net/apps/trac/vimprobable/ Vimprobable
+-47 file:///home/niklas/.local/share/dwb/speeddial/speeddial.html 
+-46 https://www.google.de/?gfe_rd=cr&ei=e7_8UpnZB4ff8gfkp4DgAw Google
+-45 file:///home/niklas/.local/share/dwb/speeddial/speeddial.html 
+-44 https://www.google.de/?gfe_rd=ctrl&ei=jb_8Uq3oLIff8gfkp4DgAw&gws_rd=cr Google
+-43 file:///home/niklas/.local/share/dwb/speeddial/speeddial.html 
+-42 http://www.heise.de/ heise online - IT-News, Nachrichten und Hintergründe
+-41 http://lifehacker.com/ Lifehacker - Tips and downloads for getting things done
+-40 http://www.youtube.com/ YouTube
+-39 http://www.reddit.com/ reddit: the front page of the internet
+-38 file:///home/niklas/.local/share/dwb/speeddial/speeddial.html 
+-37 https://www.facebook.com/ Willkommen bei Facebook - anmelden, registrieren oder mehr erfahren
+-36 https://www.facebook.com/checkpoint/?next Facebook
+-35 https://www.facebook.com/checkpoint/?next Facebook
+-34 https://www.facebook.com/ 
+-33 file:///home/niklas/.local/share/dwb/speeddial/speeddial.html 
+-32 https://www.google.de/?gfe_rd=ctrl&ei=jb_8Uq3oLIff8gfkp4DgAw&gws_rd=cr Google
+-31 https://accounts.google.com/ServiceLogin?hl=de&continue=https://www.google.de/%3Fgfe_rd%3Dctrl%26ei%3Djb_8Uq3oLIff8gfkp4DgAw%26gws_rd%3Dcr Anmelden – Google Konten
+-30 https://accounts.google.com/SecondFactor?continue=https%3A%2F%2Fwww.google.de%2F%3Fgfe_rd%3Dctrl%26ei%3Djb_8Uq3oLIff8gfkp4DgAw%26gws_rd%3Dcr&hl=de&checkedDomains=youtube&checkConnection=youtube%3A350%3A1&pstMsg=1 Anmelden – Google Konten
+-29 https://www.google.de/?gfe_rd=ctrl&ei=jb_8Uq3oLIff8gfkp4DgAw&gws_rd=cr Google
+-28 https://mail.google.com/mail/u/0/?shva=1#inbox Posteingang (1) - waterkoka@gmail.com - Gmail
+-27 https://mail.google.com/mail/u/0/?shva=1#inbox/144037ba2dca8c28 Ortvereinsinterne Wahlkampfinfo - waterkoka@gmail.com - Gmail
+-26 https://mail.google.com/mail/u/0/?shva=1#inbox Posteingang (1) - waterkoka@gmail.com - Gmail
+-25 file:///home/niklas/.local/share/dwb/speeddial/speeddial.html 
+-24 https://www.google.de/search?q=archwiki archwiki - Google-Suche
+-23 https://wiki.archlinux.de/ wiki.archlinux.de
+-22 file:///home/niklas/.local/share/dwb/speeddial/speeddial.html 
+-21 https://wiki.archlinux.de/ wiki.archlinux.de
+-20 file:///home/niklas/.local/share/dwb/speeddial/speeddial.html 
+-19 http://getpocket.com/ Pocket
+-18 https://getpocket.com/login?ep=1 Pocket: Log In
+-17 http://getpocket.com/a/ Pocket
+-16 http://getpocket.com/a/queue/list/ Pocket : Queue
+-15 http://getpocket.com/a/queue/ Pocket : Queue
+-14 file:///home/niklas/.local/share/dwb/speeddial/speeddial.html 
+-13 https://github.com/kokakolako kokakolako (Niklas Köhler) · GitHub
+-12 file:///home/niklas/.local/share/dwb/speeddial/speeddial.html 
+-11 https://www.google.de/?gfe_rd=ctrl&ei=jb_8Uq3oLIff8gfkp4DgAw&gws_rd=cr Google
+-10 file:///home/niklas/.local/share/dwb/speeddial/speeddial.html 
+-9 https://github.com/kokakolako kokakolako (Niklas Köhler) · GitHub
+-8 file:///home/niklas/.local/share/dwb/speeddial/speeddial.html 
+-7 dwb:settings dwb - Settings
+-6 dwb:bookmarks dwb - Bookmarks
+-5 dwb:quickmarks dwb - Quickmarks
+-4 dwb:history dwb - History
+-3 dwb:searchengines dwb - Searchengines
+-2 dwb:downloads dwb - Downloads
+-1 dwb:keys dwb - Keys
+0|0 dwb:settings dwb - Settings

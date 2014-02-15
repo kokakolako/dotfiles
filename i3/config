@@ -15,7 +15,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvtc
+bindsym $mod+Return exec urxvtcd
 # bindsym $mod+Return exec xfce4-terminal
 # bindsym $mod+Return exec urxvtc -e zsh -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -n$USER -s$USER@$HOSTNAME -f ~/.config/tmux/tmux.conf"
 

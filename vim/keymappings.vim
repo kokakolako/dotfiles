@@ -35,7 +35,6 @@ nnoremap <silent> <leader>N :bp<enter>
 nnoremap j gj
 nnoremap k gk
 
-
 " Abbreviations
 " --------------------------------------------------------
 
