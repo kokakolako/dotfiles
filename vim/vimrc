@@ -1,4 +1,3 @@
-" ME/.config/vim/plugins.vimj
 " Very defaults
 set nocompatible                            " Be vImproved
 set encoding=utf-8                          " Use UTF-8 to encode the text
@@ -50,6 +49,7 @@ set history=1000	    " Keep 1000 lines of command line history
 set ruler		        " Show the cursor position all the time
 set showcmd		        " Display incomplete commands
 set incsearch		    " Do incremental searching
+
 set number              " Show line numbers
 set ignorecase          " Ignore case when searching
 set smartcase           " No ignorecase if Uppercase char present

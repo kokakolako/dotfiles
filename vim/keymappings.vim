@@ -2,7 +2,7 @@
 " --------------------------------------------------------
 
 " Uppercase the current word in insert mode
-inoremap <c-u> <esc>vawUi
+nnoremap <C-u> <esc>vawUi
 
 " Calculate with the expression-register
 " inoremap <C-c> <C-r>=
@@ -17,9 +17,6 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 " Split vimrc to quick-edit the configs
 nnoremap <leader>e :vsplit $MYVIMRC<cr>
 
-" Reload vimrc-file when <F5> is pressed
-nnoremap <f5> :source $HOME/.config/vim/vimrc<enter>
-
 " Mapping better splitting
 nnoremap <C-w>e <C-w>w
 
@@ -28,12 +25,32 @@ cnoremap <C-p> <up>
 cnoremap <C-n> <down>
 
 " More comfortable way to change buffers
-nnoremap <silent> <leader>n :bn<enter>
-nnoremap <silent> <leader>N :bp<enter>
+" nnoremap <silent> <leader>n :bn<enter>
+" nnoremap <silent> <leader>N :bp<enter>
 
 " Don't differ 'fake-lines'
 nnoremap j gj
 nnoremap k gk
+
+" Use J,K to switch buffers + Join Lines with <C-J>
+nnoremap <silent> J :bn<Enter>
+nnoremap <silent> K :bp<Enter>
+nnoremap <silent> <C-j> :join<Enter>
+
+" Change inside markdown headings
+onoremap <silent> ih :<C-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<cr>
+
+" Select all
+nnoremap vaa ggvG<cr>
+nnoremap via ggvG<cr>
+
+" Autocommands
+" --------------------------------------------------------
+
+" Enable Spellcheck in *.md and *.txt files
+au BufNewFile,BufRead,BufEnter *.md     setlocal spell      spelllang=de_de
+au BufNewFile,BufRead,BufEnter *.txt     setlocal spell      spelllang=de_de
+
 
 " Abbreviations
 " --------------------------------------------------------

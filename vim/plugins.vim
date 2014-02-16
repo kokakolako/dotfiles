@@ -73,6 +73,8 @@ Bundle 'LaTeX-Box-Team/LaTeX-Box'
 " let g:ycm_autoclose_preview_window_after_completion=1
 " let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 
+" Bundle "lilydjwg/colorizer"
+
 " Plugins I don't use
 " --------------------------------------------------------
 

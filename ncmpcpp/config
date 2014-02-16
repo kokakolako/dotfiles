@@ -18,6 +18,7 @@ visualizer_color                              = "blue"
 # UI
 # -------------------------------------------
 
+
 song_list_format                              = "$3{%A }|{%a }$7{%b }$0{%t}| $4$R{%7l}$9"
 now_playing_prefix                            = "$r"
 now_playing_suffix                            = "$/r"
