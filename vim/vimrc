@@ -24,9 +24,9 @@ source $HOME/.config/vim/plugins.vim        " Sourcing plugins
 " endif
 
 if &t_Co > 2 || has("gui_running")
-    syntax on           " Enable syntax-highlighting
-    set hlsearch        " Highlight searches
-    set t_Co=256        " Enable 256 colors
+    syntax on                               " Enable syntax-highlighting
+    set incsearch                           "  Enable incsearch to do use ranges
+    set t_Co=256                            " Enable 256 colors
 endif
 
 if has("autocmd")
@@ -45,28 +45,28 @@ if has("autocmd")
 endif
 
 " Misc
-set history=1000	    " Keep 1000 lines of command line history
-set ruler		        " Show the cursor position all the time
-set showcmd		        " Display incomplete commands
-set incsearch		    " Do incremental searching
+set history=1000	        " Keep 1000 lines of command line history
+set ruler		            " Show the cursor position all the time
+set showcmd		            " Display incomplete commands
+set incsearch		        " Do incremental searching
 
-set number              " Show line numbers
-set ignorecase          " Ignore case when searching
-set smartcase           " No ignorecase if Uppercase char present
-set laststatus=2        " Always display statusbar
-set nobackup            " Do not keep a backup file
-set title               " Change terminal title to file name
-set cursorline          " Highlight the current line
+set number                  " Show line numbers
+set ignorecase              " Ignore case when searching
+set smartcase               " No ignorecase if Uppercase char present
+set laststatus=2            " Always display statusbar
+set nobackup                " Do not keep a backup file
+set title                   " Change terminal title to file name
+set cursorline              " Highlight the current line
 
 " Indenting
-set autoindent		    " Always set autoindenting on
-set smartindent         " Activate smart indenting
+set autoindent		        " Always set autoindenting on
+filetype plugin indent on   " Enable smart indenting
 
 " Tab settings
-set expandtab           " Expand tabs to spaces
-set softtabstop=4       " Control the colums which are used in insert-mode
-set shiftwidth=4        " Set the identing tab width
-set tabstop=4           " Changes the width of a tab
+set expandtab               " Expand tabs to spaces
+set softtabstop=4           " Control the colums which are used in insert-mode
+set shiftwidth=4            " Set the identing tab width
+set tabstop=4               " Changes the width of a tab
 
 " Permanent undo
 set undofile

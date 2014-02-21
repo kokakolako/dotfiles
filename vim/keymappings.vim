@@ -8,7 +8,7 @@ nnoremap <C-u> <esc>vawUi
 " inoremap <C-c> <C-r>=
 
 " Use a more comfortable Leader Key (for a QUERTZ keyboard-layout)
-let mapleader = ","
+let mapleader = "<space>"
 
 " Remap the CtrlP mapping to
 let g:ctrlp_map = "<leader>p"
@@ -47,9 +47,17 @@ nnoremap via ggvG<cr>
 " Autocommands
 " --------------------------------------------------------
 
-" Enable Spellcheck in *.md and *.txt files
-au BufNewFile,BufRead,BufEnter *.md     setlocal spell      spelllang=de_de
-au BufNewFile,BufRead,BufEnter *.txt     setlocal spell      spelllang=de_de
+if has("autocmd")
+
+    " Enable Spellcheck in *.md and *.txt files
+    au BufNewFile,BufRead,BufEnter *.md     setlocal spell      spelllang=de_de
+    au BufNewFile,BufRead,BufEnter *.txt    setlocal spell      spelllang=de_de
+
+    " Use pandoc to sort markdown (Use 'gq' in normal-mode)
+    let pandoc_pipeline = "pandoc --from=markdown --to=markdown_strict"
+    au FileType markdown let &formatprg=pandoc_pipeline
+
+endif
 
 
 " Abbreviations

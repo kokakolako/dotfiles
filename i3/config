@@ -180,22 +180,18 @@ bindsym $mod+o exec firefox
 # -------------------------------------------------
 
 bar {
-
-        status_command conky -c /home/niklas/.config/conky/config
-        # status_command i3status
-        # status_command ~/bin/conky_json.sh
-        # status_command ~/.config/i3/conky-i3-wrapper.sh
-
-        font pango:SourceCode Pro for Powerline 12
-        position top
-        colors {
-            background #268bd2
-            #class              border    backgr.   text
-            focused_workspace   #268bd2   #268bd2   #ffffff
-            active_workspace    #268bd2   #268bd2   #ffffff
-            inactive_workspace  #268bd2   #268bd2   #073642
-        }
-
+    # status_command i3status -c ~/.config/i3/i3status.conf
+    status_command conky -c /home/niklas/.config/conky/config
+    # status_command_conky -c /home/niklas/.config/i3/conky-wrapper
+    font pango:SourceCode Pro for Powerline 12
+    position top
+    colors {
+        background #268bd2
+        #class              border    backgr.   text
+        focused_workspace   #268bd2   #268bd2   #ffffff
+        active_workspace    #268bd2   #268bd2   #ffffff
+        inactive_workspace  #268bd2   #268bd2   #073642
+    }
 }
 
 # Assign workspaces to monitors

@@ -1,10 +1,10 @@
 set adblocker-filterlist /home/niklas/.config/dwb/adblock_lists
+toggle enable-private-browsing
 start_page
 o https://addons.mozilla.org/de/firefox/addon/reddit-enhancement-suite/
 dwb:settings
 http://portix.bitbucket.org/dwb/
 d
-toggle enable-private-browsing
 open_editor
 ~/downloads
 €Ág
