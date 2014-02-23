@@ -54,7 +54,7 @@ if has("autocmd")
     au BufNewFile,BufRead,BufEnter *.txt    setlocal spell      spelllang=de_de
 
     " Use pandoc to sort markdown (Use 'gq' in normal-mode)
-    let pandoc_pipeline = "pandoc --from=markdown --to=markdown_strict"
+    let pandoc_pipeline = "pandoc --from=markdown --to=markdown"
     au FileType markdown let &formatprg=pandoc_pipeline
 
 endif

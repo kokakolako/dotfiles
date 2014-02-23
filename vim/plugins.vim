@@ -62,6 +62,9 @@ Bundle "tpope/vim-repeat"
 Bundle "tpope/vim-surround"
 Bundle "tpope/vim-vinegar"
 
+" Matchit.zip (% is configurable)
+Bundle "matchit.zip"
+
 " Better 'f'-Command
 Bundle "justinmk/vim-sneak"
 
@@ -119,9 +122,6 @@ Bundle 'LaTeX-Box-Team/LaTeX-Box'
 
 " Open Documentation of word under cursor
 " Bundle "Keithbsmiley/investigate.vim"
-
-" Matchit.zip (% is configurable)
-" Bundle "matchit.zip"
 
 " Calendar.vim (Google Calendar + Tasks)
 " Bundle "itchyny/calendar.vim"

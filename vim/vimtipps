@@ -1,5 +1,9 @@
 # Cool tipps and commands for vim
 
+# Command           # Effect
+# --------------------------------------------------------------------------
+
+# Misc
 <C-a>               # Increment a number (++)
 <C-x>               # Decrement a number (--)
 gU                  # Uppercase something
@@ -10,6 +14,8 @@ gU                  # Uppercase something
 q:                  # Open the command-mode with history "support"
 :lcd                # Set working directory
 :set path+=app/**   # Manipulate the path (for :find)
+
+# Special Marks
 ``                  # Position before the last jump within current file
 `.                  # Location of last change
 `^                  # Location of last insertion
@@ -18,3 +24,10 @@ q:                  # Open the command-mode with history "support"
 `<                  # Start of last visual selection
 `>                  # End of last visual selection
 
+# Folding Commands
+zi 	                # Switch folding on or off
+za 	                # Toggle current fold open/closed
+zc 	                # Close current fold
+zR 	                # Open all folds
+zM 	                # Close all folds
+zv 	                # Expand folds to reveal cursor
