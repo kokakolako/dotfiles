@@ -4,25 +4,25 @@ extensions.load("adblock_subscriptions", {
 //<adblock_subscriptions___CONFIG
 
 // Shortcut to subscribe to a filterlist
-scSubscribe : null, 
+scSubscribe : null,
 // Command to subscribe to a filterlist
-cmdSubscribe : "adblock_subscribe", 
+cmdSubscribe : "adblock_subscribe",
 
 // Shortcut to unsubscribe from a filterlist
-scUnsubscribe : null, 
+scUnsubscribe : null,
 
 // Command to unsubscribe from a filterlist
 cmdUnsubscribe : "adblock_unsubscribe",
 
 // Shortcut to update subscriptions and reload filter rules
 // Note that dwb will also update all subscriptions on startup
-scUpdate : null, 
+scUpdate : null,
 
 // Command to update subscriptions and reload filter rules
 // Note that dwb will also update all subscriptions on startup
-cmdUpdate : "adblock_update", 
+cmdUpdate : "adblock_update",
 
-// Path to the filterlist directory, will be created if it doesn't exist. 
+// Path to the filterlist directory, will be created if it doesn't exist.
 filterListDir : data.configDir + "/adblock_lists"
 //>adblock_subscriptions___CONFIG
 });
@@ -33,24 +33,24 @@ extensions.load("speeddial", {
     // Shortcut for adding a site
     add : "sda",
     // Shortcut for showing the speedial site
-    show : "sds", 
+    show : "sds",
     // Command for adding a site
     cmdAdd : null,
     // Shortcut for showing the speedial site
     cmdShow : null,
     // Number of vertical items, if set to null there will be no limit for
     // number of items
-    nVert : 3, 
+    nVert : 3,
     // Number of horizontal items
     nHorz : 3,
-    // Limit of number of items, <= 0 means no limit 
+    // Limit of number of items, <= 0 means no limit
     limit : 0,
     // Whether to update snapshot images every time a bookmarked site is visited
     autoUpdate : false,
     // Cachedir where the template file and snapshots are saved
     cachedir : system.getEnv("HOME") + "/.local/share/dwb/speeddial",
     // Width of a snapshot image
-    snapshotWidth : 640, 
+    snapshotWidth : 640,
     // Height of a snapshot image
     snapshotHeight : 480
 //>speeddial___CONFIG
@@ -69,10 +69,10 @@ extensions.load("downloadhandler", {
      //
      // mimeType  : a mimetype, optional
      //
-     
+
      // { command : "xpdf %f", mimeType : "application/pdf" }
      // { command : "xdvi %f", extension : "dvi" }
-     
+
    ]
 //>downloadhandler___CONFIG
 });
@@ -120,14 +120,14 @@ keepFormdata : false
 extensions.load("autoquvi", {
 //<autoquvi___CONFIG
 // The quvi command
-quvi      : "quvi",  
+quvi      : "quvi",
 
 // External player command
-player    : "mplayer %u", 
+player    : "mplayer %u",
 
 // Whether to automatically play videos if quvi finds a playable
 // video
-autoPlay  : true, 
+autoPlay  : true,
 
 // Whether to choose the quality before quvi starts
 chooseQuality : true,
@@ -135,12 +135,12 @@ chooseQuality : true,
 // A shortcut that spawns quvi for the current website
 shortcut  : "",
 
-// A command that spawns quvi for the current website 
-command  : "autoquvi", 
+// A command that spawns quvi for the current website
+command  : "autoquvi",
 
-// 
+//
 // Whether to autospawn quvi only in the active tab
-activeOnly : true 
+activeOnly : true
 
 //>autoquvi___CONFIG
 });
