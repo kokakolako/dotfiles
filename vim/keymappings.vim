@@ -15,10 +15,15 @@ let g:ctrlp_map = "<leader>p"
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 " Split vimrc to quick-edit the configs
-nnoremap <leader>e :vsplit $MYVIMRC<cr>
+nnoremap <leader>e :vsplit $MYVIMRC<CR>
 
 " Mapping better splitting
-nnoremap <C-w>e <C-w>w
+nnoremap <silent> <C-e> :wincmd w<CR>
+nnoremap <silent> <C-k> :wincmd k<CR>
+nnoremap <silent> <C-j> :wincmd j<CR>
+nnoremap <silent> <C-h> :wincmd h<CR>
+nnoremap <silent> <C-l> :wincmd l<CR>
+
 
 " Fixing the behaviour of <C-n> and <C-p>
 cnoremap <C-p> <up>
@@ -35,14 +40,15 @@ nnoremap k gk
 " Use J,K to switch buffers + Join Lines with <C-J>
 nnoremap <silent> J :bn<Enter>
 nnoremap <silent> K :bp<Enter>
-nnoremap <silent> <C-j> :join<Enter>
+nnoremap <silent> <A-j> :join<Enter>
 
 " Change inside markdown headings
-onoremap <silent> ih :<C-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<cr>
+onoremap <silent> ih :<C-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<CR>
 
 " Select all
-nnoremap vaa ggvG<cr>
-nnoremap via ggvG<cr>
+nnoremap vaa ggvG<CR>
+nnoremap via ggvG<CR>
+
 
 " Autocommands
 " --------------------------------------------------------
