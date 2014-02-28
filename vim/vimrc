@@ -25,7 +25,7 @@ source $HOME/.config/vim/plugins.vim        " Sourcing plugins
 
 if &t_Co > 2 || has("gui_running")
     syntax on                               " Enable syntax-highlighting
-    set incsearch                           "  Enable incsearch to do use ranges
+    set incsearch                           " Enable incsearch to do use ranges
     set t_Co=256                            " Enable 256 colors
 endif
 
@@ -57,6 +57,7 @@ set laststatus=2            " Always display statusbar
 set nobackup                " Do not keep a backup file
 set title                   " Change terminal title to file name
 set cursorline              " Highlight the current line
+set lazyredraw              " Enable lazy redrawing to speed up macros
 
 " Indenting
 set autoindent		        " Always set autoindenting on
