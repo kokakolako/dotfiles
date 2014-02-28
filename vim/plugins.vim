@@ -12,9 +12,10 @@ Bundle "gmarik/vundle"
 " Colorsheme
 " --------------------------------------------------------
 
-Bundle "altercation/vim-colors-solarized"
+" Bundle "altercation/vim-colors-solarized"
+Bundle "tomasr/molokai"
 set background=dark     " Set a dark background
-colorscheme solarized   " Set a colorsheme
+colorscheme molokai   " Set a colorsheme
 
 " Airline (lightweight powerline alternative)
 " --------------------------------------------------------
