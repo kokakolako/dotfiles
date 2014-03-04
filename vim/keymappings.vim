@@ -8,7 +8,7 @@ nnoremap <C-u> <esc>vawUi
 " inoremap <C-c> <C-r>=
 
 " Use a more comfortable Leader Key (for a QUERTZ keyboard-layout)
-let mapleader = "<space>"
+let mapleader = " "
 
 " Remap the CtrlP mapping to
 let g:ctrlp_map = "<leader>p"
@@ -40,14 +40,17 @@ nnoremap k gk
 " Use J,K to switch buffers + Join Lines with <C-J>
 nnoremap <silent> J :bn<Enter>
 nnoremap <silent> K :bp<Enter>
-nnoremap <silent> <A-j> :join<Enter>
-
-" Change inside markdown headings
-onoremap <silent> ih :<C-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<CR>
+nnoremap <silent> <leader>j :join<Enter>
 
 " Select all
 nnoremap vaa ggvG<CR>
 nnoremap via ggvG<CR>
+
+" Search for the same word but don't jump to it
+nnoremap * *<C-O>
+
+" Toggle Color Higlighting
+nnoremap <leader>c :ColorToggle<Enter>
 
 
 " Autocommands
@@ -81,7 +84,7 @@ iabbrev vergelich vergleich
 " map <F2> :w!<CR>:aspell check %<CR>:e! %<CR>
 " map <F2> :setlocal spell spelllang=de_de<CR>:set spell<CR>
 
-" Easy Motion needs now only one press at <leader>
+" Easy Motion needs now only one press at <l-jeader>
 " let g:EasyMotion_leader_key = '<Leader>'
 
 " Use "," instead of ":" (save one keystroke)

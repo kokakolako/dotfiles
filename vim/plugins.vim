@@ -12,45 +12,99 @@ Bundle "gmarik/vundle"
 " Colorsheme
 " --------------------------------------------------------
 
-" Bundle "altercation/vim-colors-solarized"
-Bundle "tomasr/molokai"
+Bundle "kokakolako/molokai"
 set background=dark     " Set a dark background
 colorscheme molokai   " Set a colorsheme
+" Bundle "altercation/vim-colors-solarized"
+" Bundle "tomasr/molokai"
 
 " Airline (lightweight powerline alternative)
 " --------------------------------------------------------
 
 Bundle "bling/vim-airline"
+Bundle "paranoida/vim-airlineish"
+
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#enabled = 1
 let g:airline#extensions#whitespace#checks = [ "indent", "trailing" ]
 let g:airline#extensions#whitespace#show_message = 1
-" let g:airline_theme = "airlineish"
+let g:airline_theme = "airlineish"
+
+" Neocomplete
+" --------------------------------------------------------
+
+Bundle "Shougo/neocomplete"
+
+
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+        \ }
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return neocomplete#close_popup() . "\<CR>"
+  " For no inserting <CR> key.
+  "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplete#close_popup()
+inoremap <expr><C-e>  neocomplete#cancel_popup()
+" Close popup by <Space>.
+inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
 
 " Misc Plugins
 " --------------------------------------------------------
 
-" Highlight trailing whitespace
-Bundle "ntpeters/vim-better-whitespace"
-
-" Close tags automagically
-Bundle "Townk/vim-autoclose"
-
-" Open buffer more comfortable
-Bundle "kien/ctrlp.vim"
-
-" Something like Emmet for vim
-Bundle "rstacruz/sparkup"
-
-" Syntastic + Linter
-Bundle "scrooloose/syntastic"
-Bundle "dbakker/vim-lint"
-
-" Sorting config-parameters
-Bundle "godlygeek/tabular"
-Bundle "suxpert/vimcaps"
-Bundle "altercation/vim-colors-solarized"
+Bundle "ntpeters/vim-better-whitespace" " Highlight trailing whitespace
+Bundle "Townk/vim-autoclose" " Close tags automagically
+Bundle "kien/ctrlp.vim" " Open buffer more comfortable
+Bundle "rstacruz/sparkup" " Something like Emmet for vim
+Bundle "scrooloose/syntastic" " Syntastic + Linter
+Bundle "godlygeek/tabular" " Sorting config-parameters
+Bundle "suxpert/vimcaps" " Disable caps-lock
+Bundle "matchit.zip" " Matchit.zip (% is configurable)
+Bundle "justinmk/vim-sneak" " Better 'f'-Command
+Bundle 'LaTeX-Box-Team/LaTeX-Box' "LaTeX Plugin
+Bundle "tommcdo/vim-exchange" " Swap two regions with 'cx'
+Bundle "lilydjwg/colorizer" " Colorize Hex Codes
 
 " Great plugins from Tim Pope
 Bundle "tpope/vim-abolish"
@@ -63,80 +117,8 @@ Bundle "tpope/vim-repeat"
 Bundle "tpope/vim-surround"
 Bundle "tpope/vim-vinegar"
 
-" Matchit.zip (% is configurable)
-Bundle "matchit.zip"
 
-" Better 'f'-Command
-Bundle "justinmk/vim-sneak"
+" Use neonippet for snippet management
+Bundle "Shougo/neosnippet"
+Bundle "Shougo/neosnippet-snippets"
 
-"LaTeX Plugin
-Bundle 'LaTeX-Box-Team/LaTeX-Box'
-
-" Swap two regions with 'cx'
-Bundle "tommcdo/vim-exchange"
-
-" Autocompletion
-" Bundle "Valloric/YouCompleteMe"
-" let g:ycm_autoclose_preview_window_after_completion=1
-" let g:ycm_path_to_python_interpreter = '/usr/bin/python'
-
-" Bundle "lilydjwg/colorizer"
-
-" Plugins I don't use
-" --------------------------------------------------------
-
-"YankRing
-" Bundle "YankRing.vim"
-
-"Over.vim (Ersetzen wird grafisch vorgehoben)
-" Bundle "osyo-manga/vim-over"
-
-" Emmet
-" Bundle "mattn/emmet-vim"
-
-" Vimux
-" Bundle "benmills/vimux"
-
-" Unite
-" Bundle "Shougo/unite.vim"
-
-" Ack (a grep replacement)
-" Bundle "mileszs/ack.vim"
-
-" Neocomplcache
-" Bundle "Shougo/neocomplcache.vim"
-
-" Vimproc
-" Bundle "Shougo/vimproc.vim"
-
-" JavaScript Libaries Syntax-Higlighting
-" Bundle "othree/javascript-libraries-syntax.vim"
-
-" EasyMotion
-" Bundle "Lokaltog/vim-easymotion"
-
-" NERDtree
-" Bundle "scrooloose/nerdtree"
-
-" Sneak (better f-Command)
-" Bundle "justinmk/vim-sneak"
-
-" Ultisnips snippet plugin
-" Bundle "SirVer/ultisnips"
-
-" Open Documentation of word under cursor
-" Bundle "Keithbsmiley/investigate.vim"
-
-" Calendar.vim (Google Calendar + Tasks)
-" Bundle "itchyny/calendar.vim"
-
-" Ag.vim (153% replacement of the uses of ack)
-" Bundle "rking/ag.vim"
-
-" Easy-motion (fork of a better f-command )
-" Bundle "haya14busa/vim-easymotion"
-
-" Multiple cursors
-" Bundle "terryma/vim-multiple-cursors"
-
-" Bundle "bronson/vim-trailing-whitespace"
