@@ -93,18 +93,41 @@ endif
 " Misc Plugins
 " --------------------------------------------------------
 
-Bundle "ntpeters/vim-better-whitespace" " Highlight trailing whitespace
-Bundle "Townk/vim-autoclose" " Close tags automagically
-Bundle "kien/ctrlp.vim" " Open buffer more comfortable
-Bundle "rstacruz/sparkup" " Something like Emmet for vim
-Bundle "scrooloose/syntastic" " Syntastic + Linter
-Bundle "godlygeek/tabular" " Sorting config-parameters
-Bundle "suxpert/vimcaps" " Disable caps-lock
-Bundle "matchit.zip" " Matchit.zip (% is configurable)
-Bundle "justinmk/vim-sneak" " Better 'f'-Command
-Bundle 'LaTeX-Box-Team/LaTeX-Box' "LaTeX Plugin
-Bundle "tommcdo/vim-exchange" " Swap two regions with 'cx'
-Bundle "lilydjwg/colorizer" " Colorize Hex Codes
+" Highlight trailing whitespace
+Bundle "ntpeters/vim-better-whitespace"
+
+" Close tags automagically
+Bundle "Townk/vim-autoclose"
+
+" Open buffer more comfortable
+Bundle "kien/ctrlp.vim"
+
+" Something like Emmet for vim
+Bundle "rstacruz/sparkup"
+
+" Syntastic + Linter
+Bundle "scrooloose/syntastic"
+
+" Sorting config-parameters
+Bundle "godlygeek/tabular"
+
+" Disable caps-lock
+Bundle "suxpert/vimcaps"
+
+" Matchit.zip (% is configurable)
+Bundle "matchit.zip"
+
+" Better 'f'-Command
+Bundle "justinmk/vim-sneak"
+
+"LaTeX Plugin
+Bundle "LaTeX-Box-Team/LaTeX-Box"
+
+" Swap two regions with 'cx'
+Bundle "tommcdo/vim-exchange"
+
+" Colorize Hex Codes
+Bundle "lilydjwg/colorizer"
 
 " Great plugins from Tim Pope
 Bundle "tpope/vim-abolish"
