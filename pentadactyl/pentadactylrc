@@ -1,0 +1,2 @@
+set rtp+=~/.config/pentadactyl
+colorscheme molokai
