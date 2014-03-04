@@ -1,0 +1,222 @@
+# Defaults
+# ---------------------------------------------
+
+## Path to your oh-my-zsh configuration.
+ZSH="$HOME/.config/oh-my-zsh"
+
+## ZSH-Theme
+ZSH_THEME="kokakolako"
+
+## Set source-path
+source "$ZSH/oh-my-zsh.sh"
+
+## Uncomment to change how often before auto-updates occur? (in days)
+UPDATE_ZSH_DAYS=7
+
+## Uncomment following line if you want to disable colors in ls
+## DISABLE_LS_COLORS="true"
+
+## Set to this to use case-sensitive completion
+## CASE_SENSITIVE="true"
+
+## Uncomment following line if you want to disable autosetting terminal title.
+## DISABLE_AUTO_TITLE="true"
+
+## Uncomment following line if you want to disable command autocorrection
+## DISABLE_CORRECTION="true"
+
+## Uncomment following line if you want red dots to be displayed while waiting for completion
+## COMPLETION_WAITING_DOTS="true"
+
+## Uncomment following line if you want to disable marking untracked files under
+## VCS as dirty. This makes repository status check for large repositories much,
+## much faster.
+## DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Vi-Mode settings
+# ---------------------------------------------
+
+## Enable Vi-Mode
+bindkey -v
+
+## Enable Emacs-Like incremental history search
+bindkey "^R" history-incremental-search-backward
+
+## Kill the lag when changing to normal mode
+KEYTIMEOUT=1
+
+# Options
+# ---------------------------------------------
+
+## Set Auto-CD
+setopt autocd
+
+## Set Auto-Pushd
+setopt autopushd
+
+
+# Zsh Modules
+# ---------------------------------------------
+
+autoload -U zmv
+
+# Plugins
+# ---------------------------------------------
+
+## Adding Plugins to oh-my-zsh
+plugins=(git github coffee jump colored-man vi-mode rails gem rvm tmux)
+
+## Adding opp.zsh which activate text objects in Zsh Normal Mode
+source $HOME/.config/oh-my-zsh/plugins/opp.zsh/*.zsh
+
+## Adding an autocompletion plugin (like fish's)
+source $HOME/.config/oh-my-zsh/plugins/autosuggestions/autosuggestions.zsh
+zle-line-init() {
+    zle autosuggest-start
+}
+zle -N zle-line-init
+bindkey '^t' autosuggest-toggle
+bindkey '^o' vi-forward-blank-word
+
+# Aliases
+# ---------------------------------------------
+
+## Colorize grep
+alias grep="grep --color=auto"
+
+## Show the Directory Stack as Stack
+alias dirs="dirs -v"
+alias pushd="pushd; dirs -v"
+alias popd="popd; dirs -v"
+
+## Vim aliases
+alias vim="vim -u $HOME/.config/vim/vimrc"
+alias vi="vim -u $HOME/.config/vim/vimrc"
+alias vimkeys="vim $HOME/.config/vim/keymappings.vim"
+alias vundle="vim $HOME/.config/vim/plugins.vim"
+alias vimtipps="vim $HOME/.config/vim/vimtipps"
+# alias wim="vim -u $HOME/.config/vim/wimrc"
+# alias vi="gvim -v -u $HOME/.config/vim/vimrc"
+# alias vim="gvim -v -u $HOME/.config/vim/vimrc"
+
+## Editing config files
+alias iconfig="vim $HOME/.config/i3/config +'lcd $HOME/.config/vim/'"
+alias vconfig="vim $HOME/.config/vim/vimrc +'lcd $HOME/.config/vim/'"
+alias zconfig="vim $HOME/.config/zsh/zshrc +'lcd $HOME/.config/zsh/'"
+alias uconfig="vim $HOME/.config/X11/Xresources +'lcd $HOME/.config/'"
+alias aconfig="vim $HOME/.config/zsh/zshrc +'normal :/Aliases<CR>' +'lcd $HOME/.config/'"
+
+## Sudo aliases
+alias sctl="sudo systemctl"
+alias shutdown="sudo shutdown"
+
+## Start program with a customized config-file
+alias ncmpcpp="ncmpcpp --config $HOME/.config/ncmpcpp/config"
+alias nginx="nginx -c $HOME/.config/nginx/config"
+alias pandoc="pandoc --latex-engine=xelatex"
+alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
+alias msmtp="msmtp -C $HOME/.config/msmtp/msmtprc"
+
+## Misc aliases
+alias monitor.sh="$HOME/.bin/monitor.sh"
+alias backup.sh="/etc/cron.daily/backup.sh"
+alias virt-env="source $HOME/projekte/python/virt-env/bin/activate && cd $HOME/projekte/python/virt-env"
+alias rlocate="locate --regex"
+alias uzbl="uzbl-tabbed"
+# alias urxvt="urxvt -e bash -c 'tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -n$USER -s$USER@$HOSTNAME'"
+
+## Git Aliases
+alias gstat="git status"
+alias gpush="git push origin master"
+alias greset="git reset"
+alias ginit="git init"
+alias gclone="git clone"
+
+## Abbreviations
+alias gti="git"
+
+# Environment Variables
+# ---------------------------------------------
+
+## Misc
+TERMINAL=rxvt-unicode
+TERM=rxvt-unicode
+EDITOR="vim"
+VISUAL="vim"
+GIT_EDITOR="vim"
+MYVIMRC="$HOME/.config/vim/vimrc"
+MAIL="$HOME/mail"
+CONF="$HOME/.config"
+MARKPATH="$HOME/.marks"
+AUTOSUGGESTIO_HIGHLIGHT_COLOR="$fg[cyan]"
+
+## Pass Passwortmanager Directory
+PASSWORD_STORE_DIR="$HOME/.password-store"
+
+## Adding RVM to $PATH
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+source $HOME/.rvm/scripts/rvm
+PATH="$PATH:$HOME/.rvm/bin"
+
+# Misc
+# ---------------------------------------------
+
+## Extract archive files easily
+extract () {
+    if [ -f $1 ] ; then
+      case $1 in
+        *.tar.bz2)   tar xjf $1     ;;
+        *.tar.gz)    tar xzf $1     ;;
+        *.bz2)       bunzip2 $1     ;;
+        *.rar)       unrar e $1     ;;
+        *.gz)        gunzip $1      ;;
+        *.tar)       tar xf $1      ;;
+        *.tbz2)      tar xjf $1     ;;
+        *.tgz)       tar xzf $1     ;;
+        *.zip)       unzip $1       ;;
+        *.Z)         uncompress $1  ;;
+        *.7z)        7z x $1        ;;
+        *)     echo "'$1' cannot be extracted via extract()" ;;
+         esac
+     else
+         echo "'$1' is not a valid file"
+     fi
+}
+
+## Show dimensions of a picture
+function dim () {
+    sips $1 -g pixelWidth -g pixelHeight
+}
+
+## Use Ctr+Z to foreground vim
+foreground-vim () {
+    fg %vim &> /dev/null
+}
+zle -N foreground-vim
+bindkey "^Z" foreground-vim
+
+## Disable visual bell
+xset -b
+
+## Stuff for the jump/mark plugin
+jump () {
+    cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
+}
+mark () {
+    mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
+}
+umark () {
+    rm -i "$MARKPATH/$1"
+}
+marks () {
+    ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
+}
+_completemarks () {
+    reply=($(ls $MARKPATH))
+}
+compctl -K _completemarks jump
+compctl -K _completemarks umark
+
+## Fixing Dircolors
+eval $(dircolors $HOME/.config/dircolors/molokai.dircolors)
+
