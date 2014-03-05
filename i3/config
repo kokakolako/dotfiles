@@ -168,8 +168,8 @@ bindsym XF86TouchpadToggle exec $HOME/.bin/toggle-touchpad.sh
 bindsym Print exec deepin-screenshot
 
 ## Brightness
-bindsym XF86MonBrightnessUp exec $HOME/.bin/backlight-up
-bindsym XF86MonBrightnessDown exec $HOME/.bin/backlight-down
+bindsym XF86MonBrightnessUp exec light -a 5%
+bindsym XF86MonBrightnessDown exec light -s 5%
 
 # i3bar Configuration
 # -------------------------------------------------
