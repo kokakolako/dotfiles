@@ -16,19 +16,14 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec urxvtcd
-# bindsym $mod+Return exec xfce4-terminal
 # bindsym $mod+Return exec urxvtc -e zsh -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -n$USER -s$USER@$HOSTNAME -f $HOME/.config/tmux/tmux.conf"
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id $HOME/.bin/dmenu-console.sh -nb "#101010" -nf "#D0D0D0" -sb "#FF4000" -sf "#101010" -i -fn "SourceCode Pro for Powerline-12"
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-#
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -nb '#101010' -nf '#D0D0D0' -sb '#FF4000' -sf '#101010' -fn 'SourceCode Pro for Powerline-11' -h 26" --term="urxvtcd"
+
 # focus follow mouse
 focus_follows_mouse no
 
@@ -139,7 +134,6 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
 bindsym $mod+p exec "monitor.sh -S"
 
 # Function Keys
@@ -159,7 +153,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 ## Controll music-players via function keys
 bindsym XF86AudioNext exec mpc next # Next
 bindsym XF86AudioPrev exec mpc prev # Prev
-bindsym XF86AudioPlay exec mpc toggle && $HOME/.bin/control_vlc.sh pause # Toggle Pause
+bindsym XF86AudioPlay exec $HOME/.bin/toggle_music
 
 ## Toggle Touchpad on/off
 bindsym XF86TouchpadToggle exec $HOME/.bin/toggle-touchpad.sh
@@ -188,7 +182,7 @@ bar {
     colors {
         background #101010
         #class              border    backgr.   text
-        focused_workspace   #101010   #101010  #FF4000
+        focused_workspace   #FF4000   #FF4000  #101010
         active_workspace    #101010   #101010  #D0D0D0
         inactive_workspace  #101010   #101010  #D0D0D0
     }
