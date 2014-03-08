@@ -62,6 +62,7 @@ if has("autocmd")
     " Enable Spellcheck in *.md and *.txt files
     au BufNewFile,BufRead,BufEnter *.md     setlocal spell      spelllang=de_de
     au BufNewFile,BufRead,BufEnter *.txt    setlocal spell      spelllang=de_de
+    au FileType help setlocal nospell
 
     " Use pandoc to sort markdown (Use 'gq' in normal-mode)
     let pandoc_pipeline = "pandoc --from=markdown --to=markdown"
