@@ -49,9 +49,10 @@ nnoremap via ggvG<CR>
 " Search for the same word but don't jump to it
 nnoremap * *<C-O>
 
-" Toggle Color Higlighting
+" Quickly toggle important settings
 nnoremap <leader>c :ColorToggle<Enter>
-
+nnoremap <silent> <leader>s :StripWhitespace<Enter>
+nnoremap <silent> <leader>g :GitGutterToggle<Enter>
 
 " Autocommands
 " --------------------------------------------------------

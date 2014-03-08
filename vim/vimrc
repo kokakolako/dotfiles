@@ -2,7 +2,6 @@
 set nocompatible                            " Be vImproved
 set encoding=utf-8                          " Use UTF-8 to encode the text
 set backspace=indent,eol,start              " Backspacing over everything
-runtime macros/matchit.vim                  " Enable matchit.vim
 filetype plugin indent on                   " Enable filetype-indenting
 
 if has("multi_byte")

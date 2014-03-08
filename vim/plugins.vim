@@ -12,11 +12,12 @@ Bundle "gmarik/vundle"
 " Colorsheme
 " --------------------------------------------------------
 
+" Enable the colorsheme
 Bundle "kokakolako/molokai"
-set background=dark     " Set a dark background
 colorscheme molokai   " Set a colorsheme
-" Bundle "altercation/vim-colors-solarized"
-" Bundle "tomasr/molokai"
+
+" Set a dark background
+set background=dark     " Set a dark background
 
 " Airline (lightweight powerline alternative)
 " --------------------------------------------------------
@@ -24,12 +25,29 @@ colorscheme molokai   " Set a colorsheme
 Bundle "bling/vim-airline"
 Bundle "paranoida/vim-airlineish"
 
+" Use powerline fonts
 let g:airline_powerline_fonts = 1
+
+" Use a nice airline theme
+let g:airline_theme = "airlineish"
+
+" Enable some extensions
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#enabled = 1
+
+" Configure the whitespace extension
 let g:airline#extensions#whitespace#checks = [ "indent", "trailing" ]
 let g:airline#extensions#whitespace#show_message = 1
-let g:airline_theme = "airlineish"
+
+" Theming the seperators ( airline + tabline )
+let g:airline_left_sep = " "
+let g:airline_right_sep = " "
+let g:airline_left_alt_sep = "|"
+let g:airline_right_alt_sep = "|"
+let g:airline#extensions#tabline#left_sep = " "
+let g:airline#extensions#tabline#right_sep = "  "
+let g:airline#extensions#tabline#right_alt_sep = "|"
+let g:airline#extensions#tabline#left_alt_sep = "|"
 
 " Neocomplete
 " --------------------------------------------------------
@@ -49,6 +67,7 @@ let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'vimshell' : $HOME.'/.vimshell_hist',
     \ 'scheme' : $HOME.'/.gosh_completions'
         \ }
+"    \ 'markdown' : $
 
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
@@ -134,14 +153,19 @@ Bundle "tpope/vim-abolish"
 Bundle "tpope/vim-commentary"
 Bundle "tpope/vim-eunuch"
 Bundle "tpope/vim-fugitive"
-Bundle "tpope/vim-markdown"
 Bundle "tpope/vim-obsession"
 Bundle "tpope/vim-repeat"
 Bundle "tpope/vim-surround"
 Bundle "tpope/vim-vinegar"
 
+" Syntax-Highlighting
+Bundle "tpope/vim-markdown"
+Bundle "Matt-Stevens/vim-systemd-syntax"
 
 " Use neonippet for snippet management
 Bundle "Shougo/neosnippet"
 Bundle "Shougo/neosnippet-snippets"
+
+" Highlight the changed lines (git diff)
+Bundle "airblade/vim-gitgutter"
 
