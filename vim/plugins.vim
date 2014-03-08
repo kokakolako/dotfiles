@@ -115,7 +115,7 @@ endif
 Bundle "ntpeters/vim-better-whitespace"
 
 " Close tags automagically
-Bundle "Townk/vim-autoclose"
+Bundle "kana/vim-smartinput"
 
 " Open buffer more comfortable
 Bundle "kien/ctrlp.vim"
