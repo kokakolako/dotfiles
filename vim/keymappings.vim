@@ -42,10 +42,6 @@ nnoremap <silent> J :bn<Enter>
 nnoremap <silent> K :bp<Enter>
 nnoremap <silent> <leader>j :join<Enter>
 
-" Select all
-nnoremap vaa ggvG<CR>
-nnoremap via ggvG<CR>
-
 " Search for the same word but don't jump to it
 nnoremap * *<C-O>
 
