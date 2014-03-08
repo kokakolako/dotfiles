@@ -67,7 +67,6 @@ let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'vimshell' : $HOME.'/.vimshell_hist',
     \ 'scheme' : $HOME.'/.gosh_completions'
         \ }
-"    \ 'markdown' : $
 
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
