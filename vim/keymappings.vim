@@ -49,6 +49,9 @@ nnoremap <leader>c :ColorToggle<Enter>
 nnoremap <silent> <leader>s :StripWhitespace<Enter>
 nnoremap <silent> <leader>g :GitGutterToggle<Enter>
 
+" Jump to the buffers directory
+nnoremap <Leader>ü :cd %:p:h<cr>:pwd<cr>
+
 " Faster open the current Folding
 nnoremap <Space><Space> za
 
