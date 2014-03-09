@@ -115,6 +115,8 @@ alias ginit="git init"
 alias gclone="git clone"
 alias gcommit="git commit"
 alias gdiff="git diff"
+alias gadd="git add"
+alias glog="git log"
 
 # Environment Variables
 # ---------------------------------------------
