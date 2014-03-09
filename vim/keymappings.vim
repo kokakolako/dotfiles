@@ -24,7 +24,6 @@ nnoremap <silent> <C-j> :wincmd j<CR>
 nnoremap <silent> <C-h> :wincmd h<CR>
 nnoremap <silent> <C-l> :wincmd l<CR>
 
-
 " Fixing the behaviour of <C-n> and <C-p>
 cnoremap <C-p> <up>
 cnoremap <C-n> <down>
@@ -49,6 +48,9 @@ nnoremap * *<C-O>
 nnoremap <leader>c :ColorToggle<Enter>
 nnoremap <silent> <leader>s :StripWhitespace<Enter>
 nnoremap <silent> <leader>g :GitGutterToggle<Enter>
+
+" Faster open the current Folding
+nnoremap <Space><Space> za
 
 " Autocommands
 " --------------------------------------------------------

@@ -2,7 +2,7 @@
 set nocompatible                            " Be vImproved
 set encoding=utf-8                          " Use UTF-8 to encode the text
 set backspace=indent,eol,start              " Backspacing over everything
-filetype plugin indent on                   " Enable filetype-indenting
+filetype plugin indent on                   " Enable filetype-indenting via plugins
 
 if has("multi_byte")
     if &termencoding == ""
@@ -62,7 +62,7 @@ set lazyredraw              " Enable lazy redrawing to speed up macros
 set autoindent		        " Always set autoindenting on
 filetype plugin indent on   " Enable smart indenting
 
-" Tab settings
+" Tabbing
 set expandtab               " Expand tabs to spaces
 set softtabstop=4           " Control the colums which are used in insert-mode
 set shiftwidth=4            " Set the identing tab width
@@ -70,7 +70,7 @@ set tabstop=4               " Changes the width of a tab
 
 " Permanent undo
 set undofile
-set undodir=~/.vim/undo
+set undodir=$HOME/.config/vim/undo
 
 " Globbing Menu in the ex-mode
 set wildmenu
