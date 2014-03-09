@@ -32,10 +32,10 @@ if has("autocmd")
     augroup vimrcEx
     au!
     " For all text files set 'textwidth' to 78 characters.
-    autocmd FileType text setlocal textwidth=78
+    au FileType text setlocal textwidth=78
 
     " Jump to the last known cursor position
-    autocmd BufReadPost *
+    au BufReadPost *
         \ if line("'\"") > 1 && line("'\"") <= line("$") |
         \   exe "normal! g`\"" |
         \ endif

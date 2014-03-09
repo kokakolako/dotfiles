@@ -1,4 +1,4 @@
-" Vim Keybindings
+" Vim Keybindings {{{1
 " --------------------------------------------------------
 
 " Uppercase the current word in insert mode
@@ -52,7 +52,8 @@ nnoremap <silent> <leader>g :GitGutterToggle<Enter>
 " Faster open the current Folding
 nnoremap <Space><Space> za
 
-" Autocommands
+" 1}}}
+" Autocommands {{{1
 " --------------------------------------------------------
 
 if has("autocmd")
@@ -60,7 +61,12 @@ if has("autocmd")
     " Enable Spellcheck in *.md and *.txt files
     au BufNewFile,BufRead,BufEnter *.md     setlocal spell      spelllang=de_de
     au BufNewFile,BufRead,BufEnter *.txt    setlocal spell      spelllang=de_de
+
+    " Disable Spellcheck in Help-Files
     au FileType help setlocal nospell
+
+    " Enable marker-folding in Vim-files
+    au FileType vim setlocal foldmethod=marker
 
     " Use pandoc to sort markdown (Use 'gq' in normal-mode)
     let pandoc_pipeline = "pandoc --from=markdown --to=markdown"
@@ -68,16 +74,16 @@ if has("autocmd")
 
 endif
 
-
-" Abbreviations
+" 1}}}
+" Abbreviations {{{1
 " --------------------------------------------------------
 
 iabbrev -> →
 iabbrev Vergelich Vergleich
 iabbrev vergelich vergleich
 
-
-" Not used key bindings
+" 1}}}
+" Not used key bindings {{{1
 " -------------------------------------------------------------------
 
 " Activate Spellcheck
@@ -98,3 +104,4 @@ iabbrev vergelich vergleich
 " Remapping 0 to ^ to jump to the first character
 " nnoremap 0 ^
 
+" 1}}}
