@@ -13,26 +13,6 @@ source "$ZSH/oh-my-zsh.sh"
 ## Uncomment to change how often before auto-updates occur? (in days)
 UPDATE_ZSH_DAYS=7
 
-## Uncomment following line if you want to disable colors in ls
-## DISABLE_LS_COLORS="true"
-
-## Set to this to use case-sensitive completion
-## CASE_SENSITIVE="true"
-
-## Uncomment following line if you want to disable autosetting terminal title.
-## DISABLE_AUTO_TITLE="true"
-
-## Uncomment following line if you want to disable command autocorrection
-## DISABLE_CORRECTION="true"
-
-## Uncomment following line if you want red dots to be displayed while waiting for completion
-## COMPLETION_WAITING_DOTS="true"
-
-## Uncomment following line if you want to disable marking untracked files under
-## VCS as dirty. This makes repository status check for large repositories much,
-## much faster.
-## DISABLE_UNTRACKED_FILES_DIRTY="true"
-
 # Vi-Mode settings
 # ---------------------------------------------
 
@@ -42,24 +22,22 @@ bindkey -v
 ## Enable Emacs-Like incremental history search
 bindkey "^R" history-incremental-search-backward
 
-# Use vim cli mode
+## Use vim cli mode
 bindkey '^P' up-history
 bindkey '^N' down-history
 
-# backspace and ^h working even after
-# returning from command mode
+## backspace and ^h working even after returning from command mode
 bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
 
-# ctrl-w removed word backwards
+## ctrl-w removed word backwards
 bindkey '^w' backward-kill-word
 
-# ctrl-r starts searching history backward
+## ctrl-r starts searching history backward
 bindkey '^r' history-incremental-search-backward
 
 ## Kill the lag when changing to normal mode
 KEYTIMEOUT=1
-
 
 # Options
 # ---------------------------------------------
@@ -85,15 +63,6 @@ plugins=(git github coffee jump colored-man vi-mode rails gem rvm tmux)
 ## Adding opp.zsh which activate text objects in Zsh Normal Mode
 source $HOME/.config/oh-my-zsh/plugins/opp.zsh/*.zsh
 
-## Adding an autocompletion plugin (like fish's)
-# source $HOME/.config/oh-my-zsh/plugins/autosuggestions/autosuggestions.zsh
-# zle-line-init () {
-#     zle autosuggest-start
-# }
-# zle -N zle-line-init
-# bindkey '^t' autosuggest-toggle
-# bindkey '^o' vi-end-of-line
-
 # Aliases
 # ---------------------------------------------
 
@@ -107,20 +76,16 @@ alias popd="popd; dirs -v"
 
 ## Vim aliases
 alias vim="vim -u $HOME/.config/vim/vimrc"
-alias vi="vim -u $HOME/.config/vim/vimrc"
 alias vimkeys="vim $HOME/.config/vim/keymappings.vim"
 alias vundle="vim $HOME/.config/vim/plugins.vim"
 alias vimtipps="vim $HOME/.config/vim/vimtipps"
-# alias wim="vim -u $HOME/.config/vim/wimrc"
-# alias vi="gvim -v -u $HOME/.config/vim/vimrc"
-# alias vim="gvim -v -u $HOME/.config/vim/vimrc"
 
 ## Editing config files
-alias iconfig="vim $HOME/.config/i3/config +'lcd $HOME/.config/vim/'"
-alias vconfig="vim $HOME/.config/vim/vimrc +'lcd $HOME/.config/vim/'"
-alias zconfig="vim $HOME/.config/zsh/zshrc +'lcd $HOME/.config/zsh/'"
-alias uconfig="vim $HOME/.config/X11/Xresources +'lcd $HOME/.config/'"
-alias aconfig="vim $HOME/.config/zsh/zshrc +'normal :/Aliases<CR>' +'lcd $HOME/.config/'"
+alias iconfig="vim $HOME/.config/i3/config +'lcd $HOME/.config/i3'"
+alias vconfig="vim $HOME/.config/vim/vimrc +'lcd $HOME/.config/vim'"
+alias zconfig="vim $HOME/.config/zsh/zshrc +'lcd $HOME/.config/zsh'"
+alias uconfig="vim $HOME/.config/X11/Xresources +'lcd $HOME/.config/X11'"
+alias aconfig="vim $HOME/.config/zsh/zshrc +'normal :/Aliases<CR>' +'lcd $HOME/.config/zsh'"
 
 ## Sudo aliases
 alias sctl="sudo systemctl"
@@ -139,7 +104,6 @@ alias backup.sh="/etc/cron.daily/backup.sh"
 alias virt-env="source $HOME/projekte/python/virt-env/bin/activate && cd $HOME/projekte/python/virt-env"
 alias rlocate="locate --regex"
 alias uzbl="uzbl-tabbed"
-# alias urxvt="urxvt -e bash -c 'tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -n$USER -s$USER@$HOSTNAME'"
 
 ## Git Aliases
 alias g="git"
