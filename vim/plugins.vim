@@ -239,4 +239,7 @@ Bundle "Shougo/neosnippet-snippets"
 " Highlight the changed lines (git diff) {{{2
 Bundle "airblade/vim-gitgutter"
 " 2}}}
+" Automatic select textobjects {{{2
+Bundle "gcmt/wildfire.vim"
+" 2}}}
 " 1}}}
