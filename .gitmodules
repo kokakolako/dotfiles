@@ -1,3 +1,9 @@
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
-	url = ./oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh
+[submodule "oh-my-zsh-custom/zsh-autosuggestions"]
+	path = oh-my-zsh-custom/zsh-autosuggestions
+	url = https://github.com/tarruda/zsh-autosuggestions
+[submodule "oh-my-zsh-custom/opp.zsh"]
+	path = oh-my-zsh-custom/opp.zsh
+	url = https://github.com/hchbaw/opp.zsh
