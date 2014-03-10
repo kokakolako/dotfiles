@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+#!/usr/bin/ruby
 
 plugins = [
     "https://github.com/kokakolako/molokai",
@@ -37,6 +37,7 @@ plugins = [
 ]
 
 plugins.each { | i |
-    exec "git submodule add #{i} > /dev/null"
+    if ( "#{i}" == "" ) {
+        `git submodule add '#{i}' > /dev/null`
+    }
 }
-
