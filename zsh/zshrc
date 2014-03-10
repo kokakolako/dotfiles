@@ -90,8 +90,6 @@ alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
 alias msmtp="msmtp -C $HOME/.config/msmtp/msmtprc"
 
 ## Misc aliases
-alias monitor.sh="$HOME/.bin/monitor.sh"
-alias backup.sh="/etc/cron.daily/backup.sh"
 alias virt-env="source $HOME/projekte/python/virt-env/bin/activate && cd $HOME/projekte/python/virt-env"
 alias rlocate="locate --regex"
 alias uzbl="uzbl-tabbed"
@@ -125,6 +123,9 @@ MYVIMRC="$HOME/.config/vim/vimrc"
 MAIL="$HOME/mail"
 CONF="$HOME/.config"
 MARKPATH="$HOME/.marks"
+
+## Adding the binfiles to $PATH
+PATH="$PATH:$HOME/.bin"
 
 ## Pass Passwortmanager Directory
 PASSWORD_STORE_DIR="$HOME/.password-store"
