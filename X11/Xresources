@@ -50,7 +50,7 @@ URxvt.tabbed.secondaryScroll:  true
 
 *background:            #101010
 *foreground:            #D0D0D0
-*cursorColor:           #9999AA
+*cursorColor:           #999999
 
 ! Black + DarkGrey
 *color0:                #101010
