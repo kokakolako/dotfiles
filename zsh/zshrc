@@ -13,6 +13,9 @@ source "$ZSH/oh-my-zsh.sh"
 ## Uncomment to change how often before auto-updates occur? (in days)
 UPDATE_ZSH_DAYS=7
 
+## Plugins
+plugins=(git github jump colored-man vi-mode rvm opp)
+
 # Vi-Mode settings
 # ---------------------------------------------
 
@@ -39,7 +42,7 @@ bindkey '^r' history-incremental-search-backward
 ## Kill the lag when changing to normal mode
 KEYTIMEOUT=1
 
-# Options
+# General Zsh settings
 # ---------------------------------------------
 
 ## Set Auto-CD
@@ -48,20 +51,8 @@ setopt autocd
 ## Set Auto-Pushd
 setopt autopushd
 
-
-# Zsh Modules
-# ---------------------------------------------
-
+## Load a Mass Renaming Module
 autoload -U zmv
-
-# Plugins
-# ---------------------------------------------
-
-## Adding Plugins to oh-my-zsh
-plugins=(git github coffee jump colored-man vi-mode rails gem rvm tmux)
-
-## Adding opp.zsh which activate text objects in Zsh Normal Mode
-source $HOME/.config/oh-my-zsh/plugins/opp.zsh/*.zsh
 
 # Aliases
 # ---------------------------------------------
@@ -182,25 +173,6 @@ bindkey "^Z" foreground-vim
 
 ## Disable visual bell
 xset -b
-
-## Stuff for the jump/mark plugin
-jump () {
-    cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
-}
-mark () {
-    mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
-}
-umark () {
-    rm -i "$MARKPATH/$1"
-}
-marks () {
-    ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
-}
-_completemarks () {
-    reply=($(ls $MARKPATH))
-}
-compctl -K _completemarks jump
-compctl -K _completemarks umark
 
 ## Fixing Dircolors
 eval $(dircolors $HOME/.config/dircolors/molokai.dircolors)
