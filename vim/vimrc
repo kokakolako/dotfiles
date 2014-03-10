@@ -3,15 +3,17 @@ set nocompatible                            " Be vImproved
 set encoding=utf-8                          " Use UTF-8 to encode the text
 set backspace=indent,eol,start              " Backspacing over everything
 filetype plugin indent on                   " Enable filetype-indenting via plugins
+set fileformat=unix                         " Open files with unix-fileformat
 
-"Set runtimepath
+" Set runtimepath
 set rtp=$HOME/.config/vim/
 
 " Pathogen Settings
 runtime! bundle/vim-pathogen/autoload/pathogen.vim
-silent! call pathogen#infect()
-silent! call pathogen#helptags()
+call pathogen#infect()
+call pathogen#helptags()
 
+syntax on                                   " Enable syntax-highlighting
 
 if has("multi_byte")
     if &termencoding == ""
@@ -32,10 +34,16 @@ source $HOME/.config/vim/plugins.vim        " Sourcing plugins
 " endif
 
 if &t_Co > 2 || has("gui_running")
-    syntax on                               " Enable syntax-highlighting
     set incsearch                           " Enable incsearch to do use ranges
     set t_Co=256                            " Enable 256 colors
 endif
+
+" Enable a colorsheme
+colorscheme molokai   " Set a colorsheme
+
+" Set a dark background
+set background=dark     " Set a dark background
+
 
 if has("autocmd")
     augroup vimrcEx
