@@ -37,7 +37,5 @@ plugins = [
 ]
 
 plugins.each { | i |
-    if ( "#{i}" == "" ) {
-        `git submodule add '#{i}' > /dev/null`
-    }
+    `git submodule add '#{i}' > /dev/null`
 }
