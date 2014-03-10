@@ -4,6 +4,15 @@ set encoding=utf-8                          " Use UTF-8 to encode the text
 set backspace=indent,eol,start              " Backspacing over everything
 filetype plugin indent on                   " Enable filetype-indenting via plugins
 
+"Set runtimepath
+set rtp=$HOME/.config/vim/
+
+" Pathogen Settings
+runtime! bundle/vim-pathogen/autoload/pathogen.vim
+silent! call pathogen#infect()
+silent! call pathogen#helptags()
+
+
 if has("multi_byte")
     if &termencoding == ""
         let &termencoding = &encoding

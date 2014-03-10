@@ -1,30 +1,14 @@
-" Vundle Settings {{{1
-" --------------------------------------------------------
-
-filetype off                  " required!
-
-set rtp+=~/.config/vim/bundle/vundle/
-call vundle#rc("$HOME/.config/vim/bundle")
-
-" let Vundle manage Vundle
-Bundle "gmarik/vundle"
-" 1}}}
-" Colorsheme {{{1
+" Colorsheme
 " --------------------------------------------------------
 
 " Enable the colorsheme
-Bundle "kokakolako/molokai"
 colorscheme molokai   " Set a colorsheme
 
 " Set a dark background
 set background=dark     " Set a dark background
 
-" 1}}}
-" Airline (lightweight powerline alternative) {{{1
+" Airline (lightweight powerline alternative)
 " --------------------------------------------------------
-
-Bundle "bling/vim-airline"
-Bundle "paranoida/vim-airlineish"
 
 " Use powerline fonts
 let g:airline_powerline_fonts = 1
@@ -49,11 +33,9 @@ let g:airline#extensions#tabline#left_sep = " "
 let g:airline#extensions#tabline#right_sep = "  "
 let g:airline#extensions#tabline#right_alt_sep = "|"
 let g:airline#extensions#tabline#left_alt_sep = "|"
-"1 }}}
-" Neocomplete (Autocompletion in vim) {{{1
-" --------------------------------------------------------
 
-Bundle "Shougo/neocomplete"
+" Neocomplete (Autocompletion in vim)
+" --------------------------------------------------------
 
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
@@ -107,12 +89,9 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
-" 1}}}
+
 " Textobj-user (Create custom textobjects) {{{1
 " --------------------------------------------------------
-
-" Create custom text-objects
-Bundle "kana/vim-textobj-user"
 
 " textobj-entire - Text objects for entire buffer
 " Version: 0.0.3
@@ -176,70 +155,3 @@ function! s:select_i()
 endfunction
 
 let g:loaded_textobj_entire = 1
-" 1}}}
-" Misc Plugins {{{1
-" --------------------------------------------------------
-" Highlight trailing whitespace {{{2
-Bundle "ntpeters/vim-better-whitespace"
-" 2}}}
-" Close tags automagically {{{2
-Bundle "kana/vim-smartinput"
-" 2}}}
-" Open buffer more comfortable {{{2
-Bundle "kien/ctrlp.vim"
-" 2}}}
-" Something like Emmet for vim {{{2
-Bundle "rstacruz/sparkup"
-" 2}}}
-" Syntastic + Linter {{{2
-Bundle "scrooloose/syntastic"
-" 2}}}
-" Sorting config-parameters {{{2
-Bundle "godlygeek/tabular"
-" 2}}}
-" Disable caps-lock {{{2
-Bundle "suxpert/vimcaps"
-" 2}}}
-" Matchit.zip (% is configurable) {{{2
-Bundle "matchit.zip"
-" 2}}}
-" Better 'f'-Command {{{2
-Bundle "justinmk/vim-sneak"
-" 2}}}
-"LaTeX Plugin {{{2
-Bundle "LaTeX-Box-Team/LaTeX-Box"
-" 2}}}
-" Swap two regions with 'cx' {{{2
-Bundle "tommcdo/vim-exchange"
-" 2}}}
-" Intelligent Folding of Markdown {{{2
-Bundle "nelstrom/vim-markdown-folding"
-" 2}}}
-" Colorize Hex Codes {{{2
-Bundle "lilydjwg/colorizer"
-" 2}}}
-" Great plugins from Tim Pope "{{{2
-Bundle "tpope/vim-abolish"
-Bundle "tpope/vim-commentary"
-Bundle "tpope/vim-eunuch"
-Bundle "tpope/vim-fugitive"
-Bundle "tpope/vim-obsession"
-Bundle "tpope/vim-repeat"
-Bundle "tpope/vim-surround"
-Bundle "tpope/vim-vinegar"
-" 2}}}
-" Syntax-Highlighting {{{2
-Bundle "tpope/vim-markdown"
-Bundle "Matt-Stevens/vim-systemd-syntax"
-" 2}}}
-" Use neonippet for snippet management {{{2
-Bundle "Shougo/neosnippet"
-Bundle "Shougo/neosnippet-snippets"
-"2}}}
-" Highlight the changed lines (git diff) {{{2
-Bundle "airblade/vim-gitgutter"
-" 2}}}
-" Automatic select textobjects {{{2
-Bundle "gcmt/wildfire.vim"
-" 2}}}
-" 1}}}
