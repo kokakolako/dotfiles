@@ -4,9 +4,6 @@
 [submodule "vim/zsh-autosuggestions"]
 	path = vim/zsh-autosuggestions
 	url = https://github.com/tarruda/zsh-autosuggestions
-[submodule "vim/bundle/molokai"]
-	path = vim/bundle/molokai
-	url = https://github.com/kokakolako/molokai
 [submodule "vim/bundle/vim-airline"]
 	path = vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline
@@ -97,3 +94,9 @@
 [submodule "vim/bundle/wildfire.vim"]
 	path = vim/bundle/wildfire.vim
 	url = https://github.com/gcmt/wildfire.vim
+[submodule "vim/bundle/vim-pathogen"]
+	path = vim/bundle/vim-pathogen
+	url = https://github.com/tpope/vim-pathogen
+[submodule "vim/src/molokai"]
+	path = vim/src/molokai
+	url = https://github.com/kokakolako/molokai

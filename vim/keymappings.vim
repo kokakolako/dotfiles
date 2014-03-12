@@ -53,7 +53,7 @@ nnoremap <silent> <leader>g :GitGutterToggle<Enter>
 nnoremap <Leader>ü :cd %:p:h<cr>:pwd<cr>
 
 " Faster open the current Folding
-nnoremap <Space><Space> za
+nnoremap <silent> <Space><Space> za
 
 " 1}}}
 " Autocommands {{{1

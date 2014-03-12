@@ -65,8 +65,9 @@ xftfont SourceCode Pro for Powerline:size=12
 TEXT
 ${if_mpd_playing}"${mpd_title}" von ${mpd_artist}${endif} \
 🔥 ${acpitemp}°  \
+⚡ ${battery BAT1}  \
 ${if_up wlp8s0}📶 ${wireless_essid wlp8s0} ${endif} \
 ${if_up enp7s0}🔌 ${addr enp7s0}${endif}\
 ⛭ ${time %a, %d.%m.%Y}  \
-${time %H:%M}\
+${time %H:%M}
 

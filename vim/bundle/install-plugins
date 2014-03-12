@@ -34,8 +34,10 @@ plugins = [
     "https://github.com/airblade/vim-gitgutter",
     "https://github.com/gcmt/wildfire.vim",
     "https://github.com/tpope/vim-pathogen",
+    "https://github.com/kana/vim-textobj-entire",
 ]
 
 plugins.each { | i |
+    if ( i ==  )
     `git submodule add '#{i}' > /dev/null`
 }

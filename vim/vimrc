@@ -1,72 +1,46 @@
-" Very defaults
-set nocompatible                            " Be vImproved
-set encoding=utf-8                          " Use UTF-8 to encode the text
-set backspace=indent,eol,start              " Backspacing over everything
-filetype plugin indent on                   " Enable filetype-indenting via plugins
-set fileformat=unix                         " Open files with unix-fileformat
+" Be Vi IMproved!
+set nocompatible
 
-" Set runtimepath
-set rtp=$HOME/.config/vim/
-
-" Pathogen Settings
+set rtp=$HOME/.config/vim/,/usr/share/vim/vimfiles,/usr/share/vim/vim74
 runtime! bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
-call pathogen#helptags()
+execute pathogen#infect("bundle/{}", "src/{}")
+execute pathogen#helptags()
 
-syntax on                                   " Enable syntax-highlighting
-
-if has("multi_byte")
-    if &termencoding == ""
-        let &termencoding = &encoding
-    endif
-    set encoding=utf-8
-    setglobal fileencoding=utf-8
-    set fileencodings=ucs-bom,utf-8,latin1
+if has('autocmd')
+  filetype plugin indent on
 endif
 
-" Sourcing the splitted rc-files
-source $HOME/.config/vim/keymappings.vim    " Sourcing keymappings
-source $HOME/.config/vim/plugins.vim        " Sourcing plugins
+if has('syntax') && !exists('g:syntax_on')
+  syntax enable
+endif
 
-" In many terminal emulators the mouse works just fine, thus enable it.
-" if has('mouse')
-"     set mouse=a
-" endif
+set autoindent
+set encoding=utf-8
+set backspace=indent,eol,start
+set showcmd
+set complete-=i
+set smarttab
+set nrformats-=octal
+set shiftround
+set ttimeout
+set ttimeoutlen=100
 
 if &t_Co > 2 || has("gui_running")
-    set incsearch                           " Enable incsearch to do use ranges
-    set t_Co=256                            " Enable 256 colors
+    set incsearch
+    set t_Co=256
 endif
 
-" Enable a colorsheme
-colorscheme molokai   " Set a colorsheme
-
-" Set a dark background
-set background=dark     " Set a dark background
-
-
-if has("autocmd")
-    augroup vimrcEx
-    au!
-    " For all text files set 'textwidth' to 78 characters.
-    au FileType text setlocal textwidth=78
-
-    " Jump to the last known cursor position
-    au BufReadPost *
-        \ if line("'\"") > 1 && line("'\"") <= line("$") |
-        \   exe "normal! g`\"" |
-        \ endif
-
-    augroup END
+if &encoding ==# 'latin1' && has('gui_running')
+  set encoding=utf-8
 endif
 
-" Misc
-set history=1000	        " Keep 1000 lines of command line history
+if has('mouse')
+    set mouse=a
+endif
+
 set ruler		            " Show the cursor position all the time
-set showcmd		            " Display incomplete commands
-set incsearch		        " Do incremental searching
-
 set number                  " Show line numbers
+set history=1000	        " Keep 1000 lines of command line history
 set ignorecase              " Ignore case when searching
 set smartcase               " No ignorecase if Uppercase char present
 set laststatus=2            " Always display statusbar
@@ -74,22 +48,28 @@ set nobackup                " Do not keep a backup file
 set title                   " Change terminal title to file name
 set cursorline              " Highlight the current line
 set lazyredraw              " Enable lazy redrawing to speed up macros
-
-" Indenting
-set autoindent		        " Always set autoindenting on
-filetype plugin indent on   " Enable smart indenting
-
-" Tabbing
 set expandtab               " Expand tabs to spaces
 set softtabstop=4           " Control the colums which are used in insert-mode
 set shiftwidth=4            " Set the identing tab width
 set tabstop=4               " Changes the width of a tab
-
-" Permanent undo
 set undofile
 set undodir=$HOME/.config/vim/undo
-
-" Globbing Menu in the ex-mode
 set wildmenu
 set wildmode=full
 
+if &tabpagemax < 50
+  set tabpagemax=50
+endif
+
+if !empty(&viminfo)
+  set viminfo^=!
+endif
+
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime! macros/matchit.vim
+endif
+
+source $HOME/.config/vim/keymappings.vim
+source $HOME/.config/vim/plugins.vim
+colorscheme molokai
+set background=dark
