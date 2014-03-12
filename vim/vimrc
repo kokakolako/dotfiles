@@ -1,20 +1,22 @@
 " Be Vi IMproved!
 set nocompatible
 
-set rtp=$HOME/.config/vim/,/usr/share/vim/vimfiles,/usr/share/vim/vim74
+set rtp=$HOME/.config/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after
 runtime! bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect("bundle/{}", "src/{}")
-execute pathogen#helptags()
+
+silent! execute pathogen#infect("bundle/{}")
+silent! execute pathogen#infect("src/{}")
 
 if has('autocmd')
   filetype plugin indent on
 endif
 
 if has('syntax') && !exists('g:syntax_on')
-  syntax enable
+  syntax on
 endif
 
 set autoindent
+set autowrite
 set encoding=utf-8
 set backspace=indent,eol,start
 set showcmd
@@ -30,6 +32,7 @@ if &t_Co > 2 || has("gui_running")
     set t_Co=256
 endif
 
+
 if &encoding ==# 'latin1' && has('gui_running')
   set encoding=utf-8
 endif
@@ -38,6 +41,7 @@ if has('mouse')
     set mouse=a
 endif
 
+colorscheme molokai         " Set the colorscheme
 set ruler		            " Show the cursor position all the time
 set number                  " Show line numbers
 set history=1000	        " Keep 1000 lines of command line history
@@ -71,5 +75,4 @@ endif
 
 source $HOME/.config/vim/keymappings.vim
 source $HOME/.config/vim/plugins.vim
-colorscheme molokai
-set background=dark
+
