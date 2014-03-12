@@ -1,7 +1,7 @@
 " Be Vi IMproved!
 set nocompatible
 
-set rtp=$HOME/.config/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after
+set rtp+=$HOME/.config/vim
 runtime! bundle/vim-pathogen/autoload/pathogen.vim
 
 silent! execute pathogen#infect("bundle/{}")
