@@ -6,6 +6,10 @@ runtime! bundle/vim-pathogen/autoload/pathogen.vim
 
 silent! execute pathogen#infect("bundle/{}")
 silent! execute pathogen#infect("src/{}")
+silent! execute pathogen#helptags()
+
+source $HOME/.config/vim/plugins.vim
+source $HOME/.config/vim/keymappings.vim
 
 if has('autocmd')
   filetype plugin indent on
@@ -32,7 +36,6 @@ if &t_Co > 2 || has("gui_running")
     set t_Co=256
 endif
 
-
 if &encoding ==# 'latin1' && has('gui_running')
   set encoding=utf-8
 endif
@@ -56,7 +59,8 @@ set expandtab               " Expand tabs to spaces
 set softtabstop=4           " Control the colums which are used in insert-mode
 set shiftwidth=4            " Set the identing tab width
 set tabstop=4               " Changes the width of a tab
-set undofile
+set hidden                  " Now its possible to switch buffers without saving
+set undofile                " Undo-File for permanent undo
 set undodir=$HOME/.config/vim/undo
 set wildmenu
 set wildmode=full
@@ -72,7 +76,4 @@ endif
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
   runtime! macros/matchit.vim
 endif
-
-source $HOME/.config/vim/keymappings.vim
-source $HOME/.config/vim/plugins.vim
 

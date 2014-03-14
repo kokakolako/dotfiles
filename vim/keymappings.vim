@@ -52,6 +52,7 @@ nnoremap <silent> <leader>g :GitGutterToggle<Enter>
 " Jump to the buffers directory
 nnoremap <Leader>ü :cd %:p:h<cr>:pwd<cr>
 
+
 " Faster open the current Folding
 nnoremap <silent> <Space><Space> za
 
@@ -84,27 +85,3 @@ endif
 iabbrev -> →
 iabbrev Vergelich Vergleich
 iabbrev vergelich vergleich
-
-" 1}}}
-" Not used key bindings {{{1
-" -------------------------------------------------------------------
-
-" Activate Spellcheck
-" map <F2> :w!<CR>:aspell check %<CR>:e! %<CR>
-" map <F2> :setlocal spell spelllang=de_de<CR>:set spell<CR>
-
-" Easy Motion needs now only one press at <l-jeader>
-" let g:EasyMotion_leader_key = '<Leader>'
-
-" Use "," instead of ":" (save one keystroke)
-" map , :
-
-" Ultisnips stuff
-" let g:UltiSnipsExpandTrigger = "<tab>"
-" let g:UltiSnipsJumpForwardTrigger = "<tab>"
-" let g:UltiSnipsJumpBackwardTrigger= "<s-tab>"
-
-" Remapping 0 to ^ to jump to the first character
-" nnoremap 0 ^
-
-" 1}}}
