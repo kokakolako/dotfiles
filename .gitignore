@@ -31,6 +31,7 @@ fish/oh-my-fish
 
 vim/undo
 vim/src
+vim/bundle/neocomplete/tags
 
 ncmpcpp/state
 ncmpcpp/mpd.log
