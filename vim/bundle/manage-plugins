@@ -1,5 +1,25 @@
 #!/usr/bin/ruby
 
+if ENV["XDG_CONFIG_HOME"] != ""
+    if File.directory? "#{ENV['XDG_CONFIG_HOME']}/vim"
+        vim_dir = "#{ENV['XDG_CONFIG_HOME']}/vim"
+    else
+        if File.directory? "#{ENV['HOME']}/.vim"
+            vim_dir = "#{ENV['HOME']}/.vim"
+        end
+    end
+else
+    if File.directory? "#{ENV['HOME']}/.config/vim"
+        vim_dir = "#{ENV['HOME']}/.config/vim"
+    end
+    if File.directory? "#{ENV['HOME']}/.vim"
+        vim_dir = "#{ENV['HOME']}/.vim"
+    end
+end
+
+if File.directory? 
+end
+
 plugins = [
     "https://github.com/kokakolako/molokai",
     "https://github.com/bling/vim-airline",
@@ -37,7 +57,15 @@ plugins = [
     "https://github.com/kana/vim-textobj-entire",
 ]
 
-plugins.each { | i |
-    if ( i ==  )
-    `git submodule add '#{i}' > /dev/null`
-}
+
+case ARGV[0]
+when "init"
+    plugins.each { | i |
+        `git submodule add '#{i}' > /dev/null`
+    }
+when "update"
+    `git submodule foreach git pull origin master`
+when "add"
+    plugins.push( ARGV[1] )
+    `git submodule add #{ARGV[1]}`
+end
