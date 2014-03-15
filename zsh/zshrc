@@ -123,6 +123,7 @@ MYVIMRC="$HOME/.config/vim/vimrc"
 MAIL="$HOME/mail"
 CONF="$HOME/.config"
 MARKPATH="$HOME/.marks"
+XDG_CONFIG_HOME="$HOME/.config"
 
 ## Adding the binfiles to $PATH
 PATH="$PATH:$HOME/.bin"
