@@ -1,4 +1,4 @@
-" Vim Keybindings {{{1
+" Vim Keybindings
 " --------------------------------------------------------
 
 " Uppercase the current word in insert mode
@@ -45,7 +45,7 @@ nnoremap <silent> <leader>j :join<Enter>
 nnoremap * *<C-O>
 
 " Quickly toggle important settings
-nnoremap <leader>c :ColorToggle<Enter>
+nnoremap <silent> <leader>c :ColorToggle<Enter>
 nnoremap <silent> <leader>s :StripWhitespace<Enter>
 nnoremap <silent> <leader>g :GitGutterToggle<Enter>
 
@@ -56,8 +56,7 @@ nnoremap <Leader>ü :cd %:p:h<cr>:pwd<cr>
 " Faster open the current Folding
 nnoremap <silent> <Space><Space> za
 
-" 1}}}
-" Autocommands {{{1
+" Autocommands
 " --------------------------------------------------------
 
 if has("autocmd")
@@ -78,8 +77,7 @@ if has("autocmd")
 
 endif
 
-" 1}}}
-" Abbreviations {{{1
+" Abbreviations
 " --------------------------------------------------------
 
 iabbrev -> →
