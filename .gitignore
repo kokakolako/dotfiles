@@ -29,6 +29,9 @@ fish/fish_history
 sublime-text-3
 fish/oh-my-fish
 
+beets/library.db
+beets/state.pickle
+
 vim/undo
 vim/src
 vim/bundle/neocomplete/tags
