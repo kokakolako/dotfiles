@@ -2,10 +2,10 @@
 # ---------------------------------------------
 
 ## Path to your oh-my-zsh configuration.
-ZSH="$HOME/.config/oh-my-zsh"
+export ZSH="$HOME/.config/oh-my-zsh"
 
 ## ZSH-Theme
-ZSH_THEME="kokakolako"
+export ZSH_THEME="kokakolako"
 
 ## Set source-path
 source "$ZSH/oh-my-zsh.sh"
