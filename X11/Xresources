@@ -24,7 +24,7 @@ URxvt.urgentOnBell:            false
 URxvt.imLocale:                de_DE.UTF-8
 URxvt.matcher.button:          1
 URxvt.print-pipe:              "cat > /dev/null"
-URxvt.fading:                  45
+URxvt.fading:                  30
 URxvt.lineSpace:               1
 
 URxvt.cutchars:                "\"()*,<>[]{}|'"
