@@ -114,27 +114,27 @@ alias gbranch="git branch"
 # ---------------------------------------------
 
 ## Misc
-TERMINAL=rxvt-unicode
-TERM=rxvt-unicode
-EDITOR="vim"
-VISUAL="vim"
-GIT_EDITOR="vim"
-MYVIMRC="$HOME/.config/vim/vimrc"
-MAIL="$HOME/mail"
-CONF="$HOME/.config"
-MARKPATH="$HOME/.marks"
-XDG_CONFIG_HOME="$HOME/.config"
+export TERMINAL=rxvt-unicode
+export TERM=rxvt-unicode
+export EDITOR="vim"
+export VISUAL="vim"
+export GIT_EDITOR="vim"
+export MYVIMRC="$HOME/.config/vim/vimrc"
+export MAIL="$HOME/mail"
+export CONF="$HOME/.config"
+export MARKPATH="$HOME/.marks"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 ## Adding the binfiles to $PATH
-PATH="$PATH:$HOME/.bin"
+export PATH="$PATH:$HOME/.bin"
 
 ## Pass Passwortmanager Directory
-PASSWORD_STORE_DIR="$HOME/.password-store"
+export PASSWORD_STORE_DIR="$HOME/.password-store"
 
 ## Adding RVM to $PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 source $HOME/.rvm/scripts/rvm
-PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/.rvm/bin"
 
 # Misc
 # ---------------------------------------------
