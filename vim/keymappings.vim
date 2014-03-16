@@ -28,10 +28,6 @@ nnoremap <silent> <C-l> :wincmd l<CR>
 cnoremap <C-p> <up>
 cnoremap <C-n> <down>
 
-" More comfortable way to change buffers
-" nnoremap <silent> <Leader>n :bn<enter>
-" nnoremap <silent> <Leader>N :bp<enter>
-
 " Don't differ 'fake-lines'
 nnoremap j gj
 nnoremap k gk
@@ -50,7 +46,7 @@ nnoremap <Leader>s :StripWhitespace<CR>:echo "Removed the whitespace"<CR>
 nnoremap <Leader>g :GitGutterToggle<CR>:echo "Toggled Gitgutter"<CR>
 nnoremap <Leader>r :w<CR>:source %<CR>:echo "Sourced the current file"<CR>
 nnoremap <Leader>w :w<CR>
-
+nnoremap <Leader>v :split $HOME/.config/vim/vimrc<CR>
 
 " Jump to the buffers directory
 nnoremap <Leader>ü :cd %:p:h<CR>:pwd<CR>
