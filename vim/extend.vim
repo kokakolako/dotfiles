@@ -1,4 +1,6 @@
-" Vim Keybindings
+" Vim Extended-Configuration: Keymappings, Autocommands, Abbreviations
+
+" Keymappings
 " --------------------------------------------------------
 
 " Uppercase the current word in insert mode
@@ -14,15 +16,16 @@ let mapleader = " "
 let g:ctrlp_map = "<Leader>p"
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
-" Split vimrc to quick-edit the configs
-nnoremap <Leader>e :vsplit $MYVIMRC<CR>
-
 " Mapping better splitting
 nnoremap <silent> <C-e> :wincmd w<CR>
 nnoremap <silent> <C-k> :wincmd k<CR>
 nnoremap <silent> <C-j> :wincmd j<CR>
 nnoremap <silent> <C-h> :wincmd h<CR>
 nnoremap <silent> <C-l> :wincmd l<CR>
+
+inoremap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+            \ "\<Plug>(neosnippet_expand_or_jump)"
+            \: pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Fixing the behaviour of <C-n> and <C-p>
 cnoremap <C-p> <up>
@@ -47,10 +50,11 @@ nnoremap <Leader>g :GitGutterToggle<CR>:echo "Toggled Gitgutter"<CR>
 nnoremap <Leader>r :w<CR>:source %<CR>:echo "Sourced the current file"<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>v :split $HOME/.config/vim/vimrc<CR>
+nnoremap <Leader>t :TagbarToggle<CR>
+nnoremap <Leader>a :%s/->/→/g<CR>:echo "Replacing arrows"<CR>
 
 " Jump to the buffers directory
 nnoremap <Leader>ü :cd %:p:h<CR>:pwd<CR>
-
 
 " Faster open the current Folding
 nnoremap <silent> <Space><Space> za
@@ -61,7 +65,10 @@ nnoremap <silent> <Space><Space> za
 if has("autocmd")
 
     " Enable Spellcheck in *.md and *.txt files
-    au BufNewFile,BufRead,BufEnter *.md setlocal spell
+    au BufNewFile,BufRead,BufEnter *.md setlocal spell spelllang=de
+    au BufNewFile,BufRead,BufEnter *.md setlocal textwidth=76
+
+    au BufWrite *.md normal!ggvGgq
 
     " Disable Spellcheck in Help-Files
     au FileType help setlocal nospell
