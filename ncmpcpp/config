@@ -1,7 +1,6 @@
 # Global settings
 # -------------------------------------------
 
-user                                          = "niklas"
 mpd_music_dir                                 = "/home/niklas/musik/"
 mpd_crossfade_time                            = "1"
 ncmpcpp_directory                             = "/home/niklas/.config/ncmpcpp"
@@ -41,8 +40,6 @@ screen_switcher_mode                          = "sequence: 2 -> 3  -> 9 -> 10"
 ignore_leading_the                            = "yes"
 mouse_support                                 = "yes"
 empty_tag_marker                              = "[empty]"
-allow_physical_files_deletion                 = "yes"
-allow_physical_directories_deletion           = "yes"
 main_window_color                             = "default"
 main_window_highlight_color                   = "default"
 media_library_left_column                     = "A"
