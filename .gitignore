@@ -48,3 +48,9 @@ dwb/default/cookies
 dwb/default/bookmarks
 dwb/default/search.history
 
+ranger/history
+ranger/commands.py
+ranger/bookmarks
+ranger/scope.sh
+ranger/tagged
+
