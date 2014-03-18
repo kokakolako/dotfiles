@@ -1,4 +1,5 @@
 set adblocker-filterlist /home/niklas/.config/dwb/adblock_lists
+history_forward
 toggle enable-private-browsing
 start_page
 o https://addons.mozilla.org/de/firefox/addon/reddit-enhancement-suite/
