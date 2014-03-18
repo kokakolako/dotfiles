@@ -12,7 +12,7 @@ silent! execute pathogen#helptags()
 
 " Sourcing the other vim-config files
 source $HOME/.config/vim/plugins.vim
-source $HOME/.config/vim/keymappings.vim
+source $HOME/.config/vim/extend.vim
 
 " Filetype indenting + Syntax highlighting
 filetype plugin indent on
@@ -53,7 +53,7 @@ set hidden                          " Now its possible to switch buffers without
 set undofile                        " Undo-File for permanent undo
 set undodir=$HOME/.config/vim/undo  " Change the path of the permanent-undo file
 set wildmenu                        " Enable the wildmenu
-set wildmode=list:longest,full      " Change the behaviour of wildmenu
+set wildmode=full                   " Change the behaviour of wildmenu
 set tabpagemax=50                   " Maximal 50 suggestions at tabcompletion
 
 " Creating a viminfo-file
