@@ -64,11 +64,15 @@ nnoremap <silent> <Space><Space> za
 
 if has("autocmd")
 
-    " Enable Spellcheck in *.md and *.txt files
-    au BufNewFile,BufRead,BufEnter *.md setlocal spell spelllang=de
-    au BufNewFile,BufRead,BufEnter *.md setlocal textwidth=76
+    augroup markdown_buffer
+        autocmd!
 
-    au BufWrite *.md normal!ggvGgq
+        " Enable Spellcheck in markdown files
+        au BufNewFile,BufRead,BufEnter *.md setlocal spell spelllang=de
+
+        " Set the textwidth to 76 in markdown files
+        au BufNewFile,BufRead,BufEnter *.md setlocal textwidth=76
+    augroup END
 
     " Disable Spellcheck in Help-Files
     au FileType help setlocal nospell
@@ -76,9 +80,15 @@ if has("autocmd")
     " Enable marker-folding in Vim-files
     au FileType vim setlocal foldmethod=marker
 
-    " Use pandoc to sort markdown (Use 'gq' in normal-mode)
+    " Disable auto-commenting on new lines
+    au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+    " Use pandoc to reformat markdown (Use 'gq' in normal-mode)
     let pandoc_pipeline = "pandoc --from=markdown --to=markdown"
     au FileType markdown let &formatprg=pandoc_pipeline
+
+    " Reformatting the markdown file (with pandoc) when write a buffer
+    au BufWrite *.md normal!ggvGgq
 
 endif
 
