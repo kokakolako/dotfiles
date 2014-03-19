@@ -1,13 +1,3 @@
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh
-[submodule "vim/zsh-autosuggestions"]
-	path = vim/zsh-autosuggestions
-	url = https://github.com/tarruda/zsh-autosuggestions
-[submodule "vim/bundle/neocomplete"]
-	path = vim/bundle/neocomplete
-	url = https://github.com/Shougo/neocomplete
-    ignore = dirty
-[submodule "vim/src/molokai"]
-	path = vim/src/molokai
-	url = https://github.com/kokakolako/molokai
