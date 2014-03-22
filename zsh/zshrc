@@ -168,11 +168,17 @@ function dim () {
 }
 
 ## Use Ctr+Z to foreground vim
-foreground-vim () {
-    fg %vim &> /dev/null
+fancy-ctrl-z () {
+  if [[ $#BUFFER -eq 0 ]]; then
+    fg
+    zle redisplay
+  else
+    zle push-input
+    zle clear-screen
+  fi
 }
-zle -N foreground-vim
-bindkey "^Z" foreground-vim
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
 
 ## Disable visual bell
 xset -b
