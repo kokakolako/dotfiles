@@ -47,6 +47,7 @@ dwb/default/navigate.history
 dwb/default/cookies
 dwb/default/bookmarks
 dwb/default/search.history
+dwb/userscripts/extension_loader.js
 
 ranger/history
 ranger/commands.py
