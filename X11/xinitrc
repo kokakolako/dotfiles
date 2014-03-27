@@ -15,6 +15,7 @@ exec i3 &
 exec xrdb -load $HOME/.config/X11/Xresources &
 exec urxvtd &
 exec compton &
+exec crond &
 exec light 10% &
 exec xautolock -time 30 -locker "sudo pm-suspend" -detectsleep &
 exec xcmenu &
