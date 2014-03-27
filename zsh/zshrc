@@ -95,7 +95,6 @@ alias rlocate="locate --regex"
 alias uzbl="uzbl-tabbed"
 
 ## Git Aliases
-alias git="LANG=en_US git"
 alias g="git"
 alias gti="git"
 alias gstatus="git status"
