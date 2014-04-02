@@ -16,7 +16,7 @@ bindsym $mod+Return exec urxvtcd
 bindsym $mod+Shift+q kill
 
 # start j4-dmenu-desktop
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -nb '#101010' -nf '#D0D0D0' -sb '#FF4000' -sf '#101010' -fn 'SourceCode Pro for Powerline-11' -h 26" --term="urxvtcd"
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -nb '#101010' -nf '#D0D0D0' -sb '#101010' -sf '#FF4000' -fn 'SourceCode Pro for Powerline-11' -h 26" --term="urxvtcd"
 
 # focus follow mouse
 focus_follows_mouse no
@@ -178,9 +178,9 @@ bar {
         background #101010
         separator #101010
         #class              border    backgr.   text
-        focused_workspace   #FF4000   #FF4000  #101010
-        active_workspace    #101010   #101010  #D0D0D0
-        inactive_workspace  #101010   #101010  #D0D0D0
+        focused_workspace   #101010   #101010   #FF4000  
+        active_workspace    #101010   #101010   #D0D0D0
+        inactive_workspace  #101010   #101010   #D0D0D0
     }
 }
 
