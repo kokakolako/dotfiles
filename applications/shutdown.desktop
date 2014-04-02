@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Shutdown
+GenericName=Shutdown
+Comment=Shutdown the computer
+Exec=gksudo -k -m "To shut down the computer, you need to insert your password" shutdown now 
+Terminal=false
+StartupNotify=false

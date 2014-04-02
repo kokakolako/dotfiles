@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Hibernate
+GenericName=hibernate
+Comment=Hibernate the computer
+Exec=gksudo -k systemctl hibernate -m "To hibernate the computer, you need to insert your password"
+Terminal=false
+StartupNotify=false
+

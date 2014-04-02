@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Suspend
+GenericName=Suspend
+Comment=Suspend the computer
+Exec=gksudo -k systemctl suspend -m "To suspend the computer, you need to insert your password"
+Terminal=false
+StartupNotify=false
