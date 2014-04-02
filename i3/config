@@ -178,7 +178,7 @@ bar {
         background #101010
         separator #101010
         #class              border    backgr.   text
-        focused_workspace   #101010   #101010   #FF4000  
+        focused_workspace   #101010   #101010   #FF4000
         active_workspace    #101010   #101010   #D0D0D0
         inactive_workspace  #101010   #101010   #D0D0D0
     }
