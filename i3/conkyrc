@@ -8,18 +8,14 @@ max_text_width 0
 update_interval 0.5
 total_run_times 0
 override_utf8_locale yes
-
 double_buffer yes
 no_buffers yes
+border_inner_margin 0
+border_outer_margin 0
 
 TEXT
 
 [\
-# Test
-{   "color": "\#FF4000",\
-    "font": "FontAwesome",\
-    "full_text": ""\
-},\
 # MPD
 {   "color": "\#FF4000",\
     "full_text": "${if_mpd_playing}🔊${endif}"\
