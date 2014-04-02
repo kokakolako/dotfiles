@@ -1,0 +1,65 @@
+use_xft yes
+xftfont "SourceCode Pro for Powerline":size=11
+out_to_x no
+own_window no
+out_to_console yes
+background no
+max_text_width 0
+update_interval 0.5
+total_run_times 0
+override_utf8_locale yes
+
+double_buffer yes
+no_buffers yes
+
+TEXT
+
+[\
+# Test
+{   "color": "\#FF4000",\
+    "font": "FontAwesome",\
+    "full_text": ""\
+},\
+# MPD
+{   "color": "\#FF4000",\
+    "full_text": "${if_mpd_playing}🔊${endif}"\
+},\
+{   "color": "\#D0D0D0",\
+    "full_text": "${if_mpd_playing}\"${mpd_title}\" von ${mpd_artist}${endif}"\
+},\
+\
+# Battery
+{   "color": "\#FF4000",\
+    "full_text": "⚡"\
+},\
+{   "color": "\#D0D0D0",\
+    "full_text": "${battery BAT1} "\
+},\
+# CPU-Temp
+{   "color": "\#FF4000",\
+    "full_text": "CPU"\
+},\
+{   "color": "\#D0D0D0",\
+    "full_text": "${acpitemp}° "\
+},\
+# W-LAN
+{   "color": "\#FF4000",\
+    "full_text": "${if_up wlp8s0}📶${endif}"\
+},\
+{   "color": "\#D0D0D0",\
+    "full_text": "${if_up wlp8s0}${wireless_essid wlp8s0}${endif}"\
+},\
+# Ethernet
+{   "color": "\#FF4000",\
+    "full_text": "${if_up enp7s0}🔌${endif}"\
+},\
+{   "color": "\#D0D0D0",\
+    "full_text": "${if_up enp7s0}${addr enp7s0}${endif}"\
+},\
+# Time
+{   "color": "\#FF4000",\
+    "full_text": "⏲"\
+},\
+{   "color": "\#D0D0D0",\
+    "full_text": "${time %d.%m.%Y} ${time %H:%M}"\
+}],

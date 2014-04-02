@@ -171,11 +171,12 @@ bindsym $mod+o exec firefox
 # -------------------------------------------------
 
 bar {
-    status_command conky -c $HOME/.config/conky/config
-    font xft:SourceCode Pro for Powerline 11
     position top
+    status_command "$HOME/.config/i3/conky-wrapper"
+    font xft:SourceCode Pro for Powerline 11
     colors {
         background #101010
+        separator #101010
         #class              border    backgr.   text
         focused_workspace   #FF4000   #FF4000  #101010
         active_workspace    #101010   #101010  #D0D0D0
