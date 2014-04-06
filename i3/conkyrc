@@ -21,36 +21,42 @@ TEXT
     "full_text": "${if_mpd_playing}🔊${endif}"\
 },\
 {   "color": "\#D0D0D0",\
-    "full_text": "${if_mpd_playing}\"${mpd_title}\" von ${mpd_artist}${endif}"\
+    "full_text": "${if_mpd_playing}\"${mpd_title}\" von ${mpd_artist}${endif}  "\
 },\
-\
 # Battery
 {   "color": "\#FF4000",\
     "full_text": "⚡"\
 },\
 {   "color": "\#D0D0D0",\
-    "full_text": "${battery BAT1} "\
+    "full_text": "${battery BAT1}  "\
 },\
-# CPU-Temp
+# Temp
+{   "color": "\#FF4000",\
+    "full_text": "TEMP"\
+},\
+{   "color": "\#D0D0D0",\
+    "full_text": "${acpitemp}°  "\
+},\
+# CPU (partly copied from http://blog.z3bra.org/2014/04/meeting-at-the-bar.html)
 {   "color": "\#FF4000",\
     "full_text": "CPU"\
 },\
 {   "color": "\#D0D0D0",\
-    "full_text": "${acpitemp}° "\
+    "full_text": "${exec ~/.bin/cpu-last }  "\
 },\
 # W-LAN
 {   "color": "\#FF4000",\
     "full_text": "${if_up wlp8s0}📶${endif}"\
 },\
 {   "color": "\#D0D0D0",\
-    "full_text": "${if_up wlp8s0}${wireless_essid wlp8s0}${endif}"\
+    "full_text": "${if_up wlp8s0}${wireless_essid wlp8s0}  ${endif}"\
 },\
 # Ethernet
 {   "color": "\#FF4000",\
     "full_text": "${if_up enp7s0}🔌${endif}"\
 },\
 {   "color": "\#D0D0D0",\
-    "full_text": "${if_up enp7s0}${addr enp7s0}${endif}"\
+    "full_text": "${if_up enp7s0}${addr enp7s0}  ${endif}"\
 },\
 # Time
 {   "color": "\#FF4000",\
