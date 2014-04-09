@@ -19,7 +19,7 @@
     #   %I  iconname (without its path)
     #   %p  progress value if set ([  0%] to [100%]) or nothing
     # Markup is allowed
-    format = "<b>%s</b>\n%b"
+    format = "%s\n%b"
 
     # Sort messages by urgency
     sort = yes
@@ -90,7 +90,7 @@
 
     # should a notification popped up from history be sticky or
     # timeout as if it would normally do.
-    sticky_history = yes
+    sticky_history = no
 
     # Display indicators for URLs (U) and actions (A)
     show_indicators = yes
@@ -102,7 +102,7 @@
 
     # Draw a line of 'separatpr_height' pixel height between two notifications.
     # Set to 0 to disable
-    separator_height = 2
+    separator_height = 1
 
     # padding between text and separator
     padding = 8
@@ -131,7 +131,7 @@
 
 [frame]
     width = 5
-    color = "#268bd2"
+    color = "#D0D0D0"
 
 [shortcuts]
     # shortcuts are specified as [modifier+][modifier+]...key
@@ -155,13 +155,13 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the '#' and following  would be interpreted as a comment.
-    background = "#268bd2"
-    foreground = "#888888"
+    foreground = "#303030"
+    background = "#D0D0D0"
     timeout = 10
 
 [urgency_normal]
-    background = "#268bd2"
-    foreground = "#ffffff"
+    foreground = "#303030"
+    background = "#D0D0D0"
     timeout = 10
 
 [urgency_critical]
