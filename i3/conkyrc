@@ -16,6 +16,10 @@ border_outer_margin 0
 TEXT
 
 [\
+# Current Window (you need i3-py)
+# {   "color": "\#303030",\
+#     "full_text": "${exec ~/.bin/curr-window title}"\
+# },\
 # MPD
 {   "color": "\#FF4000",\
     "full_text": "${if_mpd_playing}🔊${endif}"\

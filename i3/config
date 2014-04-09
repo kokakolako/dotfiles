@@ -10,7 +10,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvtcd
+bindsym $mod+Return exec --no-startup-id urxvtcd
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -103,7 +103,7 @@ bindsym $mod+Shift+z reload
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -133,39 +133,39 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 ## Toggle through Monitors
-bindsym $mod+p exec "$HOME/.bin/toggle-monitor -S"
+bindsym $mod+p exec --no-startup-id "$HOME/.bin/toggle-monitor -S"
 
 # Function Keys
 # -------------------------------------------------
 
 ## Volume +
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 -- +10%
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+
 
 ## Volume -
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -- -10%
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%-
 
 ## Toggle Mute
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+bindsym XF86AudioMute exec --no-startup-id exec amixer set -c 0 Master 25 unmute
 
 ## Control music-players via function keys
-bindsym XF86AudioNext exec mpc next # Next
-bindsym XF86AudioPrev exec mpc prev # Prev
-bindsym XF86AudioPlay exec $HOME/.bin/toggle-music
+bindsym XF86AudioNext exec --no-startup-id mpc next && notify-send "$( mpc current )" # Next
+bindsym XF86AudioPrev exec --no-startup-id mpc prev && notify-send "$( mpc current )" # Prev
+bindsym XF86AudioPlay exec --no-startup-id $HOME/.bin/toggle-music
 
 ## Toggle Touchpad on/off
-bindsym XF86TouchpadToggle exec $HOME/.bin/toggle-touchpad
+bindsym XF86TouchpadToggle exec --no-startup-id $HOME/.bin/toggle-touchpad
 
 ## Print Screen on "Druck"
-bindsym Print exec deepin-screenshot
+bindsym Print exec --no-startup-id scrot ~/bilder/Screenshots/%Y-%M-%d-%T.png
 
 ## Brightness
-bindsym XF86MonBrightnessUp exec light -a 5%
-bindsym XF86MonBrightnessDown exec light -s 5%
+bindsym XF86MonBrightnessUp exec --no-startup-id light -a 5%
+bindsym XF86MonBrightnessDown exec --no-startup-id light -s 5%
 
 # i3bar Configuration
 # -------------------------------------------------
 
-bindsym $mod+o exec firefox
+bindsym $mod+o exec --no-startup-id firefox
 
 # i3bar Configuration
 # -------------------------------------------------
