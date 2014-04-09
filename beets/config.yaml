@@ -9,3 +9,6 @@ paths:
 plugins: chroma
 acoustid:
     apikey: cMh6x0zY
+copy: no
+per_disc_numbering: no
+
