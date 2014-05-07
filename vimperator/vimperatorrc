@@ -1,0 +1,7 @@
+set rtp+=~/.config/pentadactyl
+colorscheme molokai
+
+" dwb-like shortcuts
+nnoremap J :tabn<CR>
+nnoremap K :tabp<CR>
+nnoremap O :tabopen 
