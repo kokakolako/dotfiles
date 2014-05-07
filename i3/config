@@ -9,16 +9,10 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec --no-startup-id urxvtcd
-
-# kill focused window
+# Kill focused window
 bindsym $mod+Shift+q kill
 
-# start j4-dmenu-desktop
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -nb '#101010' -nf '#D0D0D0' -sb '#101010' -sf '#FF4000' -fn 'SourceCode Pro for Powerline-11' -h 26" --term="urxvtcd"
-
-# focus follow mouse
+# Focus follow mouse
 focus_follows_mouse no
 
 # change focus
@@ -27,52 +21,52 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
+# Alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# move focused window
+# Move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# alternatively, you can use the cursor keys:
+# Alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
+# Split in horizontal orientation
 bindsym $mod+c split h
 
-# split in vertical orientation
+# Split in vertical orientation
 bindsym $mod+v split v
 
-# enter fullscreen mode for the focused container
+# Enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
 bindsym f11 fullscreen
 
-# change container layout (stacked, tabbed, toggle split)
+# Change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
+# Toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-# change focus between tiling / floating windows
+# Change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
+# Focus the parent container
 bindsym $mod+a focus parent
 
-# focus the child container
+# Focus the child container
 bindsym $mod+b focus child
 
-# switch to workspace
+# Switch to workspace
 bindsym $mod+1 workspace 1|web
 bindsym $mod+2 workspace 2|mus
 bindsym $mod+3 workspace 3|etc
@@ -84,7 +78,7 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
-# move focused container to workspace
+# Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1|web
 bindsym $mod+Shift+2 move container to workspace 2|mus
 bindsym $mod+Shift+3 move container to workspace 3|etc
@@ -96,16 +90,13 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-# reload the configuration file
+# Reload the configuration file
 bindsym $mod+Shift+z reload
 
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
-# resize window (you can also use the mouse for that)
+# Resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -130,42 +121,13 @@ mode "resize" {
 }
 
 ## Enable a resize-mode to change the window-size
-bindsym $mod+r mode "resize"
+Bindsym $mod+r mode "resize"
 
-## Toggle through Monitors
-bindsym $mod+p exec --no-startup-id "$HOME/.bin/toggle-monitor -S"
 
-# Function Keys
+# Open j4-dmenu-desktop
 # -------------------------------------------------
 
-## Volume +
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+
-
-## Volume -
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%-
-
-## Toggle Mute
-bindsym XF86AudioMute exec --no-startup-id exec amixer set -c 0 Master 25 unmute
-
-## Control music-players via function keys
-bindsym XF86AudioNext exec --no-startup-id mpc next && notify-send "$( mpc current )" # Next
-bindsym XF86AudioPrev exec --no-startup-id mpc prev && notify-send "$( mpc current )" # Prev
-bindsym XF86AudioPlay exec --no-startup-id $HOME/.bin/toggle-music
-
-## Toggle Touchpad on/off
-bindsym XF86TouchpadToggle exec --no-startup-id $HOME/.bin/toggle-touchpad
-
-## Print Screen on "Druck"
-bindsym Print exec --no-startup-id scrot ~/bilder/Screenshots/%Y-%M-%d-%T.png
-
-## Brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id light -a 5%
-bindsym XF86MonBrightnessDown exec --no-startup-id light -s 5%
-
-# i3bar Configuration
-# -------------------------------------------------
-
-bindsym $mod+o exec --no-startup-id firefox
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -nb '#101010' -nf '#D0D0D0' -sb '#101010' -sf '#FF4000' -fn 'SourceCode Pro for Powerline-11' -h 26" --term="urxvtcd"
 
 # i3bar Configuration
 # -------------------------------------------------
@@ -209,37 +171,10 @@ font xft:SourceCode Pro for Powerline 11
 # -------------------------------------------------
 
 new_window pixel 5
+new_float normal
 
 # Theming
 # -------------------------------------------------
-
-
-## Solarized
-
-# base03:    #002b36
-# base02:    #073642
-# base01:    #586e75
-# base00:    #657b83
-# base0:     #839496
-# base1:     #93a1a1
-# base2:     #eee8d5
-# base3:     #fdf6e3
-# yellow:    #b58900
-# orange:    #cb4b16
-# red:       #dc322f
-# magenta:   #d33682
-# violet:    #6c71c4
-# blue:      #268bd2
-# cyan:      #2aa198
-# green:     #859900
-
-# class                      border  backgr. text    indicator
-# client.focused              #CB4B16 #CB4B16 #000000 #6C71C4
-# client.focused_inactive     #073642 #073642 #FFFFFF #073642
-# client.unfocused            #073642 #073642 #FFFFFF #073642
-# client.urgent               #073642 #073642 #FFFFFF #073642
-# client.background           #073642
-
 
 ## Molokai
 
@@ -268,3 +203,31 @@ client.focused_inactive     #303030 #303030 #d0d0d0 #303030
 client.unfocused            #303030 #303030 #d0d0d0 #303030
 client.urgent               #303030 #303030 #d0d0d0 #303030
 client.background           #303030
+
+## Solarized
+
+# base03:    #002b36
+# base02:    #073642
+# base01:    #586e75
+# base00:    #657b83
+# base0:     #839496
+# base1:     #93a1a1
+# base2:     #eee8d5
+# base3:     #fdf6e3
+# yellow:    #b58900
+# orange:    #cb4b16
+# red:       #dc322f
+# magenta:   #d33682
+# violet:    #6c71c4
+# blue:      #268bd2
+# cyan:      #2aa198
+# green:     #859900
+
+# class                      border  backgr. text    indicator
+# client.focused              #CB4B16 #CB4B16 #000000 #6C71C4
+# client.focused_inactive     #073642 #073642 #FFFFFF #073642
+# client.unfocused            #073642 #073642 #FFFFFF #073642
+# client.urgent               #073642 #073642 #FFFFFF #073642
+# client.background           #073642
+
+
