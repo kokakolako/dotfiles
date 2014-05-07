@@ -1,0 +1,86 @@
+###########################
+# xbindkeys configuration #
+###########################
+
+# To specify a key, you can use 'xbindkeys --key' or
+# 'xbindkeys --multikey' and put one of the two lines in this file.
+
+# The format of a command line is:
+#    "command to start"
+#       associated key
+
+# A list of keys is in /usr/include/X11/keysym.h and in
+# /usr/include/X11/keysymdef.h
+# The XK_ is not needed.
+
+# List of modifier:
+#   Release, Control, Shift, Mod1 (Alt), Mod2 (NumLock),
+#   Mod3 (CapsLock), Mod4, Mod5 (Scroll).
+
+# The release modifier is not a standard X modifier, but you can
+# use it if you want to catch release events instead of press events
+
+# By defaults, xbindkeys does not pay attention with the modifiers
+# NumLock, CapsLock and ScrollLock.
+# Uncomment the lines above if you want to pay attention to them.
+
+#keystate_numlock = enable
+#keystate_capslock = enable
+#keystate_scrolllock= enable
+
+# Start a terminal
+"urxvtcd"
+    Mod4 + Return
+
+# Toggle through monitors
+"$HOME/.bin/toggle-monitor -S"
+    Mod4 + p
+
+# Volume +
+"amixer set Master 5%+"
+    XF86AudioRaiseVolume
+
+# Volume -
+"amixer set Master 5%-"
+    XF86AudioLowerVolume
+
+# Toggle mute
+"amixer set -c 0 Master 25 unmute"
+    XF86AudioMute
+
+# Next song
+"mpc next && notify-send '$( mpc current )'"
+    XF86AudioNext
+
+# Previous song
+"mpc prev && notify-send '$( mpc current )'"
+    XF86AudioPrev
+
+# Play / pause the current song
+"$HOME/.bin/toggle-music"
+    XF86AudioPlay
+
+# Toggle touchpad on/off
+"$HOME/.bin/toggle-touchpad"
+    XF86TouchpadToggle
+
+# Make a screenshot
+"scrot ~/bilder/Screenshots/%Y-%M-%d-%T.png"
+    Print
+
+# Brightness +
+"light -a 5%"
+    XF86MonBrightnessUp
+
+# Brightness -
+"light -s 5%"
+    XF86MonBrightnessDown
+
+# Exit i3 (logs you out of your X session)
+"i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+    Mod4 + Shift + e
+
+# Start firefox
+"firefox"
+    Mod4 + o
+

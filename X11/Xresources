@@ -8,7 +8,7 @@ xterm.faceName:                DejaVu Sans Mono
 xterm.faceSize:                14
 
 URxvt.termName:                rxvt-unicode
-URxvt.font:	                   xft:Source Code Pro for Powerline:pixelsize=15, \
+URxvt.font:                    xft:Source Code Pro for Powerline:pixelsize=14, \
                                xft:DejaVu Sans Mono:pixelsize=15, \
                                xft:Code2300:pixelsize=15, \
                                xft:WenQuanYi Bitmap Song:pixelsize=15, \
@@ -28,11 +28,12 @@ URxvt.fading:                  30
 URxvt.lineSpace:               1
 
 URxvt.cutchars:                "\"()*,<>[]{}|'"
-URxvt.perl-ext-common:         clipboard
+URxvt.perl-ext-common:         clipboard,url-select
 URxvt.perl-lib:                /urs/lib/urxvt/perl
 URxvt.keysym.M-c:              perl:clipboard:copy
 URxvt.keysym.M-v:              perl:clipboard:paste
 URxvt.keysym.M-C-v:            perl:clipboard:paste_escaped
+URxvt.keysym.M-u:              perl:url-select:select_next
 URxvt.clipboard.autocopy:      true
 URxvt.clipboard.copycmd:       xclip -i -selection clipboard
 URxvt.clipboard.pastecmd:      xclip -o -selection clipboard
