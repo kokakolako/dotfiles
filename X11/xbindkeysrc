@@ -49,11 +49,11 @@
     XF86AudioMute
 
 # Next song
-"mpc next && notify-send '$( mpc current )'"
+"mpc next && notify-send "$( mpc current )""
     XF86AudioNext
 
 # Previous song
-"mpc prev && notify-send '$( mpc current )'"
+"mpc prev && notify-send "$( mpc current )""
     XF86AudioPrev
 
 # Play / pause the current song
@@ -84,3 +84,5 @@
 "firefox"
     Mod4 + o
 
+"$HOME/.bin/custom-launcher"
+    Mod4 + d
