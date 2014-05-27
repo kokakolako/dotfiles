@@ -1,5 +1,5 @@
 use_xft yes
-xftfont "SourceCode Pro for Powerline":size=11
+xftfont SourceCode Pro for Powerline:pixelsize=11
 out_to_x no
 own_window no
 out_to_console yes
@@ -16,65 +16,66 @@ border_outer_margin 0
 # Not used modules
 
 # MPD
-# {   "color": "\#FF4000",\
+# {   "color": "\#FF0055",\
 #     "full_text": "${if_mpd_playing}🔊${endif}"\
 # },\
-# {   "color": "\#D0D0D0",\
+# {   "color": "\#000000",\
 #     "full_text": "${if_mpd_playing}\"${mpd_title}\" von ${mpd_artist}${endif}  "\
+# },\
+
+# Print Current Window (you need i3-py)
+# {   "color": "\#303030",\
+#     "full_text": "${exec ~/.bin/curr-window title}"\
 # },\
 
 TEXT
 [\
-# Current Window (you need i3-py)
-# {   "color": "\#303030",\
-#     "full_text": "${exec ~/.bin/curr-window title}"\
-# },\
 # Battery
-{   "color": "\#FF4000",\
+{   "color": "\#FF0055",\
     "full_text": "⚡"\
 },\
-{   "color": "\#D0D0D0",\
+{   "color": "\#000000",\
     "full_text": "${exec ~/.bin/print-battery-status} "\
 },\
 # Temp
-{   "color": "\#FF4000",\
+{   "color": "\#FF0055",\
     "full_text": "TEMP"\
 },\
-{   "color": "\#D0D0D0",\
+{   "color": "\#000000",\
     "full_text": "${acpitemp} "\
 },\
 # CPU (partly copied from http://blog.z3bra.org/2014/04/meeting-at-the-bar.html)
-{   "color": "\#FF4000",\
+{   "color": "\#FF0055",\
     "full_text": "CPU"\
 },\
-{   "color": "\#D0D0D0",\
+{   "color": "\#000000",\
     "full_text": "${exec ~/.bin/print-cpu-last } "\
 },\
 # W-LAN
-{   "color": "\#FF4000",\
+{   "color": "\#FF0055",\
     "full_text": "${if_up wlp8s0}📶${endif}"\
 },\
-{   "color": "\#D0D0D0",\
+{   "color": "\#000000",\
     "full_text": "${if_up wlp8s0}${wireless_essid wlp8s0} ${endif}"\
 },\
 # Ethernet
-{   "color": "\#FF4000",\
+{   "color": "\#FF0055",\
     "full_text": "${if_up enp7s0}🔌${endif}"\
 },\
-{   "color": "\#D0D0D0",\
+{   "color": "\#000000",\
     "full_text": "${if_up enp7s0}${addr enp7s0} ${endif}"\
 },\
 # Volume
-{   "color": "\#FF4000",\
+{   "color": "\#FF0055",\
     "full_text": "🔊"\
 },\
-{   "color": "\#D0D0D0",\
+{   "color": "\#000000",\
     "full_text": "${exec ~/.bin/print-volume}"\
 },\
 # Time
-{   "color": "\#FF4000",\
-    "full_text": "⏲"\
+{   "color": "\#FF0055",\
+    "full_text":  " ⏲"\
 },\
-{   "color": "\#D0D0D0",\
+{   "color": "\#000000",\
     "full_text": "${time %d.%m.%Y} - ${time %H:%M}"\
 }],

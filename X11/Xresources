@@ -8,12 +8,13 @@ xterm.faceName:                DejaVu Sans Mono
 xterm.faceSize:                14
 
 URxvt.termName:                rxvt-unicode
-URxvt.font:                    xft:Source Code Pro for Powerline:pixelsize=14, \
-                               xft:DejaVu Sans Mono:pixelsize=15, \
-                               xft:Code2300:pixelsize=15, \
-                               xft:WenQuanYi Bitmap Song:pixelsize=15, \
+URxvt.font:                    xft:Inconsolata for Powerline:pixelsize=16, \
+                               xft:DejaVu Sans Mono:pixelsize=16, \
+                               xft:Code2300:pixelsize=16, \
+                               xft:WenQuanYi Bitmap Song:pixelsize=16, \
                                xft:FreeSerif:style=Regular, \
                                xft:unifont:style=Medium
+! xft:Source Code Pro for Powerline:pixelsize=14
 URxvt.insecure:                false
 URxvt.internalBorder:          0
 URxvt.saveLines:               1000
@@ -24,7 +25,7 @@ URxvt.urgentOnBell:            false
 URxvt.imLocale:                de_DE.UTF-8
 URxvt.matcher.button:          1
 URxvt.print-pipe:              "cat > /dev/null"
-URxvt.fading:                  30
+URxvt.fading:                  20
 URxvt.lineSpace:               1
 
 URxvt.cutchars:                "\"()*,<>[]{}|'"
@@ -46,42 +47,41 @@ URxvt.tabbed.tab-fg:           0
 URxvt.tabbed.tab-bg:           1
 URxvt.tabbed.secondaryScroll:  true
 
-! Modified Molokai theme
-! Original Theme: https://gist.github.com/vreon/845878
+! Colors inspired by hemisu (https://github.com/noahfrederick/vim-hemisu)
 
-*background:            #101010
-*foreground:            #D0D0D0
-*cursorColor:           #999999
+*background:            #FFFFFF
+*foreground:            #101010
+*cursorColor:           #777777
 
 ! Black + DarkGrey
 *color0:                #101010
 *color8:                #303030
 
 ! DarkRed + Red
-*color1:                #960050
-*color9:                #FF0090
+*color1:                #FF0055
+*color9:                #ED0028
 
 ! DarkGreen + Green
-*color2:                #66AA11
-*color10:               #80FF00
+*color2:                #739200
+*color10:               #B1D631
 
 ! DarkYellow + Yellow
 *color3:                #C47F2C
 *color11:               #FF4000
 
 ! DarkBlue + Blue
-*color4:                #30309B
-*color12:               #5F5FEE
+*color4:                #005F87
+*color12:               #538192
 
 ! DarkMagenta + Magenta
 *color5:                #7E40A5
-*color13:               #BB88DD
+*color13:               #CBE4EE
 
 ! DarkCyan + Cyan
 *color6:                #3579A8
 *color14:               #4EB4FA
 
 ! LightGrey + White
-*color7:                #9999AA
-*color15:               #D0D0D0
+*color7:                #BBBBBB
+*color15:               #FFFFFF
 

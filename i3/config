@@ -60,6 +60,9 @@ bindsym $mod+Shift+space floating toggle
 # Change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
+# Start bar in floating mode
+for_window [class="bar"] floating enable
+
 # Focus the parent container
 bindsym $mod+a focus parent
 
@@ -123,35 +126,23 @@ mode "resize" {
 ## Enable a resize-mode to change the window-size
 Bindsym $mod+r mode "resize"
 
-
-# Open j4-dmenu-desktop
-# -------------------------------------------------
-
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -nb '#101010' -nf '#D0D0D0' -sb '#101010' -sf '#FF4000' -fn 'SourceCode Pro for Powerline-11' -h 26" --term="urxvtcd"
-
 # i3bar Configuration
 # -------------------------------------------------
 
 bar {
     position top
     status_command "$HOME/.config/i3/conky-wrapper"
-    font xft:SourceCode Pro for Powerline 11
+    # font xft:SourceCode Pro for Powerline 11
+    font xft:Inconsolata for Powerline 12
     colors {
-        background #101010
-        separator #101010
+        background #FFFFFF
+        separator #FFFFFF
         #class              border    backgr.   text
-        focused_workspace   #101010   #101010   #FF4000
-        active_workspace    #101010   #101010   #D0D0D0
-        inactive_workspace  #101010   #101010   #D0D0D0
+        focused_workspace   #FFFFFF   #FFFFFF   #FF0055
+        active_workspace    #FFFFFF   #FFFFFF   #000000
+        inactive_workspace  #FFFFFF   #FFFFFF   #000000
     }
 }
-
-# Assign workspaces to monitors
-# -------------------------------------------------
-
-workspace "1|web" output HDMI1
-workspace "2|web" output VGA1
-workspace "2|mus" output LVDS1
 
 # Scratchpad
 # -------------------------------------------------
@@ -171,7 +162,6 @@ font xft:SourceCode Pro for Powerline 11
 # -------------------------------------------------
 
 new_window pixel 5
-new_float normal
 
 # Theming
 # -------------------------------------------------
@@ -179,7 +169,7 @@ new_float normal
 ## Molokai
 
 # *background:  #101010
-# *foreground:  #d0d0d0
+# *foreground:  #101010
 # *cursorColor: #d0d0d0
 # *color0:      #101010
 # *color1:      #960050
@@ -198,10 +188,10 @@ new_float normal
 # *color14:     #4eb4fa
 
 #class                      border  backgr. text    indicator
-client.focused              #66aa11 #66aa11 #000000 #9999aa
-client.focused_inactive     #303030 #303030 #d0d0d0 #303030
-client.unfocused            #303030 #303030 #d0d0d0 #303030
-client.urgent               #303030 #303030 #d0d0d0 #303030
+client.focused              #538192 #538192 #000000 #FF0055
+client.focused_inactive     #303030 #303030 #FFFFFF #303030
+client.unfocused            #303030 #303030 #FFFFFF #303030
+client.urgent               #303030 #303030 #FFFFFF #303030
 client.background           #303030
 
 ## Solarized
@@ -229,5 +219,4 @@ client.background           #303030
 # client.unfocused            #073642 #073642 #FFFFFF #073642
 # client.urgent               #073642 #073642 #FFFFFF #073642
 # client.background           #073642
-
 
