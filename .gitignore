@@ -7,7 +7,6 @@ chromium
 ibus
 libreoffice
 dconf
-Trolltech.conf
 gconf
 enchant
 minecraft
@@ -57,3 +56,4 @@ ranger/tagged
 ranger/__pycache__/
 
 dwb/settings.UHBWEX
+ImageMagick
