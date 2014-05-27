@@ -6,9 +6,11 @@ paths:
     singleton: $artist/title
     comp: compilations/$album%aunique{}/$track $title
     albumtype:soundtrack: soundtracks/$album/$track $title
-plugins: chroma
+plugins: chroma mpdupdate
 acoustid:
     apikey: cMh6x0zY
 copy: no
 per_disc_numbering: no
-
+mpd:
+    host: 127.0.0.1
+    port: 6600
