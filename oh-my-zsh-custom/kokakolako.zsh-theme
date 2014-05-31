@@ -12,15 +12,11 @@ user () {
     fi
 }
 
-ZSH_THEME_GIT_PROMPT_PREFIX=""
-ZSH_THEME_GIT_PROMPT_SUFFIX=" "
+PROMPT='%{$fg[red]%}λ $(host)%{$reset_color%}%B%c%b $(git_prompt_info)%{$fg[red]%}> %{$reset_color%}'
+# RPROMPT='%{$fg[red]%}<%{$reset_color%}'
 
-# ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}*"
-# ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%}*"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$reset_color%}* "
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[yellow]%}* "
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[red]%}"
 
-PROMPT="%{$fg[red]%}λ $(host)%{$reset_color%}%c $(git_prompt_info)%{$fg[red]%}> %{$reset_color%}"
-RPROMPT="%{$fg[red]%}<%{$reset_color%}"
-
-# PROMPT='%{$fg[red]%}λ %m %{$fg[green]%}%c %{$fg[yellow]%}→ $(git_prompt_info)%{$reset_color%}'
-# ZSH_THEME_GIT_PROMPT_PREFIX="λ %{$fg[red]%}git %{$fg[red]%}"
-# ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[red]%} → %{$reset_color%}"
