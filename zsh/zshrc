@@ -157,11 +157,6 @@ extract () {
      fi
 }
 
-## Show dimensions of a picture
-function dim () {
-    sips $1 -g pixelWidth -g pixelHeight
-}
-
 ## Use Ctr+Z to foreground vim
 fancy-ctrl-z () {
   if [[ $#BUFFER -eq 0 ]]; then
