@@ -1,0 +1,49 @@
+# Start a terminal
+super + Return
+    urxvtcd
+
+# Toggle through monitors
+super + p
+    $HOME/.bin/toggle-monitor -S
+
+# Next & prev song
+XF86Audio{Next,Prev}
+    mpc {next,prev} && notify-send "$( mpc current )"
+
+# Volume control
+XF86Audio{Raise,Lower}Volume
+    amixer set Master 5%{+,-}
+
+# Play / pause the current song
+XF86AudioPlay
+    $HOME/.bin/toggle-music
+
+# Toggle mute
+XF86AudioMute
+    amixer set -c 0 Master 25 unmute
+
+# Toggle touchpad on/off
+XF86TouchpadToggle
+    $HOME/.bin/toggle-touchpad
+
+# Make a screenshot
+Print
+    scrot $HOME/bilder/Screenshots/%Y-%M-%d-%T.png
+
+# Brightness
+XF86MonBrightness{Up,Down}
+    light -{a,s} 5%
+
+# Exit i3 (logs you out of your X session)
+super + shift + e
+    i3-nagbar -t warning -m "Do you want to exit i3? This will end your X session." -b "Yes, exit i3" "i3-msg exit"
+
+# Start firefox
+super + o
+    firefox
+
+# Start dmenu
+super + d
+    $HOME/.bin/custom-launcher control
+
+# vim: set syntax=conf:
