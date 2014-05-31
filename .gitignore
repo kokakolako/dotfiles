@@ -1,39 +1,23 @@
 .*.swp
-
 inkscape
-gtk*
-epiphany
-chromium
-ibus
-libreoffice
-dconf
-gconf
+ImageMagick
 enchant
 minecraft
-cmus
 khal
 0ad
-FEZ
-MonoGame
 google-musicmanager
 gpick
-unity3d
-vlc
-pulse
-pavucontrol.ini
-glade.conf
 msmtp
-beets/library.db
 fish/fish_history
-sublime-text-3
-fish/oh-my-fish
+libreoffice
+tor
+
+gtk*
+dconf
+gconf
 
 beets/library.db
 beets/state.pickle
-
-vim/undo
-vim/src
-vim/bundle/neocomplete/tags
 
 ncmpcpp/state
 ncmpcpp/mpd.log
@@ -46,14 +30,14 @@ dwb/default/navigate.history
 dwb/default/cookies
 dwb/default/bookmarks
 dwb/default/search.history
-dwb/userscripts/extension_loader.js
+dwb/default/session
+dwb/settings.*
+dwb/default/scripts.allow
 
 ranger/history
 ranger/commands.py
 ranger/bookmarks
 ranger/scope.sh
 ranger/tagged
-ranger/__pycache__/
+ranger/__pycache__
 
-dwb/settings.UHBWEX
-ImageMagick
