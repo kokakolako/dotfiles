@@ -8,7 +8,9 @@ super + p
 
 # Next & prev song
 XF86Audio{Next,Prev}
-    mpc {next,prev} && notify-send "$( mpc current )"
+    mpc {next,prev} && \
+    notify-send "$( mpc current )" && \
+    echo "{pt_step 1,pt_step 0}" > $HOME/.config/mpv/mpv-control
 
 # Volume control
 XF86Audio{Raise,Lower}Volume
