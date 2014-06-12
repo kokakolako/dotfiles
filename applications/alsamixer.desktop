@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=ALSA Mixer
+Comment=Change the volumen of the ALSA Channels
+Exec=alsamixer
+Terminal=true

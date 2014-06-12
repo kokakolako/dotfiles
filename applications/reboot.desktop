@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Reboot
+Comment=Reboot the PC
+Exec=reboot
+Terminal=true
