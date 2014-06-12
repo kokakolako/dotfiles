@@ -10,6 +10,9 @@ export ZSH_THEME="kokakolako"
 ## Set source-path
 source "$ZSH/oh-my-zsh.sh"
 
+## Sourcing shell aliases
+source "$HOME/.config/zsh/alias.sh"
+
 ## Uncomment to change how often before auto-updates occur? (in days)
 UPDATE_ZSH_DAYS=7
 
@@ -19,28 +22,28 @@ plugins=(git github jump colored-man vi-mode rvm)
 # Vi-Mode settings
 # ---------------------------------------------
 
-## Enable Vi-Mode
-bindkey -v
+# ## Enable Vi-Mode
+# bindkey -v
 
-## Enable Emacs-Like incremental history search
-bindkey "^R" history-incremental-search-backward
+# ## Enable Emacs-Like incremental history search
+# bindkey "^R" history-incremental-search-backward
 
-## Use vim cli mode
-bindkey '^P' up-history
-bindkey '^N' down-history
+# ## Use vim cli mode
+# bindkey '^P' up-history
+# bindkey '^N' down-history
 
-## backspace and ^h working even after returning from command mode
-bindkey '^?' backward-delete-char
-bindkey '^h' backward-delete-char
+# ## backspace and ^h working even after returning from command mode
+# bindkey '^?' backward-delete-char
+# bindkey '^h' backward-delete-char
 
-## ctrl-w removed word backwards
-bindkey '^w' backward-kill-word
+# ## ctrl-w removed word backwards
+# bindkey '^w' backward-kill-word
 
-## ctrl-r starts searching history backward
-bindkey '^r' history-incremental-search-backward
+# ## ctrl-r starts searching history backward
+# bindkey '^r' history-incremental-search-backward
 
-## Kill the lag when changing to normal mode
-KEYTIMEOUT=1
+# ## Kill the lag when changing to normal mode
+# KEYTIMEOUT=1
 
 # General Zsh settings
 # ---------------------------------------------
@@ -53,63 +56,6 @@ setopt autopushd
 
 ## Load a Mass Renaming Module
 autoload -U zmv
-
-# Aliases
-# ---------------------------------------------
-
-## Colorize grep
-alias grep="grep --color=auto"
-alias cp="rsync -aP"
-
-## Show the Directory Stack as Stack
-alias dirs="dirs -v"
-alias pushd="pushd; dirs -v"
-alias popd="popd; dirs -v"
-
-## Vim aliases
-alias vim="vim -u $HOME/.config/vim/vimrc"
-alias vimkeys="vim $HOME/.config/vim/keymappings.vim"
-alias vundle="vim $HOME/.config/vim/plugins.vim"
-alias vimtipps="vim $HOME/.config/vim/vimtipps"
-
-## Editing config files
-alias iconfig="vim $HOME/.config/i3/config +'lcd $HOME/.config/i3'"
-alias vconfig="vim $HOME/.config/vim/vimrc +'lcd $HOME/.config/vim'"
-alias zconfig="vim $HOME/.config/zsh/zshrc +'lcd $HOME/.config/zsh'"
-alias uconfig="vim $HOME/.config/X11/Xresources +'lcd $HOME/.config/X11'"
-alias aconfig="vim $HOME/.config/zsh/zshrc +'normal :/Aliases<CR>' +'lcd $HOME/.config/zsh'"
-
-## Sudo aliases
-alias sctl="sudo systemctl"
-alias shutdown="sudo shutdown"
-
-## Start program with a customized config-file
-alias ncmpcpp="ncmpcpp --config $HOME/.config/ncmpcpp/config"
-alias nginx="nginx -c $HOME/.config/nginx/config"
-alias pandoc="pandoc --latex-engine=xelatex"
-alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
-alias msmtp="msmtp -C $HOME/.config/msmtp/msmtprc"
-
-## Misc aliases
-alias virt-env="source $HOME/projekte/python/virt-env/bin/activate && cd $HOME/projekte/python/virt-env"
-alias rlocate="locate --regex"
-alias uzbl="uzbl-tabbed"
-
-## Git Aliases
-alias g="git"
-alias gti="git"
-alias gstatus="git status"
-alias gpush="git push origin master"
-alias greset="git reset"
-alias ginit="git init"
-alias gclone="git clone"
-alias gcommit="git commit"
-alias gdiff="git diff"
-alias gadd="git add"
-alias glog="git lg"
-alias grm="git rm"
-alias gcheckout="git checkout"
-alias gbranch="git branch"
 
 # Environment Variables
 # ---------------------------------------------
@@ -179,3 +125,14 @@ eval $(dircolors $HOME/.config/dircolors/molokai.dircolors)
 # Adding rvm to the path
 source ~/.rvm/scripts/rvm
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+man() {
+    env LESS_TERMCAP_mb=$'\E[01;31m' \
+    LESS_TERMCAP_md=$'\E[01;38;5;74m' \
+    LESS_TERMCAP_me=$'\E[0m' \
+    LESS_TERMCAP_se=$'\E[0m' \
+    LESS_TERMCAP_so=$'\E[38;5;246m' \
+    LESS_TERMCAP_ue=$'\E[0m' \
+    LESS_TERMCAP_us=$'\E[04;38;5;146m' \
+    man "$@"
+}
