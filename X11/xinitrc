@@ -7,22 +7,61 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
     unset f
 fi
 
-exec i3 &
-exec xrdb -load $HOME/.config/X11/Xresources &
-exec xsetroot -cursor_name arrow &
-exec xset +fp /usr/share/fonts/local &
-exec xset fp rehash &
-exec sxhkd &
-exec setxkbmap -option compose:rctrl &
-exec xautolock -time 10 -locker $HOME/.bin/lock-screen -detectsleep &
+# Load the Xresources-File
+xrdb -load $HOME/.config/X11/Xresources &
 
-exec crond &
-exec udiskie &
-exec xcmenu &
-exec compton &
-exec light 20% &
-exec unclutter &
-exec $HOME/.bin/random-wallpaper &
-exec $HOME/.bin/lightson &
-exec urxvtd &
-exec dunst
+# Set the arrow curser as the default cursor
+xsetroot -cursor_name arrow &
+
+# Fixing Font-Caching
+xset +fp /usr/share/fonts/local &
+xset fp rehash &
+
+# Set the R_Ctrl as the compose-key
+setxkbmap -option compose:rctrl &
+
+# Screenlocker
+xautolock -time 10 -locker $HOME/.bin/lock-screen -detectsleep &
+
+# Starting cron
+crond &
+
+# Udiskie, to automount devices
+udiskie &
+
+# A nice little Clipboar-Manager
+xcmenu &
+
+# My compositer
+compton &
+
+# Set the background-light to 30%
+light 30% &
+
+# Hide the cursor after some time
+unclutter &
+
+# Set a random wallpaper
+sh $HOME/.bin/random-wallpaper &
+
+# Stop the screenlocker, when seeing Movies via Flash
+sh $HOME/.bin/lightson &
+
+# Starting the urxvt-daemon
+urxvtd &
+
+# My keybindings-daemon
+sxhkd &
+
+# Notifier
+dunst &
+
+# Starting a window manager
+session=${1:-i3}
+case $session in
+    xmonad  )       exec xmonad;;
+    bspwm   )       exec bspwm;;
+    i3      )       exec i3;;
+    2bwm    )       exec 2bwm;;
+    *       )       exec $1;;
+esac
