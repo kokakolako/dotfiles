@@ -1,59 +1,62 @@
-# Global settings
+# General Configurarion
 # -------------------------------------------
 
+## MPD Settings + Configuration Directory
 mpd_music_dir                                 = "/home/niklas/musik/"
 mpd_crossfade_time                            = "1"
 ncmpcpp_directory                             = "/home/niklas/.config/ncmpcpp"
 
-# Visualizer
+## Lyrics
+follow_now_playing_lyrics                     = "yes"
+store_lyrics_in_song_dir                      = "yes"
+
+## Other
+ignore_leading_the                            = "yes"
+mouse_support                                 = "no"
+empty_tag_marker                              = "~"
+
+# UI
 # -------------------------------------------
 
-visualizer_sync_interval                      = "1"
+## Formatting
+song_list_format                              = "$3{%A}$2{%t}$7{%b}"
+song_columns_list_format                      = "(30)[red]{A} (40)[cyan]{t} (30)[green]{b}"
+media_library_left_column                     = "A"
+
+## UI-Modi
+user_interface                                = "alternative"
+playlist_display_mode                         = "columns"
+playlist_editor_display_mode                  = "columns"
+browser_display_mode                          = "columns"
+search_engine_display_mode                    = "columns"
+
+header_visibility                             = "no"
+header_text_scrolling                         = "yes"
+titles_visibility                             = "no"
+statusbar_visibility                          = "no"
+autocenter_mode                               = "yes"
+centered_cursor                               = "yes"
+default_space_mode                            = "select"
+default_find_mode                             = "wrapped"
+
+## Progress Bar
+progressbar_look                              = "███"
+progressbar_color                             = "white"
+progressbar_elapsed_color                     = "red"
+
+## Colors
+main_window_color                             = "default"
+main_window_highlight_color                   = "cyan"
+active_column_color                           = "red"
+alternative_ui_separator_color                = "white"
+window_border_color                           = "white"
+empty_tag_color                               = "cyan"
+
+## Visualizer
+visualizer_sync_interval                      = "5"
 visualizer_fifo_path                          = "/home/niklas/.config/ncmpcpp/mpd.fifo"
 visualizer_type                               = "spectrum" (spectrum/wave)
 visualizer_look                               = "◆█"
 visualizer_color                              = "cyan"
 visualizer_in_stereo                          = "yes"
 
-# UI
-# -------------------------------------------
-
-
-## Formatting
-
-song_list_format                              = "$3{%A}$2{%t}$7{%b}"
-song_columns_list_format                      = "(30)[red]{A} (40)[cyan]{t} (30)[green]{b}"
-
-user_interface                                = "alternative"
-playlist_display_mode                         = "columns"
-browser_display_mode                          = "columns"
-search_engine_display_mode                    = "columns"
-header_visibility                             = "no"
-titles_visibility                             = "no"
-statusbar_visibility                          = "no"
-
-autocenter_mode                               = "yes"
-centered_cursor                               = "yes"
-default_space_mode                            = "select"
-
-progressbar_look                              = "███"
-progressbar_color                             = "white"
-progressbar_elapsed_color                     = "red"
-
-follow_now_playing_lyrics                     = "yes"
-store_lyrics_in_song_dir                      = "yes"
-screen_switcher_mode                          = "sequence: 2 -> 3  -> 9 -> 10"
-ignore_leading_the                            = "yes"
-mouse_support                                 = "no"
-
-empty_tag_marker                              = "[empty]"
-empty_tag_color                               = "cyan"
-
-main_window_color                             = "default"
-main_window_highlight_color                   = "cyan"
-
-media_library_left_column                     = "A"
-active_column_color                           = "red"
-ask_before_clearing_main_playlist             = "yes"
-alternative_ui_separator_color                = "white"
-window_border_color                           = "white"
