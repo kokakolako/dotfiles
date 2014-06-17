@@ -19,7 +19,8 @@ empty_tag_marker                              = "~"
 # -------------------------------------------
 
 ## Formatting
-song_list_format                              = "$3{%A}$2{%t}$7{%b}"
+# song_list_format                              = "$3{%A}$2{%t}$7{%b}"
+song_list_format                              = "{[.red](%l)[/green]}{%a - }{%t}|{[.white]%f[/white]}"
 song_columns_list_format                      = "(30)[red]{A} (40)[cyan]{t} (30)[green]{b}"
 media_library_left_column                     = "A"
 
