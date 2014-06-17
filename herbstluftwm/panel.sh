@@ -11,11 +11,16 @@ fi
 x=${geometry[0]}
 y=${geometry[1]}
 panel_width=${geometry[2]}
-panel_height=16
-font="-*-fixed-medium-*-*-*-12-*-*-*-*-*-*-*"
-bgcolor=$(hc get frame_border_normal_color)
-selbg=$(hc get window_border_active_color)
-selfg='#101010'
+panel_height=30
+
+font="-gohu-gohufont-medium-r-normal--14-100-100-100-c-80-iso10646-1"
+bgcolor='#FFFFFF'
+selfg='#FF0055'
+selbg='#FFFFFF'
+
+# font="-*-fixed-medium-*-*-*-12-*-*-*-*-*-*-*"
+# bgcolor=$(hc get frame_border_normal_color)
+# selbg=$(hc get window_border_active_color)
 
 ####
 # Try to find textwidth binary.
@@ -61,11 +66,11 @@ hc pad $monitor $panel_height
     # e.g.
     #   date    ^fg(#efefef)18:33^fg(#909090), 2013-10-^fg(#efefef)29
 
-    #mpc idleloop player &
+    # mpc idleloop player &
     while true ; do
         # "date" output is checked once a second, but an event is only
         # generated if the output changed compared to the previous run.
-        date +$'date\t^fg(#efefef)%H:%M^fg(#909090), %Y-%m-^fg(#efefef)%d'
+        date +$'date\t%Y/%m/%d - %H:%M'
         sleep 1 || break
     done > >(uniq_linebuffered) &
     childpid=$!
@@ -82,8 +87,13 @@ hc pad $monitor $panel_height
         # This part prints dzen data based on the _previous_ data handling run,
         # and then waits for the next event to happen.
 
-        bordercolor="#26221C"
-        separator="^bg()^fg($selbg)|"
+        separator="  "
+        temp="^fg(#FF0055)^i($HOME/.config/herbstluftwm/sm4tik-icon-pack/xbm/temp.xbm) ^fg(#000000)$( sensors | grep temp1 | cut -c 16-19 )"
+        cpu_last="^fg(#FF0055)^i($HOME/.config/herbstluftwm/sm4tik-icon-pack/xbm/cpu.xbm) ^fg(#000000)$( $HOME/.bin/print-cpu-last )"
+        batt="^fg(#FF0055)^i($HOME/.config/herbstluftwm/sm4tik-icon-pack/xbm/bat_full_01.xbm) ^fg(#000000)$( $HOME/.bin/print-battery-status )"
+        clock_icon="^fg(#FF0055)^i($HOME/.config/herbstluftwm/sm4tik-icon-pack/xbm/clock.xbm)^fg(#000000)"
+        wifi="^fg(#FF0055)^i($HOME/.config/herbstluftwm/sm4tik-icon-pack/xbm/wifi_01.xbm) ^fg(#000000)$( $HOME/.bin/print-wifi )"
+
         # draw tags
         for i in "${tags[@]}" ; do
             case ${i:0:1} in
@@ -91,13 +101,13 @@ hc pad $monitor $panel_height
                     echo -n "^bg($selbg)^fg($selfg)"
                     ;;
                 '+')
-                    echo -n "^bg(#9CA668)^fg(#141414)"
+                    echo -n "^bg(#000000)^fg(#000000)"
                     ;;
                 ':')
-                    echo -n "^bg()^fg(#ffffff)"
+                    echo -n "^bg()^fg(#000000)"
                     ;;
                 '!')
-                    echo -n "^bg(#FF0675)^fg(#141414)"
+                    echo -n "^bg(#000000)^fg(#000000)"
                     ;;
                 *)
                     echo -n "^bg()^fg(#ababab)"
@@ -114,13 +124,13 @@ hc pad $monitor $panel_height
                 echo -n " ${i:1} "
             fi
         done
-        echo -n "$separator"
+        # echo -n "$separator"
         echo -n "^bg()^fg() ${windowtitle//^/^^}"
         # small adjustments
-        right="$separator^bg() $date $separator"
+        right="$batt $seperator $cpu_last $seperator $wifi $seperator $temp $seperator $clock_icon $date"
         right_text_only=$(echo -n "$right" | sed 's.\^[^(]*([^)]*)..g')
         # get width of right aligned text.. and add some space..
-        width=$($textwidth "$font" "$right_text_only    ")
+        width=$($textwidth "$font" "$right_text_only         ")
         echo -n "^pa($(($panel_width - $width)))$right"
         echo
 
@@ -170,8 +180,6 @@ hc pad $monitor $panel_height
             focus_changed|window_title_changed)
                 windowtitle="${cmd[@]:2}"
                 ;;
-            #player)
-            #    ;;
         esac
     done
 
@@ -181,4 +189,4 @@ hc pad $monitor $panel_height
 
 } 2> /dev/null | dzen2 -w $panel_width -x $x -y $y -fn "$font" -h $panel_height \
     -e 'button3=;button4=exec:herbstclient use_index -1;button5=exec:herbstclient use_index +1' \
-    -ta l -bg "$bgcolor" -fg '#efefef'
+    -ta l -bg "$bgcolor" -fg '#FF0055'
