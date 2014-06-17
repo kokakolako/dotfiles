@@ -33,7 +33,7 @@ udiskie &
 xcmenu &
 
 # My compositer
-compton &
+compton -b &
 
 # Set the background-light to 30%
 light 30% &
@@ -57,11 +57,12 @@ sxhkd &
 dunst &
 
 # Starting a window manager
-session=${1:-i3}
+session=${1:-hlwm}
 case $session in
     xmonad  )       exec xmonad;;
     bspwm   )       exec bspwm;;
     i3      )       exec i3;;
     2bwm    )       exec 2bwm;;
+    hlwm    )       exec herbstluftwm --locked;;
     *       )       exec $1;;
 esac
