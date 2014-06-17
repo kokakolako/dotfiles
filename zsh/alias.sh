@@ -10,12 +10,6 @@ alias dirs="dirs -v"
 alias pushd="pushd; dirs -v"
 alias popd="popd; dirs -v"
 
-## Vim aliases
-alias vim="vim -u $HOME/.config/vim/vimrc"
-alias vimkeys="vim $HOME/.config/vim/keymappings.vim"
-alias vundle="vim $HOME/.config/vim/plugins.vim"
-alias vimtipps="vim $HOME/.config/vim/vimtipps"
-
 ## Editing config files
 alias iconfig="vim $HOME/.config/i3/config +'lcd $HOME/.config/i3'"
 alias vconfig="vim $HOME/.config/vim/vimrc +'lcd $HOME/.config/vim'"
@@ -41,6 +35,7 @@ alias mpv="mpv -input file=$HOME/.config/mpv/mpv-control"
 alias virt-env="source $HOME/projekte/python/virt-env/bin/activate && cd $HOME/projekte/python/virt-env"
 alias rlocate="locate --regex"
 alias uzbl="uzbl-tabbed"
+alias info="info --vi-keys"
 
 ## Git Aliases
 alias gti="git"
