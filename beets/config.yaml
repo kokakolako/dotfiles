@@ -1,4 +1,4 @@
-directory: ~/musik
+directory: ~/music
 color: yes
 threaded: yes
 paths:

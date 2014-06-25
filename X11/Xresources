@@ -8,7 +8,7 @@ xterm.faceName:                DejaVu Sans Mono
 xterm.faceSize:                14
 
 URxvt.termName:                rxvt-unicode
-URxvt.font:                    xft:Inconsolata for Powerline:pixelsize=16, \
+URxvt.font:                    xft:Inconsolata for Powerline:style=light:pixelsize=16, \
                                xft:DejaVu Sans Mono:pixelsize=16, \
                                xft:Code2300:pixelsize=16, \
                                xft:WenQuanYi Bitmap Song:pixelsize=16, \
@@ -16,7 +16,7 @@ URxvt.font:                    xft:Inconsolata for Powerline:pixelsize=16, \
                                xft:unifont:style=Medium
 ! xft:Source Code Pro for Powerline:pixelsize=14
 URxvt.insecure:                false
-URxvt.internalBorder:          15 
+URxvt.internalBorder:          15
 URxvt.saveLines:               1000
 URxvt.cursorBlink:             true
 URxvt.scrollBar:               false
@@ -38,6 +38,7 @@ URxvt.keysym.M-u:              perl:url-select:select_next
 URxvt.clipboard.autocopy:      true
 URxvt.clipboard.copycmd:       xclip -i -selection clipboard
 URxvt.clipboard.pastecmd:      xclip -o -selection clipboard
+URxvt.depth:                   32
 
 URxvt.tabbed.saveLines:        1000
 URxvt.tabbed.scrollBar:        false

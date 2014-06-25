@@ -23,9 +23,6 @@ setxkbmap -option compose:rctrl &
 # Screenlocker
 xautolock -time 10 -locker $HOME/.bin/lock-screen -detectsleep &
 
-# Starting cron
-crond &
-
 # Udiskie, to automount devices
 udiskie &
 
@@ -42,10 +39,10 @@ light 30% &
 unclutter &
 
 # Set a random wallpaper
-sh $HOME/.bin/random-wallpaper &
+$HOME/.bin/random-wallpaper &
 
 # Stop the screenlocker, when seeing Movies via Flash
-sh $HOME/.bin/lightson &
+$HOME/.bin/lightson &
 
 # Starting the urxvt-daemon
 urxvtd &
@@ -55,6 +52,12 @@ sxhkd &
 
 # Notifier
 dunst &
+
+# Powersaving
+powerdown &
+
+# Starting the JACK Daemon
+$HOME/.bin/start-jack &
 
 # Starting a window manager
 session=${1:-hlwm}

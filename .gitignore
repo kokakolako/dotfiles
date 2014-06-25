@@ -12,6 +12,7 @@ msmtp
 fish/fish_history
 libreoffice
 tor
+Trolltech.conf
 
 gtk*
 dconf

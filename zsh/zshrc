@@ -19,9 +19,6 @@ UPDATE_ZSH_DAYS=7
 ## Plugins
 plugins=(git github jump colored-man vi-mode rvm)
 
-
-# bindkey '^u' backward-kill-word
-
 # General Zsh settings
 # ---------------------------------------------
 
@@ -49,6 +46,10 @@ export CONF="$HOME/.config"
 export MARKPATH="$HOME/.marks"
 export XDG_CONFIG_HOME="$HOME/.config"
 
+## Plan 9 Settings
+export PLAN9=/usr/lib/plan9/
+export PATH="$PATH:/usr/lib/plan9/bin/"
+
 ## Adding the binfiles to $PATH
 export PATH="$PATH:$HOME/.bin"
 
@@ -60,28 +61,6 @@ export PASSWORD_STORE_DIR="$HOME/.password-store"
 
 # Misc
 # ---------------------------------------------
-
-## Extract archive files easily
-extract () {
-    if [ -f $1 ] ; then
-      case $1 in
-        *.tar.bz2)   tar xjf $1     ;;
-        *.tar.gz)    tar xzf $1     ;;
-        *.bz2)       bunzip2 $1     ;;
-        *.rar)       unrar e $1     ;;
-        *.gz)        gunzip $1      ;;
-        *.tar)       tar xf $1      ;;
-        *.tbz2)      tar xjf $1     ;;
-        *.tgz)       tar xzf $1     ;;
-        *.zip)       unzip $1       ;;
-        *.Z)         uncompress $1  ;;
-        *.7z)        7z x $1        ;;
-        *)     echo "'$1' cannot be extracted via extract()" ;;
-         esac
-     else
-         echo "'$1' is not a valid file"
-     fi
-}
 
 ## Use Ctr+Z to foreground vim
 fancy-ctrl-z () {
@@ -106,14 +85,3 @@ eval $(dircolors $HOME/.config/dircolors/molokai.dircolors)
 source ~/.rvm/scripts/rvm
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-## Colorizing Man-Pages
-man() {
-    env LESS_TERMCAP_mb=$'\E[01;31m' \
-    LESS_TERMCAP_md=$'\E[01;38;5;74m' \
-    LESS_TERMCAP_me=$'\E[0m' \
-    LESS_TERMCAP_se=$'\E[0m' \
-    LESS_TERMCAP_so=$'\E[38;5;246m' \
-    LESS_TERMCAP_ue=$'\E[0m' \
-    LESS_TERMCAP_us=$'\E[04;38;5;146m' \
-    man "$@"
-}

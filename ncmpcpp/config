@@ -37,7 +37,7 @@ titles_visibility                             = "no"
 statusbar_visibility                          = "no"
 autocenter_mode                               = "yes"
 centered_cursor                               = "yes"
-default_space_mode                            = "select"
+default_space_mode                            = "add"
 default_find_mode                             = "wrapped"
 
 ## Progress Bar
