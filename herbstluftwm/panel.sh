@@ -60,6 +60,7 @@ fi
 hc pad $monitor $panel_height
 
 {
+
     ### Event generator ###
     # based on different input data (mpc, date, hlwm hooks, ...) this generates events, formed like this:
     #   <eventname>\t<data> [...]
@@ -76,7 +77,9 @@ hc pad $monitor $panel_height
     childpid=$!
     hc --idle
     kill $childpid
+
 } 2> /dev/null | {
+
     IFS=$'\t' read -ra tags <<< "$(hc tag_status $monitor)"
     visible=true
     date=""
@@ -87,12 +90,8 @@ hc pad $monitor $panel_height
         # This part prints dzen data based on the _previous_ data handling run,
         # and then waits for the next event to happen.
 
-        separator="  "
-        temp="^fg(#FF0055)^i($HOME/.config/herbstluftwm/sm4tik-icon-pack/xbm/temp.xbm) ^fg(#000000)$( sensors | grep temp1 | cut -c 16-19 )"
-        cpu_last="^fg(#FF0055)^i($HOME/.config/herbstluftwm/sm4tik-icon-pack/xbm/cpu.xbm) ^fg(#000000)$( $HOME/.bin/print-cpu-last )"
-        batt="^fg(#FF0055)^i($HOME/.config/herbstluftwm/sm4tik-icon-pack/xbm/bat_full_01.xbm) ^fg(#000000)$( $HOME/.bin/print-battery-status )"
-        clock_icon="^fg(#FF0055)^i($HOME/.config/herbstluftwm/sm4tik-icon-pack/xbm/clock.xbm)^fg(#000000)"
-        wifi="^fg(#FF0055)^i($HOME/.config/herbstluftwm/sm4tik-icon-pack/xbm/wifi_01.xbm) ^fg(#000000)$( $HOME/.bin/print-wifi )"
+        arch_icon="^fg(#FF0055)^i($HOME/.config/herbstluftwm/icons/xbm/arch_10x10.xbm)"
+        echo -n "  $arch_icon "
 
         # draw tags
         for i in "${tags[@]}" ; do
@@ -113,24 +112,46 @@ hc pad $monitor $panel_height
                     echo -n "^bg()^fg(#ababab)"
                     ;;
             esac
+
             if [ ! -z "$dzen2_svn" ] ; then
+
                 # clickable tags if using SVN dzen
                 echo -n "^ca(1,\"${herbstclient_command[@]:-herbstclient}\" "
                 echo -n "focus_monitor \"$monitor\" && "
                 echo -n "\"${herbstclient_command[@]:-herbstclient}\" "
                 echo -n "use \"${i:1}\") ${i:1} ^ca()"
+
             else
+
                 # non-clickable tags if using older dzen
                 echo -n " ${i:1} "
             fi
         done
-        # echo -n "$separator"
-        echo -n "^bg()^fg() ${windowtitle//^/^^}"
-        # small adjustments
-        right="$batt $seperator $cpu_last $seperator $wifi $seperator $temp $seperator $clock_icon $date"
+
+        temp="^fg(#000000)$( sensors | grep CPU | grep -Ewo "[0-9]*.[0-9]" )"
+        temp_icon="^fg(#FF0055)^i($HOME/.config/herbstluftwm/icons/xbm/temp.xbm)"
+
+        cpu="^fg(#000000)$( $HOME/.bin/print-cpu-last )"
+        cpu_icon="^fg(#FF0055)^i($HOME/.config/herbstluftwm/icons/xbm/cpu.xbm)"
+
+        batt="^fg(#000000)$( $HOME/.bin/print-battery-status )"
+        batt_icon="^fg(#FF0055)^i($HOME/.config/herbstluftwm/icons/xbm/bat_full_01.xbm)"
+
+
+        wifi=" ^fg(#000000)$( iwconfig wlp8s0 | grep ESSID | cut -c 33- | tr -d '"' | sed "s/[[:space:]]//g" )"
+        wifi_icon="^fg(#FF0055)^i($HOME/.config/herbstluftwm/icons/xbm/wifi_01.xbm)"
+
+        # vol="^fg(#000000)$( $HOME/.bin/print-volume )"
+        # vol_icon="^fg(#FF0055)^i($HOME/.config/herbstluftwm/icons/xbm/cat.xbm)"
+
+        date_icon="^fg(#FF0055)^i($HOME/.config/herbstluftwm/icons/xbm/clock.xbm)^fg(#000000)"
+
+        echo -n "^bg()^fg(#000000) ${windowtitle//^/^^}"
+        right="$batt_icon $batt  $cpu_icon $cpu  ${wifi_icon}${wifi}  $temp_icon $temp  $date_icon $date"
         right_text_only=$(echo -n "$right" | sed 's.\^[^(]*([^)]*)..g')
+
         # get width of right aligned text.. and add some space..
-        width=$($textwidth "$font" "$right_text_only         ")
+        width=$($textwidth "$font" "$right_text_only       ")
         echo -n "^pa($(($panel_width - $width)))$right"
         echo
 
@@ -144,20 +165,21 @@ hc pad $monitor $panel_height
 
         # wait for next event
         IFS=$'\t' read -ra cmd || break
+
         # find out event origin
         case "${cmd[0]}" in
-            tag*)
+            tag* )
                 #echo "resetting tags" >&2
                 IFS=$'\t' read -ra tags <<< "$(hc tag_status $monitor)"
                 ;;
-            date)
+            date )
                 #echo "resetting date" >&2
                 date="${cmd[@]:1}"
                 ;;
-            quit_panel)
+            quit_panel )
                 exit
                 ;;
-            togglehidepanel)
+            togglehidepanel )
                 currentmonidx=$(hc list_monitors | sed -n '/\[FOCUS\]$/s/:.*//p')
                 if [ "${cmd[1]}" -ne "$monitor" ] ; then
                     continue
@@ -174,18 +196,18 @@ hc pad $monitor $panel_height
                     hc pad $monitor $panel_height
                 fi
                 ;;
-            reload)
+            reload )
                 exit
                 ;;
-            focus_changed|window_title_changed)
+            focus_changed | window_title_changed )
                 windowtitle="${cmd[@]:2}"
                 ;;
         esac
     done
 
-    ### dzen2 ###
-    # After the data is gathered and processed, the output of the previous block
-    # gets piped to dzen2.
+### dzen2 ###
+# After the data is gathered and processed, the output of the previous block
+# gets piped to dzen2.
 
 } 2> /dev/null | dzen2 -w $panel_width -x $x -y $y -fn "$font" -h $panel_height \
     -e 'button3=;button4=exec:herbstclient use_index -1;button5=exec:herbstclient use_index +1' \
