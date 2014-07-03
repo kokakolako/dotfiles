@@ -1,0 +1,26 @@
+#!/bin/zsh
+
+case "$1" in
+    "dzen2" )
+        {
+            temp="^fg(#000000)$( sensors | grep CPU | grep -Ewo "[0-9]*.[0-9]" )"
+            temp_icon="^fg(#FF0055)^i($HOME/.config/herbstluftwm/icons/xbm/temp.xbm)"
+
+            cpu="^fg(#000000)$( $HOME/.bin/print-cpu-last )"
+            cpu_icon="^fg(#FF0055)^i($HOME/.config/herbstluftwm/icons/xbm/cpu.xbm)"
+
+            batt="^fg(#000000)$( $HOME/.bin/print-battery-status )"
+            batt_icon="^fg(#FF0055)^i($HOME/.config/herbstluftwm/icons/xbm/bat_full_01.xbm)"
+
+
+            wifi=" ^fg(#000000)$( iwconfig wlp8s0 | grep ESSID | cut -c 33- | tr -d '"' | sed "s/[[:space:]]//g" )"
+            wifi_icon="^fg(#FF0055)^i($HOME/.config/herbstluftwm/icons/xbm/wifi_01.xbm)"
+
+            right="$batt_icon $batt  $cpu_icon $cpu  ${wifi_icon}${wifi}  $temp_icon $temp  $date_icon $date"
+            echo -n "$right"
+        } | dzen2
+    ;;
+    "bar" )
+        echo "hallo" | bar -p
+    ;;
+esac

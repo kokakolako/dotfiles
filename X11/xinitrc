@@ -50,6 +50,9 @@ urxvtd &
 # My keybindings-daemon
 sxhkd &
 
+# Panel
+~/.config/bspwm/panel dzen2 &
+
 # Notifier
 dunst &
 

@@ -1,47 +1,55 @@
-# Start a terminal
+# My keybindings
+# ---------------------------------------------
+
+## Start a terminal
 super + Return
     urxvtcd
 
-# Toggle through monitors
+## Toggle through monitors
 super + p
     $HOME/.bin/random-wallpaper
 
-# Next & prev song
+## Next & prev song
 XF86Audio{Next,Prev}
+    $HOME/.bin/show-key {next,prev} & \
     mpc {next,prev} && \
     notify-send "$( mpc current )" && \
-    echo "{playlist_next,playlist_prev}" > $HOME/.config/mpv/mpv-control
+    echo {playlist_next,playlist_prev} > $HOME/.config/mpv/mpv-control
 
-# Volume control
+## Volume control
 XF86Audio{Raise,Lower}Volume
-    amixer set Master 5%{+,-}
+    {amixer set Master 5%+; $HOME/.bin/show-key speaker_raise,\
+    amixer set Master 5%-; $HOME/.bin/show-key speaker_lower}
 
-# Play / pause the current song
+## Play / pause the current song
 XF86AudioPlay
     $HOME/.bin/toggle-music
 
-# Toggle mute
+## Toggle mute
 XF86AudioMute
-    amixer set -c 0 Master 25 unmute
+    {amixer set -c 0 Master 0 unmute; $HOME/.bin/show-key mute,\
+    amixer set Master 50%; $HOME/.bin/show-key unmute}
 
-# Toggle touchpad on/off
+
+## Toggle touchpad on/off
 XF86TouchpadToggle
     $HOME/.bin/toggle-touchpad
 
-# Make a screenshot
+## Make a screenshot
 Print
-    scrot $HOME/bilder/Screenshots/%Y-%M-%d-%T.png
+    scrot "$HOME/picures/Screenshots/%Y_%M_%d %T.png"
 
-# Brightness
+## Brightness
 XF86MonBrightness{Up,Down}
-    light -{a,s} 5%
+    {light -a 5%; $HOME/.bin/show-key brightness_up,\
+    light -s 5%; $HOME/.bin/show-key brightness_down}
 
-# Start firefox
+## Start firefox
 super + o
     firefox
 
-# Start dmenu
+## Start dmenu
 super + d
     $HOME/.bin/custom-launcher control
 
-# vim: set syntax=conf:
+## vim: set syntax=conf:

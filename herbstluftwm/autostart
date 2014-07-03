@@ -8,8 +8,6 @@ hc() {
 
 hc emit_hook reload
 
-xsetroot -solid '#5A8E3A'
-
 # remove all existing keybindings
 hc keyunbind --all
 
@@ -71,7 +69,7 @@ hc keybind $Mod-q remove
 hc keybind $Mod-space cycle_layout 1
 hc keybind $Mod-s floating toggle
 hc keybind $Mod-f fullscreen toggle
-hc keybind $Mod-p pseudotile toggle
+hc keybind $Mod-t pseudotile toggle
 
 # mouse
 hc mouseunbind --all

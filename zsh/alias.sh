@@ -26,10 +26,7 @@ alias hconfig="vim $HOME/.config/herbstluftwm/autostart $HOME/.config/herbstluft
 # ---------------------------------------------
 
 alias ncmpcpp="ncmpcpp --config $HOME/.config/ncmpcpp/config"
-alias nginx="nginx -c $HOME/.config/nginx/config"
 alias pandoc="pandoc --latex-engine=xelatex"
-alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
-alias msmtp="msmtp -C $HOME/.config/msmtp/msmtprc"
 alias mpv="mpv -input file=$HOME/.config/mpv/mpv-control"
 
 # Git aliases

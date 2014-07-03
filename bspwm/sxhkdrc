@@ -1,129 +1,148 @@
-# Bspwm Hotkeys
-# -----------------------------------------------------------------
+# Bspwm ---------------------------------------------
 
-super + shift + e
-    bspc quit
+super + shift + x
+    bspc quit 1 && pkill bar && pkill dzen2
 
+## Toggle panels
+super + x
+    {pkill panel; pkill cat; pkill conky; bspc config top_padding 0 ,\
+    bspc config top_padding 14; $HOME/.config/bspwm/panel/panel & }
+
+## Workstation Monitor
+super + w
+    bspc monitor -f next
+
+## Close window
 super + shift + q
     bspc window -c
 
-super + t
-    bspc desktop -l next
+## Kill window
+super + ctrl + q
+    bspc window -k
 
+## Toggle tile
+super + {_,shift +} t
+    bspc window -t {floating,fullscreen}
+
+## Lock node
+super + shift + p
+    bspc window -t private
+
+## Balance tree
 super + b
     bspc desktop -B
 
-super + {s,f}
-    bspc window -t {floating,fullscreen}
-
-super + {grave,Tab}
-    bspc {window,desktop} -f last
-
-super + apostrophe
-    bspc window -s last
-
-super + {o,i}
-    bspc control --record-history off; \
-        bspc window {older,newer} -f; \
-        bspc control --record-history on
-
-super + y
-    bspc window -w last.manual
-
-super + m
-    bspc window -s biggest
-
-super + {_,shift + }{h,j,k,l}
-    bspc window -{f,s} {left,down,up,right}
-
-super + {_,shift + }c
-    bspc window -f {next,prev}
-
-super + {comma,period}
-    bspc desktop -C {backward,forward}
-
-super + bracket{left,right}
-    bspc desktop -f {prev,next}
-
+## Presel window for splitting
 super + ctrl + {h,j,k,l}
     bspc window -p {left,down,up,right}
 
-super + ctrl + {_,shift + }space
-    bspc {window -p cancel,desktop -c}
+## Move window into presel position
+super + shift {a,s,d,f}
+    bspc window -w {left,down,up,right}
 
-super + alt + {h,j,k,l}
-    bspc window -e {left -10,down +10,up -10,right +10}
+## Select windows, or move
+super + {_,shift + }{h,j,k,l}
+    bspc window -{f,s} {left,down,up,right} || bspc window -f {prev, prev, next, next}
 
-super + alt + shift + {h,j,k,l}
-    bspc window -e {right -10,up +10,down -10,left +10}
+## Resize nodes
+super + {a,f}
+    S={+,-}; \
+    bspc window -e left $\{S\}20 || \
+    bspc window -e right $\{S\}20
 
+super + {s,d}
+    S={+,-}; \
+    bspc window -e down $\{S\}20 || \
+    bspc window -e up $\{S\}20
+
+
+## Move floating windows (requires baskerville's xdo)
+super + {Left,Right,Up,Down}
+    xdo move {-x -20,-x +20,-y -20,-y +20}
+
+## Resize floating windows
+super + shift + {Left,Right,Up,Down}
+        xdo resize {-w -20,-w +20,-h -20,-h +20} bspc window -e {left -10,down +10,up -10,right +10} || {right -10,up +10,down -10,left +10}
+
+## Move current window to largest space
+super + Return
+    bspc window -s biggest
+
+## Mirror and flip leaves of tree
+super + {comma,period}
+    bspc desktop -F {horizontal,vertical}
+
+## Rotate leaves of tree
+super + shift + {comma,period}
+    bspc desktop -R {90,270}
+
+## Select previous / next desktop
+super + {p,n}
+    bspc desktop -f {prev.occupied,next.occupied}
+
+## Lock a window from closing
+super + Escape
+    bspc window -t locked
+
+## Toggle monocle
+super + space
+    bspc desktop -l next
+
+## Toggle pseudotiled (floating in tile)
+super + shift + space
+    bspc window -t pseudo_tiled
+
+## Focus on floating / tiled
+super + e
+    bspc window -f {next.floating,next.tiled}
+
+## Change desktop padding
+super + {_, shift} + bracketright
+    bspc config -d focused right_padding $((`bspc config -d focused right_padding` {+,-} 20 ))
+
+super + {_, shift} + bracketleft
+    bspc config -d focused left_padding $((`bspc config -d focused left_padding` {+,-} 20 ))
+
+ctrl + {_, shift} + bracketright
+    bspc config -d focused bottom_padding $((`bspc config -d focused bottom_padding` {+,-} 20 ))
+
+ctrl + {_, shift} + bracketleft
+    bspc config -d focused top_padding $((`bspc config -d focused top_padding` {+,-} 20 ))
+
+## Change window gap
+super + {minus,plus}
+    bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2 ))
+
+## Set splitting ratio of windows
 super + ctrl + {1-9}
     bspc window -r 0.{1-9}
 
+## Focus or move window to desktops
 super + {_,shift + }{1-9,0}
-    bspc {desktop -f,window -d} ^{1-9,10}
+    bspc {desktop -f, window -d} $(bspc query -M -m)/{i,ii,iii,iv,v,vi,vii,viii,ix,x}
 
-~button1
-    bspc pointer -g focus
+##
+## mouse bindings
+##
 
+## Move or resize window
 super + button{1-3}
     bspc pointer -g {move,resize_side,resize_corner}
 
+## Needed for ^^^^
 super + !button{1-3}
     bspc pointer -t %i %i
+
 
 super + @button{1-3}
     bspc pointer -u
 
-# WM-Independent Hotkeys
-# -----------------------------------------------------------------
+## spawn programs
 
-# Start a terminal
-super + Return
-    urxvtcd
+super + shift + backslash
+    create_frame
 
-# Toggle through monitors
-super + p
-    $HOME/.bin/toggle-monitor -S
+super + ctrl + Return
+    bspc rule -a urxvt -o pseudo_tiled=on && urxvtc
 
-# Next & prev song
-XF86Audio{Next,Prev}
-    mpc {next,prev} && notify-send "$( mpc current )"
-
-# Volume control
-XF86Audio{Raise,Lower}Volume
-    amixer set Master 5%{+,-}
-
-# Play / pause the current song
-XF86AudioPlay
-    $HOME/.bin/toggle-music
-
-# Toggle mute
-XF86AudioMute
-    amixer set -c 0 Master 25 unmute
-
-# Toggle touchpad on/off
-XF86TouchpadToggle
-    $HOME/.bin/toggle-touchpad
-
-# Make a screenshot
-Print
-    scrot $HOME/bilder/Screenshots/%Y-%M-%d-%T.png
-
-# Brightness
-XF86MonBrightness{Up,Down}
-    light -{a,s} 5%
-
-# Exit i3 (logs you out of your X session)
-super + shift + e
-    i3-nagbar -t warning -m "Do you want to exit i3? This will end your X session." -b "Yes, exit i3" "i3-msg exit"
-
-# Start firefox
-super + o
-    firefox
-
-# Start dmenu
-super + d
-    $HOME/.bin/custom-launcher control
-
-# vim: set syntax=conf:
+# vim: set ft=conf:

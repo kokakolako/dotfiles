@@ -58,31 +58,31 @@ URxvt.tabbed.secondaryScroll:  true
 *color0:                #101010
 *color8:                #303030
 
-! DarkRed + Red
+! Red + DarkRed
 *color1:                #FF0055
 *color9:                #ED0028
 
-! DarkGreen + Green
-*color2:                #739200
-*color10:               #B1D631
+! Green + DarkGreen
+*color2:                #B1D631
+*color10:               #739200
 
-! DarkYellow + Yellow
-*color3:                #C47F2C
-*color11:               #FF4000
+! Yellow + DarkYellow
+*color3:                #FF4000
+*color11:               #C47F2C
 
-! DarkBlue + Blue
+! Blue + DarkBlue
 *color4:                #005F87
 *color12:               #538192
 
-! DarkMagenta + Magenta
+! Magenta + DarkMagenta
 *color5:                #7E40A5
 *color13:               #CBE4EE
 
-! DarkCyan + Cyan
-*color6:                #3579A8
-*color14:               #4EB4FA
+! Cyan + DarkCyan
+*color6:                #4EB4FA
+*color14:               #3579A8
 
-! LightGrey + White
-*color7:                #BBBBBB
-*color15:               #FFFFFF
+! White+ LightGrey
+*color7:                #FFFFFF
+*color15:               #BBBBBB
 

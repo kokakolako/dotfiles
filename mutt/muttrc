@@ -1,0 +1,70 @@
+# My mail-account
+source "gpg2 -dq $HOME/.config/mutt/passwords.gpg |"
+
+# Defaults
+set editor                                           = vim
+set realname                                         = "Niklas Köhler"
+set abort_nosubject                                  = no
+set include
+set reply_to
+
+# Signatur
+set sig_dashes                                       = no
+
+# Gmail configuration
+set folder                                           = "imaps://imap.gmail.com"
+set imap_user                                        = "waterkoka@gmail.com"
+set imap_pass                                        = $my_pw
+set spoolfile                                        = +INBOX
+mailboxes                                            = +INBOX
+
+# Caching locally
+set header_cache                                     = $HOME/.cache/mutt
+set message_cachedir                                 = $HOME/.cache/mutt
+
+# Drafts
+set postponed                                        = +[Gmail]/Drafts
+
+set imap_check_subscribed                            = yes
+set imap_keepalive                                   = 300
+set mail_check                                       = 120
+unset imap_passive
+
+# Folder Configuration
+set move                                             = no
+set delete                                           = yes
+
+# Render HTML (via lynx)
+set mailcap_path                                     = $HOME/.config/mutt/mailcap
+auto_view text/html
+alternative_order text/plain text/html
+
+# Show sidebar
+set sidebar_visible                                  = yes
+set sidebar_sort = yes
+macro index \CY '<enter-command>toggle sidebar_visible<enter><refresh>'
+macro pager \CY '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+bind index,pager \CP sidebar-prev
+bind index,pager \CN sidebar-next
+bind index,pager \CO sidebar-open
+
+# Adressbook
+set alias_file                                       = $HOME/.config/mutt/alias
+set query_command                                    = /usr/bin/goobook
+
+# Header
+ignore *
+unignore subject to from cc date bcc
+
+# Colors            Foreground      Background
+color normal        black           default
+color indicator     white           red
+color status        white           cyan
+color attachment    cyan            default
+color header        red             default     ^From:
+color header        red             default     ^Subject:
+color header        red             default     ^To:
+color header        red             default     ^Cc:
+color header        red             default     ^Bcc:
+color header        cyan            default     ^Date:
+

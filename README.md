@@ -1,18 +1,23 @@
-# My dotfile repository
+My dotfile repository
+=====================
 
-Hey congratulation you found my dotfiles!
-My current setup is an Arch Linux System with i3 as window manager
+Hey congratulation you have found my dotfiles!
+My current setup is an arch battlestation with herbstluftwm as window manager
 
-To be more exactly I'm using the following stuff:
-* i3
-* conky
-* compton
-* xfce4-terminal or urxvt
-* ncmpcpp
-* weechat
-* zsh (with oh my zsh!)
+Im mostly proud of the following configurations:
+------------------------------------------------
+
 * vim
+* herbstluftwm (+ dzen2 as panel)
+* i3 (+ i3 bar / conky )
+* zsh (+ oh my zsh!)
+* dmenu2 (a very nice fork of the suckless.org dmenu)
+* sxhkd
+* dunst
+* ncmpcpp (+ mpd)
+* my custom prompt theme
 
-If you need to you can grab easily my configurations 
+When you are seeing some references to some scripts in $HOME/.bin, the
+script is one of my [binfiles](https://github.com/kokakolako/binfiles).
+To enjoy my configuration the most, you need to clone also this repo.
 
-*Cheers, Niklas Köhler*

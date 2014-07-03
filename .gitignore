@@ -1,3 +1,4 @@
+# Misc
 .*.swp
 pulse
 inkscape
@@ -14,18 +15,22 @@ libreoffice
 tor
 Trolltech.conf
 
+# GTK
 gtk*
 dconf
 gconf
 
+# Beets
 beets/library.db
 beets/state.pickle
 
+# Ncmpcpp pc-specific-files
 ncmpcpp/state
 ncmpcpp/mpd.log
 ncmpcpp/pid
 ncmpcpp/database.db
 
+# Dwb
 dwb/default/commands.history
 dwb/default/history
 dwb/default/navigate.history
@@ -36,6 +41,7 @@ dwb/default/session
 dwb/settings.*
 dwb/default/scripts.allow
 
+# Ranger
 ranger/history
 ranger/commands.py
 ranger/bookmarks
@@ -43,3 +49,12 @@ ranger/scope.sh
 ranger/tagged
 ranger/__pycache__
 
+# Mutt
+mutt/cache
+mutt/hcache
+mutt/mailcap
+mutt/temp
+mutt/contacts.list
+mutt/passwords.gpg
+
+# vim: set ft=config:
