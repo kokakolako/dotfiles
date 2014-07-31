@@ -35,8 +35,9 @@ autoload -U zmv
 # ---------------------------------------------
 
 ## Misc
-export TERMINAL=rxvt-unicode-256color
-export TERM=rxvt-unicode-256color
+# export TERMINAL=rxvt-unicode-256color
+export TERMINAL=screen-256color
+export TERM=screen-256color
 export EDITOR="vim"
 export VISUAL="vim"
 export GIT_EDITOR="vim"
@@ -75,9 +76,6 @@ fancy-ctrl-z () {
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
-## Disable visual bell
-xset -b
-
 ## Fixing Dircolors
 eval $(dircolors $HOME/.config/dircolors/molokai.dircolors)
 
@@ -85,3 +83,15 @@ eval $(dircolors $HOME/.config/dircolors/molokai.dircolors)
 source ~/.rvm/scripts/rvm
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
+## If not in a TTY
+if [ -n "$DISPLAY" ]; then
+    ## Disable th visual bell
+    xset -b
+    ## Starting tmux
+    if [ -z "$TMUX" ]; then
+        ( tmux ls | grep -vq attached && tmux -2 at ) || tmux -2
+    fi
+## Starting X11, when inside of a TTY
+elif [ -z "$DISPLAY" ]; then
+    startx
+fi
