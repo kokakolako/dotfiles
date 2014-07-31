@@ -18,7 +18,7 @@ super + z
     zathura
 
 ## Start firefox
-super + f
+super + o
     firefox
 
 ## Start dwb
