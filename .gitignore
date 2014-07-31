@@ -29,6 +29,7 @@ ncmpcpp/state
 ncmpcpp/mpd.log
 ncmpcpp/pid
 ncmpcpp/database.db
+ncmpcpp/error.log
 
 # Dwb
 dwb/default/commands.history
