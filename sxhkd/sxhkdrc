@@ -1,20 +1,41 @@
-# My keybindings
+# Start programs
 # ---------------------------------------------
 
-## Start a terminal
+## Start dmenu
+super + d
+    $HOME/.bin/custom-launcher control
+
+## Start urxvt
 super + Return
     urxvtcd
 
-## Toggle through monitors
+## Start emacs
+super + e
+    emacs
+
+## Start zathura
+super + z
+    zathura
+
+## Start firefox
+super + f
+    firefox
+
+## Start dwb
+super + w
+    dwb
+
+# Function Keys
+# ---------------------------------------------
+
+## New wallpaper
 super + p
     $HOME/.bin/random-wallpaper
 
 ## Next & prev song
 XF86Audio{Next,Prev}
-    $HOME/.bin/show-key {next,prev} & \
-    mpc {next,prev} && \
-    notify-send "$( mpc current )" && \
-    echo {playlist_next,playlist_prev} > $HOME/.config/mpv/mpv-control
+    {mpc next; $HOME/.bin/show-key next; notify-send "$( mpc current )"; echo playlist_next > $HOME/.config/mpv/mpv-control,\
+    mpc prev; $HOME/.bin/show-key prev; notify-send "$( mpc current )"; echo playlist_prev > $HOME/.config/mpv/mpv-control}
 
 ## Volume control
 XF86Audio{Raise,Lower}Volume
@@ -28,8 +49,7 @@ XF86AudioPlay
 ## Toggle mute
 XF86AudioMute
     {amixer set -c 0 Master 0 unmute; $HOME/.bin/show-key mute,\
-    amixer set Master 50%; $HOME/.bin/show-key unmute}
-
+    /bin/amixer set Master 50%; $HOME/.bin/show-key unmute}
 
 ## Toggle touchpad on/off
 XF86TouchpadToggle
@@ -37,19 +57,11 @@ XF86TouchpadToggle
 
 ## Make a screenshot
 Print
-    scrot "$HOME/picures/Screenshots/%Y_%M_%d %T.png"
+    scrot ~/pictures/Screenshots/%Y-%m-%d-%T_screenshot.png
 
 ## Brightness
 XF86MonBrightness{Up,Down}
-    {light -a 5%; $HOME/.bin/show-key brightness_up,\
-    light -s 5%; $HOME/.bin/show-key brightness_down}
-
-## Start firefox
-super + o
-    firefox
-
-## Start dmenu
-super + d
-    $HOME/.bin/custom-launcher control
+    {light -A 5; $HOME/.bin/show-key brightness_up,\
+    light -S 5; $HOME/.bin/show-key brightness_down}
 
 ## vim: set syntax=conf:
