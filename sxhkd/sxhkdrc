@@ -1,9 +1,9 @@
 # Start programs
 # ---------------------------------------------
 
-## Start dmenu
+## Start a custom program launcher (dmenu)
 super + d
-    $HOME/.bin/custom-launcher control
+    $HOME/.bin/custom-launcher
 
 ## Start urxvt
 super + Return
@@ -34,13 +34,21 @@ super + p
 
 ## Next & prev song
 XF86Audio{Next,Prev}
-    {mpc next; $HOME/.bin/show-key next; notify-send "$( mpc current )"; echo playlist_next > $HOME/.config/mpv/mpv-control,\
-    mpc prev; $HOME/.bin/show-key prev; notify-send "$( mpc current )"; echo playlist_prev > $HOME/.config/mpv/mpv-control}
+    {mpc next;\
+        $HOME/.bin/show-key next;\
+        notify-send "$( mpc current )";\
+        echo playlist_next > $HOME/.config/mpv/mpv-control,\
+    mpc prev;\
+        $HOME/.bin/show-key prev;\
+        notify-send "$( mpc current )";\
+        echo playlist_prev > $HOME/.config/mpv/mpv-control}
 
 ## Volume control
 XF86Audio{Raise,Lower}Volume
-    {amixer set Master 5%+; $HOME/.bin/show-key speaker_raise,\
-    amixer set Master 5%-; $HOME/.bin/show-key speaker_lower}
+    {amixer set Master 5%+;\
+        $HOME/.bin/show-key speaker_raise,\
+    amixer set Master 5%-;\
+        $HOME/.bin/show-key speaker_lower}
 
 ## Play / pause the current song
 XF86AudioPlay
@@ -48,8 +56,10 @@ XF86AudioPlay
 
 ## Toggle mute
 XF86AudioMute
-    {amixer set -c 0 Master 0 unmute; $HOME/.bin/show-key mute,\
-    /bin/amixer set Master 50%; $HOME/.bin/show-key unmute}
+    {amixer set -c 0 Master 0 unmute;\
+        $HOME/.bin/show-key mute,\
+    amixer set Master 50%;\
+        $HOME/.bin/show-key unmute}
 
 ## Toggle touchpad on/off
 XF86TouchpadToggle
@@ -57,11 +67,13 @@ XF86TouchpadToggle
 
 ## Make a screenshot
 Print
-    scrot ~/pictures/Screenshots/%Y-%m-%d-%T_screenshot.png
+    scrot ~/pictures/Screenshots/%Y-%m-%d--%T--scrot.png
 
 ## Brightness
 XF86MonBrightness{Up,Down}
-    {light -A 5; $HOME/.bin/show-key brightness_up,\
-    light -S 5; $HOME/.bin/show-key brightness_down}
+    {light -A 5;\
+        $HOME/.bin/show-key brightness_up,\
+    light -S 5;\
+        $HOME/.bin/show-key brightness_down}
 
-## vim: set syntax=conf:
+# vim: set syntax=conf:
