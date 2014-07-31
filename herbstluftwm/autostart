@@ -33,8 +33,8 @@ hc keybind $Mod-Shift-l     shift right
 
 # splitting frames
 # create an empty frame at the specified direction
-hc keybind $Mod-v       split   bottom  0.5
-hc keybind $Mod-b       split   right   0.5
+hc keybind $Mod-v       split bottom 0.5
+hc keybind $Mod-b       split right 0.5
 
 # let the current frame explode into subframes
 hc keybind $Mod-Control-space split explode
@@ -91,11 +91,11 @@ hc set frame_border_active_color '#FF0055'
 hc set frame_border_normal_color '#303030'
 hc set frame_bg_normal_color '#303030'
 hc set frame_bg_active_color '#303030'
-hc set frame_border_width 1
+hc set frame_border_width 2
 hc set always_show_frame 1
 hc set frame_bg_transparent 1
 hc set frame_transparent_width 1
-hc set frame_gap 30
+hc set frame_gap 20
 
 bw=1
 tw=1
@@ -115,7 +115,7 @@ hc set_attr theme.floating.urgent.border_width 1
 hc set_attr theme.floating.active.color '#FF0055'
 hc set_attr theme.floating.normal.color '#303030'
 hc set_attr theme.floating.urgent.color '#303030'
-hc set window_gap 0
+hc set window_gap 15
 hc set frame_padding 0
 hc set smart_window_surroundings 0
 hc set smart_frame_surroundings 1
