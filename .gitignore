@@ -32,14 +32,15 @@ ncmpcpp/database.db
 ncmpcpp/error.log
 
 # Dwb
-dwb/default/commands.history
+dwb/settings.*
+dwb/keys.*
+dwb/default/commands.history*
+dwb/default/navigate.history*
 dwb/default/history
-dwb/default/navigate.history
 dwb/default/cookies
 dwb/default/bookmarks
 dwb/default/search.history
 dwb/default/session
-dwb/settings.*
 dwb/default/scripts.allow
 
 # Ranger
