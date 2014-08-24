@@ -36,10 +36,10 @@ dwb/settings.*
 dwb/keys.*
 dwb/default/commands.history*
 dwb/default/navigate.history*
-dwb/default/history
+dwb/default/history*
 dwb/default/cookies
 dwb/default/bookmarks
-dwb/default/search.history
+dwb/default/search.history*
 dwb/default/session
 dwb/default/scripts.allow
 
