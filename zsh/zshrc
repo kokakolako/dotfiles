@@ -11,7 +11,7 @@ export ZSH_THEME="kokakolako"
 source "$ZSH/oh-my-zsh.sh"
 
 ## Sourcing shell aliases
-source "$HOME/.config/zsh/alias.sh"
+source "$HOME/.config/alias.sh"
 
 ## Uncomment to change how often before auto-updates occur? (in days)
 UPDATE_ZSH_DAYS=7
