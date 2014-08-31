@@ -5,8 +5,13 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char font[] = "Inconsolata for Powerline:style=light:pixelsize=16";
-static int borderpx = 2;
+static char font[0] = "Inconsolata for Powerline:style=light:pixelsize=16";
+static char font[1] = "DejaVu Sans Mono:pixelsize=16";
+static char font[2] = "Code2300:pixelsize=16";
+static char font[3] = "WenQuanYi Bitmap Song:pixelsize=16";
+static char font[4] = "FreeSerif:style=Regular";
+static char font[5] = "unifont:style=Medium";
+static int borderpx = 15;
 static char shell[] = "/bin/sh";
 
 /* identification sequence returned in DA and DECID */
