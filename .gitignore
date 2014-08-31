@@ -63,4 +63,14 @@ mutt/passwords.gpg
 jumanji/contacts
 jumanji/cookies
 
+# Emacs
+emacs/history
+emacs/elpa
+emacs/cache
+emacs/authinfo.gpg
+emacs/auto-save-list/
+emacs/history
+emacs/eshell
+emacs/org-clock-save.el
+
 # vim: set ft=config:
