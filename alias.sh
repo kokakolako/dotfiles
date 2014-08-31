@@ -19,7 +19,6 @@ alias ncmpcpp="ncmpcpp -c $HOME/.config/ncmpcpp/config"
 alias pandoc="pandoc --latex-engine=xelatex"
 alias mpv="mpv -input file=$HOME/.config/mpv/mpv-control"
 
-
 # Shortcuts (+ sudo-shortcuts)
 # ---------------------------------------------
 
@@ -33,11 +32,13 @@ alias sctl="sudo systemctl"
 alias shutdown="sudo shutdown"
 alias reboot="sudo reboot"
 alias poweroff="sudo poweroff"
+alias e="emacs"
 
 
 # Misc aliases
 # ---------------------------------------------
 
+alias emacs="emacsclient -nc &> /dev/null"
 alias virt-env="source $HOME/projekte/python/virt-env/bin/activate && cd $HOME/projekte/python/virt-env"
 alias locate="locate --regex"  # Using locate with regexes
 alias uzbl="uzbl-tabbed"       # Starting uzbl as uzbl-tabbed
@@ -46,6 +47,12 @@ alias grep="grep --color=auto" # Colorize output of grep
 alias cp="rsync -aP"           # Show a progress bar and do not ignore permissions
 alias ipv4_addr="curl ipv4.icanhazip.com"
 alias ipv6_addr="curl ipv6.icanhazip.com"
+
+function xcmenuctrl () {
+    clipboard_entry="$( xcmenu --dmenu | dmenu -l 11 -i -nb '#101010' -sb '#FF0055' -nf '#FFFFFF' -sf '#101010' -fn 'Inconsolata for Powerline-14' )"
+    ## Remove the pattern "*: " from the beginning of $clipboard_entry
+    printf "${clipboard_entry#*: }"
+}
 
 
 # Hook which is invoked when the current working directory is changing
@@ -62,17 +69,17 @@ function chpwd () {
 # ---------------------------------------------
 
 remove_orphans () {
-    echo "\e[34m::\e[0;1m Entferne nicht-benötigte Pakete...\e[0m"
+    printf "\e[34m::\e[0;1m Entferne nicht-benötigte Pakete...\e[0m\n"
     pacaur -Qdt # List all orphans
     if [[ $? == 0 ]]; then
         local orphans=$( pacaur -Qdt | wc -l )
         [[ $orphans -ge 1 ]] \
             && sudo pacaur -Rns $( pacaur -Qdtq )
         [[ $? == 0 ]] \
-            && echo " Es wurden alle nicht-benötigte Pakete entfernt" \
-            || echo " Beim Entfernen der nicht-benötigten Pakete kam es zu einem Fehler"
+            && printf " Es wurden alle nicht-benötigte Pakete entfernt" \
+            || printf " Beim Entfernen der nicht-benötigten Pakete kam es zu einem Fehler"
     else
-        echo " Es gibt nichts zu tun"
+        printf " Es gibt nichts zu tun"
     fi
 }
 
@@ -82,7 +89,7 @@ remove_orphans () {
 
 function update_git_submodules () {
     local curr_dir=$PWD
-    echo "\e[34m::\e[0;1m Aktualisieren der git submodules...\e[0m"
+    printf "\n\e[34m::\e[0;1m Aktualisieren der git submodules...\e[0m"
     submodules=("$HOME/.config/vim/")
     for submodule in $submodules; do
         cd "$submodule"
@@ -134,8 +141,8 @@ function update_my_own_pkgs () {
 function tmux-reload () {
     tmux source-file $HOME/.config/tmux/tmux.conf > /dev/null
     [ $? -eq 0 ] \
-        && echo "Sucessfully reloaded the tmux.conf file" \
-        || echo "An error occured while trying to reload the tmux.conf file"
+        && printf "Sucessfully reloaded the tmux.conf file\n" \
+        || printf "An error occured while trying to reload the tmux.conf file\n"
 }
 
 
@@ -145,8 +152,8 @@ function tmux-reload () {
 function sxhkd-reload () {
     kill -s USR1 "$( pidof sxhkd )" > /dev/null
     [ $? -eq 0 ] \
-        && echo "Sucessfully reloaded the sxhkdrc file" \
-        || echo "An error occured while trying to reload the sxhkdrc file"
+        && printf "Sucessfully reloaded the sxhkdrc file" \
+        || printf "An error occured while trying to reload the sxhkdrc file"
 }
 
 
@@ -179,14 +186,14 @@ function dirs () {
         case $args in
             "$HOME" )
                 [[ "$dir" == "~" ]] \
-                    && echo "\e[1m${stack_pos}\t\e[3${color}m${dir}\e[0m" \
-                    || echo "${stack_pos}\t\e[3${color}m${dir}\e[0m"
+                    && printf "\e[1m%s\t\e[3%sm%s\e[0m\n" "$stack_pos" "$color" "$dir" \
+                    || printf "%s\t\e[3%sm%s\e[0m" "$stack_pos" "$color" "$dir"
             ;;
             "$dir" )
-                echo "\e[1m${stack_pos}\t\e[3${color}m${dir}\e[0m"
+                printf "\e[1m%s\t\e[3%sm%s\e[0m\n" "$stack_pos" "$color" "$dir"
             ;;
             * )
-                echo "${stack_pos}\t\e[3${color}m${dir}\e[0m"
+                printf "%s\t\e[3%sm%s\e[0m\n" "$stack_pos" "$color" "$dir"
             ;;
         esac
     done
