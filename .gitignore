@@ -59,4 +59,8 @@ mutt/temp
 mutt/contacts.list
 mutt/passwords.gpg
 
+# Jumanji
+jumanji/contacts
+jumanji/cookies
+
 # vim: set ft=config:
