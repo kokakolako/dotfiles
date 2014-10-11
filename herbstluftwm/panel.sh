@@ -1,28 +1,30 @@
 #!/bin/bash
 
 hc() { "${herbstclient_command[@]:-herbstclient}" "$@" ;}
+
 monitor=${1:-0}
 geometry=( $(herbstclient monitor_rect "$monitor") )
 if [ -z "$geometry" ] ;then
     echo "Invalid monitor $monitor"
     exit 1
 fi
+
 # geometry has the format W H X Y
 x=${geometry[0]}
 y=${geometry[1]}
 panel_width=${geometry[2]}
 panel_height=30
 
-font="-gohu-gohufont-medium-r-normal--14-100-100-100-c-80-iso10646-1"
+# font="-gohu-gohufont-medium-r-normal--14-100-100-100-c-80-iso10646-1"
+# font="-fira mono-medium-medium-r-normal--14-100-100-100-c-80-iso10646-1"
+# font="-*-terminus-*-r-normal-*-*-120-*-*-*-*-iso8859-*"
+font="-*-fixed-medium-*-*-*-12-*-*-*-*-*-*-*"
+# font="Inconsolata-10"
+
 bgcolor='#FFFFFF'
-selfg='#FF0055'
 selbg='#FFFFFF'
+selfg='#FF0055'
 
-# font="-*-fixed-medium-*-*-*-12-*-*-*-*-*-*-*"
-# bgcolor=$(hc get frame_border_normal_color)
-# selbg=$(hc get window_border_active_color)
-
-####
 # Try to find textwidth binary.
 # In e.g. Ubuntu, this is named dzen2-textwidth.
 if which textwidth &> /dev/null ; then
@@ -30,10 +32,10 @@ if which textwidth &> /dev/null ; then
 elif which dzen2-textwidth &> /dev/null ; then
     textwidth="dzen2-textwidth";
 else
-    echo "This script requires the textwidth tool of the dzen2 project."
+    printf "This script requires the textwidth tool of the dzen2 project."
     exit 1
 fi
-####
+
 # true if we are using the svn version of dzen2
 # depending on version/distribution, this seems to have version strings like
 # "dzen-" or "dzen-x.x.x-svn"
@@ -84,52 +86,53 @@ hc pad $monitor $panel_height
     visible=true
     date=""
     windowtitle=""
+
     while true ; do
 
         ### Output ###
         # This part prints dzen data based on the _previous_ data handling run,
         # and then waits for the next event to happen.
 
-        arch_icon="^fg(#FF0055)^i($HOME/.config/herbstluftwm/icons/xbm/arch_10x10.xbm)"
-        echo -n "  $arch_icon "
+        # distro_icon="^fg(#FF0055)^i($HOME/.config/herbstluftwm/icons/xbm/arch_10x10.xbm)"
+        # distro_icon="^fg(#FF0055)^i($HOME/.config/icons/xbm/tux.xbm)"
+        # printf "  $distro_icon "
 
         # draw tags
         for i in "${tags[@]}" ; do
             case ${i:0:1} in
                 '#')
-                    echo -n "^bg($selbg)^fg($selfg)"
+                    printf "^bg($selbg)^fg($selfg)"
                     ;;
                 '+')
-                    echo -n "^bg(#000000)^fg(#000000)"
+                    printf "^bg(#000000)^fg(#000000)"
                     ;;
                 ':')
-                    echo -n "^bg()^fg(#000000)"
+                    printf "^bg()^fg(#000000)"
                     ;;
                 '!')
-                    echo -n "^bg(#000000)^fg(#000000)"
+                    printf "^bg(#000000)^fg(#000000)"
                     ;;
                 *)
-                    echo -n "^bg()^fg(#ababab)"
+                    printf "^bg()^fg(#ababab)"
                     ;;
             esac
-
             if [ ! -z "$dzen2_svn" ] ; then
-
                 # clickable tags if using SVN dzen
-                echo -n "^ca(1,\"${herbstclient_command[@]:-herbstclient}\" "
-                echo -n "focus_monitor \"$monitor\" && "
-                echo -n "\"${herbstclient_command[@]:-herbstclient}\" "
-                echo -n "use \"${i:1}\") ${i:1} ^ca()"
-
+                printf "^ca(1,\"${herbstclient_command[@]:-herbstclient}\" "
+                printf "focus_monitor \"$monitor\" && "
+                printf "\"${herbstclient_command[@]:-herbstclient}\" "
+                printf "use \"${i:1}\") ${i:1} ^ca()"
             else
-
                 # non-clickable tags if using older dzen
-                echo -n " ${i:1} "
+                printf " ${i:1} "
             fi
         done
 
-        temp="^fg(#000000)$( sensors | grep CPU | grep -Ewo "[0-9]*.[0-9]" )"
-        temp_icon="^fg(#FF0055)^i($HOME/.config/herbstluftwm/icons/xbm/temp.xbm)"
+        # temp="^fg(#000000)$( sensors | grep Physical id 0: | grep -Ewo "[0-9]*.[0-9]" )"
+        # temp_icon="^fg(#FF0055)^i($HOME/.config/herbstluftwm/icons/xbm/temp.xbm)"
+
+        # vol="^fg(#000000)$( $HOME/.bin/print-volume )"
+        # vol_icon="^fg(#FF0055)^i($HOME/.config/herbstluftwm/icons/xbm/cat.xbm)"
 
         cpu="^fg(#000000)$( $HOME/.bin/print-cpu-last )"
         cpu_icon="^fg(#FF0055)^i($HOME/.config/herbstluftwm/icons/xbm/cpu.xbm)"
@@ -137,22 +140,18 @@ hc pad $monitor $panel_height
         batt="^fg(#000000)$( $HOME/.bin/print-battery-status )"
         batt_icon="^fg(#FF0055)^i($HOME/.config/herbstluftwm/icons/xbm/bat_full_01.xbm)"
 
-
         wifi=" ^fg(#000000)$( iwconfig wlp8s0 | grep ESSID | cut -c 33- | tr -d '"' | sed "s/[[:space:]]//g" )"
         wifi_icon="^fg(#FF0055)^i($HOME/.config/herbstluftwm/icons/xbm/wifi_01.xbm)"
 
-        # vol="^fg(#000000)$( $HOME/.bin/print-volume )"
-        # vol_icon="^fg(#FF0055)^i($HOME/.config/herbstluftwm/icons/xbm/cat.xbm)"
-
         date_icon="^fg(#FF0055)^i($HOME/.config/herbstluftwm/icons/xbm/clock.xbm)^fg(#000000)"
 
-        echo -n "^bg()^fg(#000000) ${windowtitle//^/^^}"
-        right="$batt_icon $batt  $cpu_icon $cpu  ${wifi_icon}${wifi}  $temp_icon $temp  $date_icon $date"
+        printf "^bg()^fg(#000000) ${windowtitle//^/^^}"
+        right="$batt_icon $batt  $cpu_icon $cpu  ${wifi_icon}${wifi}  $date_icon $date"
         right_text_only=$(echo -n "$right" | sed 's.\^[^(]*([^)]*)..g')
 
         # get width of right aligned text.. and add some space..
         width=$($textwidth "$font" "$right_text_only       ")
-        echo -n "^pa($(($panel_width - $width)))$right"
+        printf "^pa($(($panel_width - $width)))$right"
         echo
 
         ### Data handling ###
@@ -171,14 +170,14 @@ hc pad $monitor $panel_height
             tag* )
                 #echo "resetting tags" >&2
                 IFS=$'\t' read -ra tags <<< "$(hc tag_status $monitor)"
-                ;;
+            ;;
             date )
                 #echo "resetting date" >&2
                 date="${cmd[@]:1}"
-                ;;
+            ;;
             quit_panel )
                 exit
-                ;;
+            ;;
             togglehidepanel )
                 currentmonidx=$(hc list_monitors | sed -n '/\[FOCUS\]$/s/:.*//p')
                 if [ "${cmd[1]}" -ne "$monitor" ] ; then
@@ -195,14 +194,15 @@ hc pad $monitor $panel_height
                     visible=true
                     hc pad $monitor $panel_height
                 fi
-                ;;
+            ;;
             reload )
                 exit
-                ;;
+            ;;
             focus_changed | window_title_changed )
                 windowtitle="${cmd[@]:2}"
-                ;;
+            ;;
         esac
+
     done
 
 ### dzen2 ###
@@ -211,4 +211,4 @@ hc pad $monitor $panel_height
 
 } 2> /dev/null | dzen2 -w $panel_width -x $x -y $y -fn "$font" -h $panel_height \
     -e 'button3=;button4=exec:herbstclient use_index -1;button5=exec:herbstclient use_index +1' \
-    -ta l -bg "$bgcolor" -fg '#FF0055'
+    -ta l -bg "$bgcolor" -fg '#FF0055' -p

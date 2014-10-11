@@ -22,7 +22,7 @@ empty_tag_marker                              = "~"
 # song_list_format                              = "$3{%A}$2{%t}$7{%b}"
 song_list_format                              = "{[.red](%l)[/green]}{%a - }{%t}|{[.white]%f[/white]}"
 song_columns_list_format                      = "(30)[red]{A} (40)[cyan]{t} (30)[green]{b}"
-media_library_left_column                     = "A"
+# media_library_left_column                     = "A"
 
 ## UI-Modi
 user_interface                                = "alternative"
@@ -37,8 +37,12 @@ titles_visibility                             = "no"
 statusbar_visibility                          = "no"
 autocenter_mode                               = "yes"
 centered_cursor                               = "yes"
-default_space_mode                            = "add"
 default_find_mode                             = "wrapped"
+ask_before_clearing_playlists                 = "no"
+media_library_primary_tag                     = "album_artist"
+
+default_space_mode                            = "add"
+space_add_mode                                = "add_remove"
 
 ## Progress Bar
 progressbar_look                              = "███"
@@ -55,8 +59,8 @@ empty_tag_color                               = "cyan"
 
 ## Visualizer
 visualizer_sync_interval                      = "5"
-visualizer_fifo_path                          = "/home/niklas/.config/ncmpcpp/mpd.fifo"
-visualizer_type                               = "spectrum" (spectrum/wave)
+visualizer_fifo_path                          = "/home/niklas/.config/mpd/socket"
+visualizer_type                               = "wave" # (spectrum/wave)
 visualizer_look                               = "◆█"
 visualizer_color                              = "red"
 visualizer_in_stereo                          = "yes"

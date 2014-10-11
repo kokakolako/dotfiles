@@ -7,7 +7,7 @@ super + d
 
 ## Start urxvt
 super + Return
-    urxvtcd
+    termite
 
 ## Start emacs
 super + e
@@ -24,6 +24,9 @@ super + o
 ## Start dwb
 super + w
     dwb
+
+super + x
+    $HOME/.bin/xcmenuctrl-custom
 
 # Function Keys
 # ---------------------------------------------
@@ -71,9 +74,9 @@ Print
 
 ## Brightness
 XF86MonBrightness{Up,Down}
-    {light -A 5;\
+    {xbacklight -inc 5;\
         $HOME/.bin/show-key brightness_up,\
-    light -S 5;\
+    xbacklight -dec 5;\
         $HOME/.bin/show-key brightness_down}
 
 # vim: set syntax=conf:

@@ -9,31 +9,37 @@ alias nconfig="vim $HOME/.config/ncmpcpp/config +'lcd $HOME/.config/ncmpcpp'"
 alias sconfig="vim $HOME/.config/sxhkd/sxhkdrc +'lcd $HOME/.config/sxhkd'"
 alias hconfig="vim $HOME/.config/herbstluftwm/autostart $HOME/.config/herbstluftwm/panel.sh +'lcd $HOME/.config/herbstluftwm'"
 alias tconfig="vim $HOME/.config/tmux/tmux.conf +'lcd $HOME/.config/tmux'"
-alias rconfig="sudo vim /etc/minirc.conf /sbin/rc"
-
+# alias rconfig="sudo vim /etc/minirc.conf /sbin/rc"
 
 # Start program with a customized config-file
 # ---------------------------------------------
 
 alias ncmpcpp="ncmpcpp -c $HOME/.config/ncmpcpp/config"
-alias pandoc="pandoc --latex-engine=xelatex"
-alias mpv="mpv -input file=$HOME/.config/mpv/mpv-control"
+alias mpv="mpv --input-file=$HOME/.config/mpv/mpv-control"
 
-# Shortcuts (+ sudo-shortcuts)
+# Shortcuts (+ sudo-shortcuts / abbreviations )
 # ---------------------------------------------
 
 alias gti="git"
 alias g="git"
 alias v="vim"
-alias gr="grep --color=auto "
-alias ge="grep -E --color=auto"
+alias G="grep --color=auto "
+alias R="grep -E --color=auto"
 alias hc="herbstclient"
+alias e="emacs"
+alias a="alsamixer"
+
 alias sctl="sudo systemctl"
 alias shutdown="sudo shutdown"
 alias reboot="sudo reboot"
 alias poweroff="sudo poweroff"
-alias e="emacs"
 
+# Funtoo-Specific Aliases
+# ---------------------------------------------
+
+alias emerge="sudo emerge"
+alias ermege="sudo emerge"
+alias E="sudo emerge"
 
 # Misc aliases
 # ---------------------------------------------
@@ -47,12 +53,38 @@ alias grep="grep --color=auto" # Colorize output of grep
 alias cp="rsync -aP"           # Show a progress bar and do not ignore permissions
 alias ipv4_addr="curl ipv4.icanhazip.com"
 alias ipv6_addr="curl ipv6.icanhazip.com"
+alias vim="vim -u $HOME/.config/vim/vimrc"
 
-function xcmenuctrl () {
-    clipboard_entry="$( xcmenu --dmenu | dmenu -l 11 -i -nb '#101010' -sb '#FF0055' -nf '#FFFFFF' -sf '#101010' -fn 'Inconsolata for Powerline-14' )"
-    ## Remove the pattern "*: " from the beginning of $clipboard_entry
-    printf "${clipboard_entry#*: }"
-}
+# "Convert" markdown files in Standard Markdown Syntax via pandoc
+# ---------------------------------------------
+# alias pandoc="pandoc --latex-engine=xelatex"
+# pandoc () {
+#     local output
+#     local input
+#     while getopts ":o" opt; do
+#         case "$opt" in
+#             o )
+#                 output="$OPTARG"
+#             ;;
+#         esac
+#     done
+#     if [[ -n "$output" ]]; then
+#         ## A little bit hacky but with the following commands it's possible
+#         ##   to get the last arg, which is the file the user wants to convert
+#         # local last
+#         eval input=\$$#
+#         # eval input=$last
+#         ## Control if the user has defined a file as an input
+#         if [[ $input != $output ]]; then
+#             local input_filename="${input%.*}"
+#             ## Control if the filetype of the input-file is ".md"
+#             if [[ ${input/$input_filename/} == ".md" ]]; then
+#                 stmd "$input" > "${input_filename}.html"
+#                 pandoc -o "$output" "${input_filename}.html"
+#             fi
+#         fi
+#     fi
+# }
 
 
 # Hook which is invoked when the current working directory is changing
