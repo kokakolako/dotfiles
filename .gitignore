@@ -24,12 +24,12 @@ gconf
 beets/library.db
 beets/state.pickle
 
-# Ncmpcpp pc-specific-files
-ncmpcpp/state
-ncmpcpp/mpd.log
-ncmpcpp/pid
-ncmpcpp/database.db
-ncmpcpp/error.log
+# MPD
+mpd/log
+mpd/database
+mpd/pid
+mpd/socket
+mpd/state
 
 # Dwb
 dwb/settings.*

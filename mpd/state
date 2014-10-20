@@ -1,8 +1,8 @@
-sw_volume: 98
+sw_volume: 100
 audio_device_state:1:My ALSA Device
 state: play
-current: 8
-time: 8
+current: 10
+time: 119
 random: 1
 repeat: 0
 single: 0
@@ -11,31 +11,17 @@ crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:System of a Down/System of a Down/01 Suite-Pee.flac
-1:System of a Down/System of a Down/02 Know.flac
-2:System of a Down/System of a Down/03 Sugar.flac
-3:System of a Down/System of a Down/04 Suggestions.flac
-4:System of a Down/System of a Down/05 Spiders.flac
-5:System of a Down/System of a Down/06 DDevil.flac
-6:System of a Down/System of a Down/07 Soil.flac
-7:System of a Down/System of a Down/08 War_.flac
-8:System of a Down/System of a Down/09 Mind.flac
-9:System of a Down/System of a Down/10 Peephole.flac
-10:System of a Down/System of a Down/11 CUBErt.flac
-11:System of a Down/System of a Down/12 Darts.flac
-12:System of a Down/System of a Down/13 P.L.U.C.K_.flac
-13:System of a Down/Toxicity/01 Prison Song.flac
-14:System of a Down/Toxicity/02 Needles.flac
-15:System of a Down/Toxicity/03 Deer Dance.flac
-16:System of a Down/Toxicity/04 Jet Pilot.flac
-17:System of a Down/Toxicity/05 X.flac
-18:System of a Down/Toxicity/06 Chop Suey!.flac
-19:System of a Down/Toxicity/07 Bounce.flac
-20:System of a Down/Toxicity/08 Forest.flac
-21:System of a Down/Toxicity/09 ATWA.flac
-22:System of a Down/Toxicity/10 Science.flac
-23:System of a Down/Toxicity/11 Shimmy.flac
-24:System of a Down/Toxicity/12 Toxicity.flac
-25:System of a Down/Toxicity/13 Psycho.flac
-26:System of a Down/Toxicity/14 Aerials _ Arto.flac
+0:Imagine Dragons/Night Visions/01 Radioactive.flac
+1:Imagine Dragons/Night Visions/02 Tiptoe.flac
+2:Imagine Dragons/Night Visions/03 It's Time.flac
+3:Imagine Dragons/Night Visions/04 Demons.flac
+4:Imagine Dragons/Night Visions/05 On Top of the World.flac
+5:Imagine Dragons/Night Visions/06 Amsterdam.flac
+6:Imagine Dragons/Night Visions/07 Hear Me.flac
+7:Imagine Dragons/Night Visions/08 Every Night.flac
+8:Imagine Dragons/Night Visions/09 Bleeding Out.flac
+9:Imagine Dragons/Night Visions/10 Underdog.flac
+10:Imagine Dragons/Night Visions/11 Nothing Left to Say _ Rocks.flac
+11:Imagine Dragons/Night Visions/12 Cha-Ching (Till We Grow Older).flac
+12:Imagine Dragons/Night Visions/13 Working Man.flac
 playlist_end
