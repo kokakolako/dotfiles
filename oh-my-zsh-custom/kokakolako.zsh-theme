@@ -1,7 +1,7 @@
 # ZSH Theme
 
 host () {
-    if [[ "$HOST" != "glurak" ]]; then
+    if [[ "$HOST" != "rayquaza" ]]; then
         echo -e "%{$fg[red]%}%m "
     fi
 }
