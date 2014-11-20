@@ -37,23 +37,32 @@ alias poweroff="sudo poweroff"
 # Funtoo-Specific Aliases
 # ---------------------------------------------
 
-alias emerge="sudo emerge"
-alias ermege="sudo emerge"
-alias E="sudo emerge"
+# alias emerge="sudo emerge"
+# alias ermege="sudo emerge"
+# alias E="sudo emerge"
+# alias Ey="sudo emerge --sync"
+# alias Es="emerge -s"
+# alias Eu="sudo emerge -auDN @world"
+# alias Er="sudo emerge -C"
+# alias Ek="sudo emerge @kernel"
+# alias Ed="sudo emerge -pv"
 
 # Misc aliases
 # ---------------------------------------------
 
+alias zathura="tabbed zathura -e $@ &> /dev/null"
 alias emacs="emacsclient -nc &> /dev/null"
 alias virt-env="source $HOME/projekte/python/virt-env/bin/activate && cd $HOME/projekte/python/virt-env"
 alias locate="locate --regex"  # Using locate with regexes
-alias uzbl="uzbl-tabbed"       # Starting uzbl as uzbl-tabbed
 alias info="info --vi-keys"    # Info with vi-keybindings
 alias grep="grep --color=auto" # Colorize output of grep
 alias cp="rsync -aP"           # Show a progress bar and do not ignore permissions
 alias ipv4_addr="curl ipv4.icanhazip.com"
 alias ipv6_addr="curl ipv6.icanhazip.com"
 alias vim="vim -u $HOME/.config/vim/vimrc"
+alias mcd="mkdir -p $@ && cd $@"
+alias eclipse="eclipse -nosplash"
+alias gimp="gimp --no-splash"
 
 # "Convert" markdown files in Standard Markdown Syntax via pandoc
 # ---------------------------------------------

@@ -2,7 +2,7 @@
 # ---------------------------------------------
 
 ## Path to your oh-my-zsh configuration.
-export ZSH="$HOME/.config/oh-my-zsh"
+export ZSH="/home/niklas/.config/oh-my-zsh"
 
 ## ZSH-Theme
 export ZSH_THEME="kokakolako"
@@ -11,7 +11,7 @@ export ZSH_THEME="kokakolako"
 source "$ZSH/oh-my-zsh.sh"
 
 ## Sourcing shell aliases
-source "$HOME/.config/alias.sh"
+source "/home/niklas/.config/alias.sh"
 
 ## Uncomment to change how often before auto-updates occur? (in days)
 UPDATE_ZSH_DAYS=7
@@ -51,29 +51,29 @@ export VISUAL="/usr/bin/vim"
 export BROWSER="/bin/firefox"
 
 ## Location of my configuration files
-export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CONFIG_HOME="/home/niklas/.config"
 
 ## Easily open my vimrc
-export MYVIMRC="$HOME/.config/vim/vimrc"
+export MYVIMRC="/home/niklas/.config/vim/vimrc"
 
 ## Plan 9 Settings
 export PLAN9=/usr/lib/plan9/
 export PATH="$PATH:/usr/lib/plan9/bin/"
 
 ## Adding the binfiles to $PATH
-export PATH="$PATH:$HOME/.bin"
+export PATH="$PATH:/home/niklas/.bin"
 
 ## Adding Ruby-Gems to $PATH
-export PATH="$PATH:$HOME/.gem/ruby/2.1.0/bin/"
+export PATH="$PATH:/home/niklas/.gem/ruby/2.1.0/bin/"
 
 ## Pass Passwortmanager Directory
-export PASSWORD_STORE_DIR="$HOME/.password-store"
+export PASSWORD_STORE_DIR="/home/niklas/.password-store"
 
 ## Misc
 export GIT_EDITOR="vim"
-export MAIL="$HOME/mail"
-export CONF="$HOME/.config"
-export MARKPATH="$HOME/.marks"
+export MAIL="/home/niklas/mail"
+export CONF="/home/niklas/.config"
+export MARKPATH="/home/niklas/.marks"
 
 ## Adding root-specific programms to PATH
 export PATH="$PATH:/usr/sbin"
@@ -95,20 +95,16 @@ zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
 ## Fixing Dircolors
-eval $(dircolors $HOME/.config/dircolors/molokai.dircolors)
+eval $(dircolors /home/niklas/.config/dircolors/molokai.dircolors)
 
-## Adding rvm to the path
-# source ~/.rvm/scripts/rvm
-# export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
+## Check if the user has started X
 if [[ $(tty) == "/dev/tty1" ]]; then
-    ## Start X
-    startx
+    ## Start X (when the user has not start it already)
+	sudo startx /home/niklas/.config/X11/xinitrc
 else
-    ## Disable the visual bell
-    xset -b
     ## Starting tmux
-   if [ -z "$TMUX" ]; then
-        ( tmux ls | grep -vq attached && tmux -2 at ) || tmux -2
+    if [ -z "$TMUX" ]; then
+        ( tmux ls | grep -vq attached && tmux -2 at ) || tmux -2 -f /home/niklas/.config/tmux/tmux.conf
     fi
 fi
+

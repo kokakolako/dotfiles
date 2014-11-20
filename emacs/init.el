@@ -9,6 +9,10 @@
 ; General Settings
 ; -----------------------------------------------------
 
+;; Set a default font
+(when (member "DejaVu Sans Mono" (font-family-list))
+  (set-face-attribute 'default nil :font "DejaVu Sans Mono"))
+
 (setq tab-width 2)
 (setq initial-scratch-message nil)
 (setq inhibit-startup-screen t)
@@ -23,6 +27,7 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 (show-paren-mode t)
 (setq show-trailing-whitespace t)
+(subword-mode 1)
 
 ;; Instanlty quitting emacs using C-x C-c
 (global-set-key (kbd "C-x C-c")
@@ -62,7 +67,7 @@
 
 ;; List the repositories
 (add-to-list 'package-archives
-	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
+	     '("melpa" . "http://melpa.org/packages/") t)
 (add-to-list 'package-archives
 	     '("gnu" . "http://elpa.gnu.org/packages/") t)
 
@@ -306,8 +311,8 @@
 ;; Rainbow-Delimiters
 ;; --------------------
 
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 (require 'rainbow-delimiters)
-(global-rainbow-delimiters-mode)
 
 ;; Gnus Gmail-Settings
 ;; --------------------
@@ -338,12 +343,18 @@
 	  (lambda () (local-set-key "o" 'my-gnus-group-list-subscribed-groups)))
 
 (custom-set-faces
- '(default ((t (:height 110 :family "Inconsolata"))))
+ '(default ((t (:height 110 :family "DejaVu Sans Mono"))))
  '(helm-buffer-not-saved ((t (:foreground "#FF0055"))))
  '(helm-buffer-process ((t (:foreground "#FF4000"))))
  '(helm-candidate-number ((t (:background "#FF0055" :foreground "#FFFFFF"))))
  '(helm-header ((t (:background "#FF0055" :foreground "#FFFFFF"))))
  '(helm-prefarg ((t (:foreground "#ff0055"))))
  '(helm-selection ((t (:background "#BBBBBB" :foreground "#FFFFFF"))))
- '(helm-source-header ((t (:foreground "black" :weight bold :height 1.3 :family "Inconsolata")))))
+ '(helm-source-header ((t (:foreground "black" :weight bold :height 1.3 :family "DejaVu Sans Mono")))))
 
+;; SLIME
+;; --------------------------
+
+(require 'slime-autoloads)
+(setq inferior-lisp-program "sbcl")
+(setq slime-contribs '(slime-scratch slime-editing-commands slime-repl)

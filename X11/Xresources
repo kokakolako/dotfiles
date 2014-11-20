@@ -7,18 +7,21 @@ Xft.lcdfilter:                 lcddefault
 Xft.rgba:                      rgb
 
 xterm.faceName:                DejaVu Sans Mono
-xterm.faceSize:                14
-
-!Emacs*font:                    Inconsolata-12
+xterm.faceSize:                10
 
 URxvt.termName:                rxvt-unicode
-URxvt.font:                    xft:Inconsolata:style=light:pixelsize=14, \
-                                xft:DejaVu Sans Mono:pixelsize=16, \
-                                xft:unifont:style=Medium
-! xft:FreeSerif:style=Regular, \
-! xft:WenQuanYi Bitmap Song:pixelsize=16, \
-! xft:Code2300:pixelsize=16, \
+URxvt.font:                    xft: DejaVu Sans Mono:pixelsize:8, \
+                               xft:unifont:style=Medium
+emacs*font:                    7x14
+
+! xft:DejaVu Sans Mono:pixelsize=16
+! xft:unifont:style=Medium
+! xft:Inconsolata:style=light:pixelsize=14
+! xft:FreeSerif:style=Regular
+! xft:WenQuanYi Bitmap Song:pixelsize=16
+! xft:Code2300:pixelsize=16
 ! xft:Source Code Pro for Powerline:pixelsize=14
+!
 URxvt.insecure:                false
 URxvt.internalBorder:          15
 URxvt.saveLines:               1000
@@ -29,21 +32,8 @@ URxvt.urgentOnBell:            false
 URxvt.imLocale:                de_DE.UTF-8
 URxvt.matcher.button:          1
 URxvt.print-pipe:              "cat > /dev/null"
-! URxvt.fading:                  20
 URxvt.lineSpace:               1
 URxvt.letterSpace:             -1
-
-URxvt.cutchars:                "\"()*,<>[]{}|'"
-URxvt.perl-ext-common:         clipboard,url-select
-URxvt.perl-lib:                /urs/lib/urxvt/perl
-! URxvt.keysym.M-c:              perl:clipboard:copy
-URxvt.keysym.M-v:              perl:clipboard:paste
-URxvt.keysym.M-C-v:            perl:clipboard:paste_escaped
-URxvt.keysym.M-u:              perl:url-select:select_next
-URxvt.clipboard.autocopy:      true
-URxvt.clipboard.copycmd:       xclip -i -selection clipboard
-URxvt.clipboard.pastecmd:      xclip -o -selection clipboard
-
 URxvt.tabbed.saveLines:        1000
 URxvt.tabbed.scrollBar:        false
 URxvt.tabbed.tabbar-fg:        3
@@ -79,8 +69,8 @@ URxvt.tabbed.secondaryScroll:  true
 *color12:               #538192
 
 ! Magenta + DarkMagenta
-*color5:                #CBE4EE
-*color13:               #7E40A5
+*color5:                #7E40A5
+*color13:               #CBE4EE
 
 ! Cyan + DarkCyan
 *color6:                #4EB4FA

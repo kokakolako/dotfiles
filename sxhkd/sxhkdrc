@@ -7,15 +7,16 @@ super + d
 
 ## Start urxvt
 super + Return
-    termite
+    urxvt
 
 ## Start emacs
 super + e
-    emacs
+    emacsclient -nc
 
 ## Start zathura
 super + z
-    zathura
+    tabbed zathura -e $@
+    
 
 ## Start firefox
 super + o
@@ -23,7 +24,7 @@ super + o
 
 ## Start dwb
 super + w
-    dwb
+    jumanji
 
 super + x
     $HOME/.bin/xcmenuctrl-custom
@@ -56,7 +57,7 @@ XF86Audio{Raise,Lower}Volume
 ## Play / pause the current song
 XF86AudioPlay
     $HOME/.bin/toggle-music
-
+pp
 ## Toggle mute
 XF86AudioMute
     {amixer set -c 0 Master 0 unmute;\

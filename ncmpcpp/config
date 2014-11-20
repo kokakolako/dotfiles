@@ -30,7 +30,6 @@ playlist_display_mode                         = "columns"
 playlist_editor_display_mode                  = "columns"
 browser_display_mode                          = "columns"
 search_engine_display_mode                    = "columns"
-
 header_visibility                             = "no"
 header_text_scrolling                         = "yes"
 titles_visibility                             = "no"
@@ -40,7 +39,6 @@ centered_cursor                               = "yes"
 default_find_mode                             = "wrapped"
 ask_before_clearing_playlists                 = "no"
 media_library_primary_tag                     = "album_artist"
-
 default_space_mode                            = "add"
 space_add_mode                                = "add_remove"
 
@@ -59,9 +57,8 @@ empty_tag_color                               = "cyan"
 
 ## Visualizer
 visualizer_sync_interval                      = "5"
-visualizer_fifo_path                          = "/home/niklas/.config/mpd/socket"
-visualizer_type                               = "wave" # (spectrum/wave)
+visualizer_fifo_path                          = "/home/niklas/.config/mpd/fifo"
+visualizer_type                               = "spectrum" # (spectrum/wave)
 visualizer_look                               = "◆█"
 visualizer_color                              = "red"
 visualizer_in_stereo                          = "yes"
-

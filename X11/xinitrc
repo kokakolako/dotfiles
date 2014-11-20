@@ -1,75 +1,24 @@
 #!/bin/sh
 
-# Do not touch these!!!
-# -----------------------------------------------------------
-if [ -d /etc/X11/xinit/xinitrc.d ]; then
-    for f in /etc/X11/xinit/xinitrc.d/*; do
-        [ -x "$f" ] && . "$f"
-    done
-    unset f
-fi
-
-# Settings
-# -----------------------------------------------------------
-
-xset +fp /usr/share/fonts
-
-## Load Xresources
-xrdb -load $HOME/.config/X11/Xresources &
-
-## Set the arrow curser as the default cursor
-xsetroot -cursor_name arrow &
-
-## Set the R_Ctrl as the compose-key
-setxkbmap -option compose:rctrl &
-
-## Loading xmodmap-configuration (i.e. to map CapsLock to ESC)
-xmodmap ~/.config/X11/xmodmap &
-
-# Daemons
-# -----------------------------------------------------------
-
-## Compositor
-compton -b --config ~/.config/compton/compton.conf &
-
-## Clipboard-manager
-# xcmenu --daemon &
-
-## Panel
-~/.config/herbstluftwm/panel.sh dzen2 &
-
-## Screenlocker
-xautolock -time 10 -locker $HOME/.bin/lock-screen -detectsleep &
-
-## Keybindings-daemon
-sxhkd &
-
-## Hide the cursor after some time
-unclutter &
-
-## Start Emacs as a daemon, to start it faster
-#emacs --daemon &
-
-# My scripts
-# -----------------------------------------------------------
-
-## Set a random wallpaper
+setxkbmap -layout de &
+$HOME/.config/herbstluftwm/panel.sh &
 $HOME/.bin/random-wallpaper &
+xsetroot -cursor_name arrow &
+xrdb -load $HOME/.config/X11/Xresources &
+clipit --daemon &
+sxhkd -c $HOME/.config/sxhkd/sxhkdrc &
+unclutter &
+mpd &
+emacs --daemon &
+compton -b &
 
-## Stop the screenlocker, when seeing Movies via Flash
-$HOME/.bin/lightson &> /dev/null &
-
-## Notify, when the battery-capacity is lower than 15%
-# $HOME/.bin/notify-low-battery &
-
-# Finally starting a window manager
-# -----------------------------------------------------------
 session=${1:-hlwm}
 case $session in
     xmonad  )       exec xmonad;;
     bspwm   )       exec bspwm;;
     i3      )       exec i3;;
     2bwm    )       exec 2bwm;;
-    hlwm    )       exec herbstluftwm --locked;;
+    rat     )       exec ratpoison;;
+    hlwm    )       exec herbstluftwm -c $HOME/.config/herbstluftwm/autostart --locked;;
     *       )       exec $1;;
 esac

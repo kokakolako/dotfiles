@@ -17,13 +17,12 @@ panel_height=30
 
 # font="-gohu-gohufont-medium-r-normal--14-100-100-100-c-80-iso10646-1"
 # font="-fira mono-medium-medium-r-normal--14-100-100-100-c-80-iso10646-1"
-# font="-*-terminus-*-r-normal-*-*-120-*-*-*-*-iso8859-*"
-font="-*-fixed-medium-*-*-*-12-*-*-*-*-*-*-*"
-# font="Inconsolata-10"
+font="-*-terminus-*-r-normal-*-*-120-*-*-*-*-iso8859-*"
+# font="-*-fixed-medium-*-*-*-12-*-*-*-*-*-*-*"
 
 bgcolor='#FFFFFF'
-selbg='#FFFFFF'
-selfg='#FF0055'
+selbg='#FF0055'
+selfg='#FFFFFF'
 
 # Try to find textwidth binary.
 # In e.g. Ubuntu, this is named dzen2-textwidth.
@@ -150,7 +149,7 @@ hc pad $monitor $panel_height
         right_text_only=$(echo -n "$right" | sed 's.\^[^(]*([^)]*)..g')
 
         # get width of right aligned text.. and add some space..
-        width=$($textwidth "$font" "$right_text_only       ")
+        width=$($textwidth "$font" "$right_text_only                       ")
         printf "^pa($(($panel_width - $width)))$right"
         echo
 

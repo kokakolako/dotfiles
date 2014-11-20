@@ -1,37 +1,26 @@
-# Misc
 .*.swp
-pulse
 inkscape
 ImageMagick
-enchant
 minecraft
-khal
-0ad
 google-musicmanager
-gpick
-msmtp
-fish/fish_history
 libreoffice
-tor
-Trolltech.conf
+fdm
+chromium
+ncmpcpp/error.log
 
-# GTK
 gtk*
 dconf
 gconf
 
-# Beets
 beets/library.db
 beets/state.pickle
 
-# MPD
 mpd/log
 mpd/database
 mpd/pid
 mpd/socket
 mpd/state
 
-# Dwb
 dwb/settings.*
 dwb/keys.*
 dwb/default/commands.history*
@@ -43,7 +32,6 @@ dwb/default/search.history*
 dwb/default/session
 dwb/default/scripts.allow
 
-# Ranger
 ranger/history
 ranger/commands.py
 ranger/bookmarks
@@ -51,7 +39,6 @@ ranger/scope.sh
 ranger/tagged
 ranger/__pycache__
 
-# Mutt
 mutt/cache
 mutt/hcache
 mutt/mailcap
@@ -59,11 +46,10 @@ mutt/temp
 mutt/contacts.list
 mutt/passwords.gpg
 
-# Jumanji
 jumanji/contacts
 jumanji/cookies
+jumanji/history
 
-# Emacs
 emacs/history
 emacs/elpa
 emacs/cache
@@ -72,5 +58,11 @@ emacs/auto-save-list/
 emacs/history
 emacs/eshell
 emacs/org-clock-save.el
+emacs/?ido.last?
+emacs/?init.el?
+
+fish/fish_history
+fish/fishd*
+fish/generated_completions
 
 # vim: set ft=config:

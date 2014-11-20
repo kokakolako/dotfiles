@@ -1,5 +1,5 @@
 [global]
-    font = SourceCode Pro for Powerline 12
+    font = Monospace 12
 
     # allow a small subset of html markup:
     # <b>bold</b>
@@ -19,13 +19,13 @@
     #   %I  iconname (without its path)
     #   %p  progress value if set ([  0%] to [100%]) or nothing
     # Markup is allowed
-    format = "<b>%s</b>\n%b"
+    format = "<b>%s</b> %b"
 
     # Sort messages by urgency
     sort = yes
 
     # Show how many messages are currently hidden (because of geometry)
-    indicate_hidden = yes
+    indicate_hidden = no
 
     # alignment of message text.
     # Possible values are "left", "center" and "right"
@@ -45,7 +45,7 @@
     word_wrap = yes
 
     # ignore newlines '\n' in notifications
-    ignore_newline = no
+    ignore_newline = yes
 
 
     # the geometry of the window
@@ -59,14 +59,14 @@
     # right side of the screen.  Y is measured from the top and down respectevly.
     # The width can be negative. In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "500-15+45"
+    geometry = "900-510+0"
 
     # Shrink window if it's smaller than the width. Will be ignored if width is 0.
     shrink = no
 
     # The transparency of the window. range: [0; 100]
     # This option will only work if a compositing windowmanager is present (e.g. xcompmgr, compiz, etc..)
-    transparency = 20
+    transparency = 0
 
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
@@ -105,10 +105,10 @@
     separator_height = 1
 
     # padding between text and separator
-    padding = 8
+    padding = 3
 
     # horizontal padding
-    horizontal_padding = 8
+    horizontal_padding = 4
 
     # Define a color for the separator.
     # possible values are:
@@ -116,7 +116,7 @@
     #  * foreground: use the same color as the foreground
     #  * frame: use the same color as the frame.
     #  * anything else will be interpreted as a X color
-    separator_color = frame
+    separator_color = auto
 
     # print a notification on startup
     # This is mainly for error detection, since dbus (re-)starts dunst
