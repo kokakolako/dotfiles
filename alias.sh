@@ -34,19 +34,6 @@ alias shutdown="sudo shutdown"
 alias reboot="sudo reboot"
 alias poweroff="sudo poweroff"
 
-# Funtoo-Specific Aliases
-# ---------------------------------------------
-
-# alias emerge="sudo emerge"
-# alias ermege="sudo emerge"
-# alias E="sudo emerge"
-# alias Ey="sudo emerge --sync"
-# alias Es="emerge -s"
-# alias Eu="sudo emerge -auDN @world"
-# alias Er="sudo emerge -C"
-# alias Ek="sudo emerge @kernel"
-# alias Ed="sudo emerge -pv"
-
 # Misc aliases
 # ---------------------------------------------
 
