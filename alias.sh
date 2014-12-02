@@ -56,9 +56,13 @@ alias cp="rsync -aP"           # Show a progress bar and do not ignore permissio
 alias ipv4_addr="curl ipv4.icanhazip.com"
 alias ipv6_addr="curl ipv6.icanhazip.com"
 alias vim="vim -u $HOME/.config/vim/vimrc"
-alias mcd="mkdir -p $@ && cd $@"
 alias eclipse="eclipse -nosplash"
 alias gimp="gimp --no-splash"
+
+function mcd () {
+    mkdir -p "$@"
+    cd "$@"
+}
 
 # "Convert" markdown files in Standard Markdown Syntax via pandoc
 # ---------------------------------------------
