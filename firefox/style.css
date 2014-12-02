@@ -1,0 +1,53 @@
+body {
+    font: 16px "DejaVu Sans Mono";
+    background: url(swirl_pattern/swirl_pattern.png);
+}
+
+div {
+    margin: 10px auto;
+    width: 360px;
+}
+
+ul {
+    float: left;
+    margin: 10px; padding: 20px;
+    width: 120px; min-height: 120px;
+    background: #ffffff; opacity: 0.8;
+    list-style: none;
+}
+
+a, h2 > a:hover {
+    color: #ff0055;
+    text-decoration: none;
+}
+
+a:hover, h2 > a {
+    color: #aaaaaa;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: normal;
+    color: #ff0055;
+    margin: 10px 0;
+    text-align: center;
+}
+
+h2 {
+    font-size: 20px;
+    color: #aaaaaa;
+    margin: 0;
+}
+
+.entity {
+    font-size: 32px;
+    line-height: 0.8;
+}
+
+.license {
+    font-size: 10px;
+    position: absolute;
+    bottom: 5px;
+    right: 30px;
+}
+

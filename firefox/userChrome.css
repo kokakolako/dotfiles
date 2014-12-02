@@ -1,0 +1,119 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/*
+Hide the scrollbar
+*/
+
+#content browser{
+
+    margin-right:-16px!important;
+    overflow:hidden;
+    overflow-x:hidden;
+    overflow-y:hidden;
+
+}
+
+
+/*
+ Customize the Firefox UI
+*/
+
+@-moz-document url(chrome://browser/content/browser.xul) {
+
+    /*
+     Styling the navigation bar
+    */
+
+    #nav-bar {
+        background: #ffffff !important;
+        margin: 0 0 0 0 !important;
+        bottom: 0;
+
+    }
+
+    /*
+     Styling the Tabs
+    */
+
+    .tabbrowser-tabs {
+        border: none !important;
+        background: #ffffff !important;
+    }
+
+    .tabbrowser-tab {
+        height: 30px;
+        font-family: "DejaVu Sans Mono" !important;
+        font-size: 12px !important;
+        background: #ffffff !important;
+        color: #000000 !important;
+        text-shadow: none !important;
+    }
+
+    .tabbrowser-tab[selected="true"] {
+        color: #FF0055 !important;
+    }
+
+    #TabsToolbar {
+        background: none !important;
+    }
+
+    .tabbrowser-tab *, .tabs-newtab-button * {
+        background: none !important;
+        margin: 0 0 0 0 !important;
+        padding: 0 0 0 0 !important;
+        -moz-appearance: none !important;
+    }
+
+    /*
+     Hide the notifications when using ssl and the back and forward buttons
+    */
+
+    #identity-box, #back-button, #forward-button, #notification-popup-box {
+        display: none !important;
+    }
+
+    /*
+     Customize the url-bar
+    */
+
+    #urlbar {
+        font-family: "DejaVu Sans Mono" !important;
+        font-size: 12px !important;
+        border: none !important;
+        background: #eeeeee !important;
+        margin-left: 10px !important;
+        padding: 5px !important;
+        border-radius: 0 !important;
+    }
+
+    /*
+     Hide the tab-throbber
+    */
+
+    .tab-throbber, .tab-background-start, .tab-background-end {
+        display: none !important;
+    }
+
+}
+
+/* @namespace url(http://www.w3.org/1999/xhtml); */
+/*  */
+/* /* */
+/*  Customize the new-tab page */
+/* */ */
+/*  */
+/* @-moz-document url("about:newtab") { */
+/*  */
+/*     /* */
+/*     Hide the search-input */
+/*     */ */
+/*  */
+/*     #newtab-search-container { */
+/*         display: none !important; */
+/*         overflow: hidden !important; */
+/*     } */
+/*  */
+/* } */
+
+
+/* vim: set ft=css: */
