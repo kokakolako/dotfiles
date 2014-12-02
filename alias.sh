@@ -50,6 +50,7 @@ alias poweroff="sudo poweroff"
 # Misc aliases
 # ---------------------------------------------
 
+alias tabbed="tabbed -d -c -t \#ffffff -T \#ff0055 -u \#ff0055 -U \#ffffff"
 alias zathura="tabbed zathura -e $@ &> /dev/null"
 alias emacs="emacsclient -nc &> /dev/null"
 alias virt-env="source $HOME/projekte/python/virt-env/bin/activate && cd $HOME/projekte/python/virt-env"
