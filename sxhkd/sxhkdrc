@@ -1,9 +1,33 @@
 # Start programs
 # ---------------------------------------------
 
-## Start a custom program launcher (dmenu)
+## Start a custom program launcher (via rofi)
+
 super + d
-    $HOME/.bin/custom-launcher
+    rofi -bg "#ffffff" \
+        -bc "#ff0055" \
+        -bw 5 \
+        -hlbg "#ffffff" \
+        -hlfg "#ff0055" \
+        -terminal urxvt \
+        -location 0 \
+        -show run \
+        -opacity "100" \
+        -font "DejaVu Sans Mono 12"
+
+## Switch to open window (via rofi)
+
+super + w
+    rofi -bg "#ffffff" \
+        -bc "#ff0055" \
+        -bw 5 \
+        -hlbg "#ffffff" \
+        -hlfg "#ff0055" \
+        -terminal urxvt \
+        -location 0 \
+        -show window \
+        -opacity "100" \
+        -font "DejaVu Sans Mono 12"
 
 ## Start urxvt
 super + Return
@@ -15,19 +39,14 @@ super + e
 
 ## Start zathura
 super + z
-    tabbed zathura -e $@
-    
+    tabbed -t '#ffffff' -T '#ff0055' -u '#ff0055' -U '#ffffff' zathura -e
+
 
 ## Start firefox
 super + o
     firefox
 
-## Start dwb
 super + w
-    jumanji
-
-super + x
-    $HOME/.bin/xcmenuctrl-custom
 
 # Function Keys
 # ---------------------------------------------
