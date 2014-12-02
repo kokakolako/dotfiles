@@ -9,7 +9,6 @@ alias nconfig="vim $HOME/.config/ncmpcpp/config +'lcd $HOME/.config/ncmpcpp'"
 alias sconfig="vim $HOME/.config/sxhkd/sxhkdrc +'lcd $HOME/.config/sxhkd'"
 alias hconfig="vim $HOME/.config/herbstluftwm/autostart $HOME/.config/herbstluftwm/panel.sh +'lcd $HOME/.config/herbstluftwm'"
 alias tconfig="vim $HOME/.config/tmux/tmux.conf +'lcd $HOME/.config/tmux'"
-# alias rconfig="sudo vim /etc/minirc.conf /sbin/rc"
 
 # Start program with a customized config-file
 # ---------------------------------------------
@@ -20,19 +19,28 @@ alias mpv="mpv --input-file=$HOME/.config/mpv/mpv-control"
 # Shortcuts (+ sudo-shortcuts / abbreviations )
 # ---------------------------------------------
 
+alias e="emacs"
+alias v="vim"
+
 alias gti="git"
 alias g="git"
-alias v="vim"
-alias G="grep --color=auto "
-alias R="grep -E --color=auto"
 alias hc="herbstclient"
-alias e="emacs"
-alias a="alsamixer"
+alias G="grep --color=auto"
+alias A="alsamixer"
 
-alias sctl="sudo systemctl"
 alias shutdown="sudo shutdown"
 alias reboot="sudo reboot"
 alias poweroff="sudo poweroff"
+
+# XBPS Shortcuts
+# ---------------------------------------------
+
+alias install="sudo xbps-install -Sy"
+alias update="sudo xbps-install -Syu"
+alias search="xbps-query -Rs"
+alias remove="sudo xbps-remove -y"
+alias clean="sudo xbps-remove -Oo"
+alias upd="update && clean && update_git_submodules"
 
 # Misc aliases
 # ---------------------------------------------
@@ -84,34 +92,16 @@ alias gimp="gimp --no-splash"
 # }
 
 
-# Hook which is invoked when the current working directory is changing
+# If the current working directory contains less than 65 directories,
+# show the directories of the current working directory via ls
 # ---------------------------------------------
 
 function chpwd () {
-    ## If the current working directory contains lesser than 30 directories,
-    ## show the directories of the current working directory via ls
     [[ $( ls -l | wc -l ) -lt 65 ]] && ls
 }
 
-
-# Remove all orphans
-# ---------------------------------------------
-
-remove_orphans () {
-    printf "\e[34m::\e[0;1m Entferne nicht-benötigte Pakete...\e[0m\n"
-    pacaur -Qdt # List all orphans
-    if [[ $? == 0 ]]; then
-        local orphans=$( pacaur -Qdt | wc -l )
-        [[ $orphans -ge 1 ]] \
-            && sudo pacaur -Rns $( pacaur -Qdtq )
-        [[ $? == 0 ]] \
-            && printf " Es wurden alle nicht-benötigte Pakete entfernt" \
-            || printf " Beim Entfernen der nicht-benötigten Pakete kam es zu einem Fehler"
-    else
-        printf " Es gibt nichts zu tun"
-    fi
-}
-
+## When the shell is invoked -- show the current directories via ls
+[[ $( ls -l | wc -l ) -lt 65 ]] && [[ $( pwd ) == $HOME ]] && ls
 
 # Update git submodules
 # ---------------------------------------------
@@ -122,22 +112,17 @@ function update_git_submodules () {
     submodules=("$HOME/.config/vim/")
     for submodule in $submodules; do
         cd "$submodule"
+        git stash
         sudo git submodule foreach git pull origin master
+        if [[ $submodule == "$HOME"/.config/vim/ ]]; then
+            [[ -d "$HOME"/.config/vim/bundle ]] \
+                && git add -A "$HOME"/.config/vim/bundle \
+                && git commit -m "Updating vim submodules"
+        fi
+        git stash apply
     done
     cd "$curr_dir"
 }
-
-
-# Update the complete system
-# ---------------------------------------------
-
-function upd () {
-    pacaur -Syu             ## Update all packages
-    pacaur -Sc              ## Clear the cache
-    remove_orphans          ## Remove all orphans
-    update_git_submodules   ## Update all submodules
-}
-
 
 # Colorizing Man-Pages
 # ---------------------------------------------
@@ -152,17 +137,6 @@ function man () {
     LESS_TERMCAP_us=$'\e[31m'       \
     man "$@"
 }
-
-
-# Update my own, local packages
-# ---------------------------------------------
-
-function update_my_own_pkgs () {
-    for i in "$( find -type d $HOME/.abs )"; do
-        cd $i
-    done
-}
-
 
 # Reload tmux
 # ---------------------------------------------
@@ -213,12 +187,12 @@ function dirs () {
         fi
         ## When "pushd" is invoked, the pushed directory should be hightlighted
         case $args in
-            "$HOME" )
-                [[ "$dir" == "~" ]] \
+            $HOME )
+                [[ $dir == "~" ]] \
                     && printf "\e[1m%s\t\e[3%sm%s\e[0m\n" "$stack_pos" "$color" "$dir" \
                     || printf "%s\t\e[3%sm%s\e[0m" "$stack_pos" "$color" "$dir"
             ;;
-            "$dir" )
+            $dir )
                 printf "\e[1m%s\t\e[3%sm%s\e[0m\n" "$stack_pos" "$color" "$dir"
             ;;
             * )
