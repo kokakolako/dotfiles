@@ -1,16 +1,16 @@
 #!/bin/sh
 
 setxkbmap -layout de &
+xsetroot -cursor_name arrow &
 $HOME/.config/herbstluftwm/panel.sh &
 $HOME/.bin/random-wallpaper &
-xsetroot -cursor_name arrow &
 xrdb -load $HOME/.config/X11/Xresources &
-clipit --daemon &
 sxhkd -c $HOME/.config/sxhkd/sxhkdrc &
 unclutter &
 mpd &
 emacs --daemon &
 compton -b &
+xautolock -time 15 -locker ~/.bin/lock-screen
 
 session=${1:-hlwm}
 case $session in
