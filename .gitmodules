@@ -2,10 +2,6 @@
 	path = vim
 	url = git@github.com:kokakolako/vimfiles.git
     ignore = dirty
-[submodule "oh-my-zsh"]
-	path = oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh.git
-    ignore = dirty
 [submodule "zsh/zsh-autosuggestions"]
 	path = zsh/zsh-autosuggestions
 	url = https://github.com/tarruda/zsh-autosuggestions.git
