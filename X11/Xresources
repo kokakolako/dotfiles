@@ -1,3 +1,6 @@
+! Xft Configuration
+! ----------------------------------------------
+
 Xft.antialias:                 1
 Xft.autohint:                  0
 Xft.dpi:                       96
@@ -9,19 +12,13 @@ Xft.rgba:                      rgb
 xterm.faceName:                DejaVu Sans Mono
 xterm.faceSize:                10
 
+! URxvt Configuration
+! ----------------------------------------------
+
 URxvt.termName:                rxvt-unicode
 URxvt.font:                    xft: DejaVu Sans Mono:pixelsize:8, \
                                xft:unifont:style=Medium
-emacs*font:                    7x14
 
-! xft:DejaVu Sans Mono:pixelsize=16
-! xft:unifont:style=Medium
-! xft:Inconsolata:style=light:pixelsize=14
-! xft:FreeSerif:style=Regular
-! xft:WenQuanYi Bitmap Song:pixelsize=16
-! xft:Code2300:pixelsize=16
-! xft:Source Code Pro for Powerline:pixelsize=14
-!
 URxvt.insecure:                false
 URxvt.internalBorder:          15
 URxvt.saveLines:               1000
@@ -41,42 +38,49 @@ URxvt.tabbed.tabbar-bg:        0
 URxvt.tabbed.tab-fg:           0
 URxvt.tabbed.tab-bg:           1
 URxvt.tabbed.secondaryScroll:  true
+URxvt.perl-ext-common:         default,clipboard
 
-! Colors inspired by hemisu (https://github.com/noahfrederick/vim-hemisu)
+! Emacs fix font issues
+! ----------------------------------------------
 
-*background:            #FFFFFF
-*foreground:            #101010
-*cursorColor:           #777777
+emacs*font:                    7x14
+
+! URxvt Colors inspired by hemisu
+! (https://github.com/noahfrederick/vim-hemisu)
+! ----------------------------------------------
+
+URxvt.background:            #ffffff
+URxvt.foreground:            #101010
+URxvt.cursorColor:           #777777
 
 ! Black + DarkGrey
-*color0:                #101010
-*color8:                #303030
+URxvt.color0:                #101010
+URxvt.color8:                #303030
 
 ! Red + DarkRed
-*color1:                #FF0055
-*color9:                #ED0028
+URxvt.color1:                #ff0055
+URxvt.color9:                #ed0028
 
 ! Green + DarkGreen
-*color2:                #B1D631
-*color10:               #739200
+URxvt.color2:                #b1d631
+URxvt.color10:               #739200
 
 ! Yellow + DarkYellow
-*color3:                #FFF700
-*color11:               #FF4000
+URxvt.color3:                #fff700
+URxvt.color11:               #ff4000
 
 ! Blue + DarkBlue
-*color4:                #005F87
-*color12:               #538192
+URxvt.color4:                #005f87
+URxvt.color12:               #538192
 
 ! Magenta + DarkMagenta
-*color5:                #7E40A5
-*color13:               #CBE4EE
+URxvt.color5:                #7e40a5
+URxvt.color13:               #cbe4ee
 
 ! Cyan + DarkCyan
-*color6:                #4EB4FA
-*color14:               #3579A8
+URxvt.color6:                #4eb4fa
+URxvt.color14:               #3579a8
 
 ! White+ LightGrey
-*color7:                #BBBBBB
-*color15:               #FFFFFF
-
+URxvt.color7:                #bbbbbb
+URxvt.color15:               #ffffff
