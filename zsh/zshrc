@@ -1,26 +1,81 @@
-# Defaults
+# Prezto
 # ---------------------------------------------
 
-## Path to your oh-my-zsh configuration.
-export ZSH="/home/niklas/.config/oh-my-zsh"
+# Categories are now not more ugly yellow
+zstyle ':completion:*' format $'> %{\e[0;31m%}%d'
 
-## ZSH-Theme
-export ZSH_THEME="kokakolako"
+# Color output (auto set to 'no' on dumb terminals).
+zstyle ':prezto:*:*' color 'yes'
 
-## Set source-path
-source "$ZSH/oh-my-zsh.sh"
+# Set the Zsh modules to load (man zshmodules).
+zstyle ':prezto:load' zmodule 'attr' 'stat'
 
-## Sourcing shell aliases
-source "/home/niklas/.config/alias.sh"
+# Set the Zsh functions to load (man zshcontrib).
+zstyle ':prezto:load' zfunction 'zargs' 'zmv'
 
-## Uncomment to change how often before auto-updates occur? (in days)
-UPDATE_ZSH_DAYS=7
+# Set the Prezto modules to load (browse modules).
+# The order matters.
+zstyle ':prezto:load' pmodule \
+  'environment' \
+  'git' \
+  'terminal' \
+  'editor' \
+  'history' \
+  'directory' \
+  'spectrum' \
+  'utility' \
+  'completion' \
+  'prompt'
 
-## Plugins
-plugins=(git github jump colored-man vi-mode rvm)
+# Set the key mapping style to 'emacs' or 'vi'.
+zstyle ':prezto:module:editor' key-bindings 'emacs'
 
-# General Zsh settings
+# Auto convert .... to ../..
+zstyle ':prezto:module:editor' dot-expansion 'yes'
+
+# Ignore submodules when they are 'dirty', 'untracked', 'all', or 'none'.
+zstyle ':prezto:module:git:status:ignore' submodules 'all'
+
+## History Substring Search
+
+# Set the query found color.
+zstyle ':prezto:module:history-substring-search:color' found ''
+
+# Set the query not found color.
+zstyle ':prezto:module:history-substring-search:color' not-found ''
+
+# Set the search globbing flags.
+zstyle ':prezto:module:history-substring-search' globbing-flags ''
+
+# Theme
+zstyle ':prezto:module:prompt' theme 'kokakolako'
+
+# Set syntax highlighters.
+zstyle ':prezto:module:syntax-highlighting' highlighters \
+  'main' \
+  'brackets' \
+  'pattern' \
+  'cursor' \
+  'root'
+
+# Set syntax highlighting styles.
+zstyle ':prezto:module:syntax-highlighting' styles \
+  'builtin' 'bg=blue' \
+  'command' 'bg=blue' \
+  'function' 'bg=blue'
+
+# Terminal
+
+# Auto set the tab and window titles.
+zstyle ':prezto:module:terminal' auto-title 'yes'
+
+# Set the window title format.
+zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
+
+# General Configuration
 # ---------------------------------------------
+
+eval "$( dircolors ~/.config/dircolors/molokai.dircolors )"
 
 ## Exorbitant high history-size
 export HISTSIZE=100000000
@@ -43,7 +98,7 @@ autoload -U zmv
 # Environment Variables
 # ---------------------------------------------
 
-## Dafault Applications
+## Default Applications
 export TERMINAL=screen-256color
 export TERM=screen-256color
 export EDITOR="/usr/bin/vim"
@@ -78,6 +133,26 @@ export MARKPATH="/home/niklas/.marks"
 ## Adding root-specific programms to PATH
 export PATH="$PATH:/usr/sbin"
 
+export ALSA_PCM_CARD=0
+export ALSA_PCM_DEVICE=0
+
+export FLASH_ALSA_CARD=0
+export FLASH_ALSA_DEVICE=3
+
+# # Enable ZSH-autosuggestions plugin (for fish-like suggestions):
+# # https://github.com/tarruda/zsh-autosuggestions
+# # ---------------------------------------------
+#
+# source /home/niklas/.config/zsh/zsh-autosuggestions/autosuggestions.zsh
+#
+# # Adding suggestions at initialization via zle
+# zle-line-init () {
+#     zle autosuggest-start
+# }
+# zle -N zle-line-init
+#
+# export AUTOSUGGESTION_HIGHLIGHT_COLOR='fg=7'
+
 # Misc
 # ---------------------------------------------
 
@@ -94,16 +169,16 @@ fancy-ctrl-z () {
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
-## Fixing Dircolors
-eval $(dircolors /home/niklas/.config/dircolors/molokai.dircolors)
+# Autostart Tmux or a new Xserver
+# ---------------------------------------------
 
 ## Check if the user has started X
-if [[ $(tty) == "/dev/tty1" ]]; then
+if [[ $(tty) == "/dev/tty1" && $HOST == "rayquaza" ]]; then
     ## Start X (when the user has not start it already)
-	sudo startx /home/niklas/.config/X11/xinitrc
+	startx /home/niklas/.config/X11/xinitrc
 else
     ## Starting tmux
-    if [ -z "$TMUX" ]; then
+    if [[ -z "$TMUX" && $USER == "niklas" ]]; then
         ( tmux ls | grep -vq attached && tmux -2 at ) || tmux -2 -f /home/niklas/.config/tmux/tmux.conf
     fi
 fi
