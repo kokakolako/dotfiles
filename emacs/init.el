@@ -116,12 +116,6 @@
 (global-set-key (kbd "C--") 'undo-tree-undo)
 (global-set-key (kbd "M--") 'undo-tree-redo)
 
-;; Browse Kill-Ring
-; -----------------------------------------------------
-
-;; Browse the kill-ring via M-y
-(global-set-key (kbd "M-y") 'browse-kill-ring)
-
 ;; Org-mode
 ; -----------------------------------------------------
 
