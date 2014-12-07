@@ -11,6 +11,7 @@ mpd &
 emacs --daemon &
 compton -b &
 gpg-agent --daemon &
+dunst &
 xautolock -time 15 -locker ~/.bin/lock-screen
 
 session=${1:-hlwm}
