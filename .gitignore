@@ -8,6 +8,8 @@ fdm
 chromium
 ncmpcpp/error.log
 
+irssi/config
+
 gtk*
 dconf
 gconf
@@ -65,5 +67,6 @@ emacs/?init.el?
 fish/fish_history
 fish/fishd*
 fish/generated_completions
+
 
 # vim: set ft=config:
