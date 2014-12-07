@@ -2,7 +2,6 @@
 # ---------------------------------------------
 
 ## Start a custom program launcher (via rofi)
-
 super + d
     rofi -bg "#ffffff" \
         -bc "#ff0055" \
@@ -16,7 +15,6 @@ super + d
         -font "DejaVu Sans Mono 12"
 
 ## Switch to open window (via rofi)
-
 super + w
     rofi -bg "#ffffff" \
         -bc "#ff0055" \
@@ -41,12 +39,9 @@ super + e
 super + z
     tabbed -t '#ffffff' -T '#ff0055' -u '#ff0055' -U '#ffffff' zathura -e
 
-
 ## Start firefox
 super + o
     firefox
-
-super + w
 
 # Function Keys
 # ---------------------------------------------
@@ -90,7 +85,8 @@ XF86TouchpadToggle
 
 ## Make a screenshot
 Print
-    scrot ~/pictures/Screenshots/%Y-%m-%d--%T--scrot.png
+    scrot ~/pictures/Screenshots/%Y-%m-%d-%T-scrot.png \
+        && notify-send "Screenshot taken!"
 
 ## Brightness
 XF86MonBrightness{Up,Down}
