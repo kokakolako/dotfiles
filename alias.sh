@@ -15,6 +15,7 @@ alias tconfig="vim $HOME/.config/tmux/tmux.conf +'lcd $HOME/.config/tmux'"
 
 alias ncmpcpp="ncmpcpp -c $HOME/.config/ncmpcpp/config"
 alias mpv="mpv --input-file=$HOME/.config/mpv/mpv-control"
+alias irssi="sudo irssi --nick kokakolako --home /home/niklas/.config/irssi/"
 
 # Shortcuts (+ sudo-shortcuts / abbreviations )
 # ---------------------------------------------
@@ -58,6 +59,7 @@ alias ipv6_addr="curl ipv6.icanhazip.com"
 alias vim="vim -u $HOME/.config/vim/vimrc"
 alias eclipse="eclipse -nosplash"
 alias gimp="gimp --no-splash"
+alias ffplay="ffplay -loglevel quiet"
 
 function mcd () {
     mkdir -p "$@"
