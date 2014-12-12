@@ -66,38 +66,6 @@ function mcd () {
     cd "$@"
 }
 
-# "Convert" markdown files in Standard Markdown Syntax via pandoc
-# ---------------------------------------------
-# alias pandoc="pandoc --latex-engine=xelatex"
-# pandoc () {
-#     local output
-#     local input
-#     while getopts ":o" opt; do
-#         case "$opt" in
-#             o )
-#                 output="$OPTARG"
-#             ;;
-#         esac
-#     done
-#     if [[ -n "$output" ]]; then
-#         ## A little bit hacky but with the following commands it's possible
-#         ##   to get the last arg, which is the file the user wants to convert
-#         # local last
-#         eval input=\$$#
-#         # eval input=$last
-#         ## Control if the user has defined a file as an input
-#         if [[ $input != $output ]]; then
-#             local input_filename="${input%.*}"
-#             ## Control if the filetype of the input-file is ".md"
-#             if [[ ${input/$input_filename/} == ".md" ]]; then
-#                 stmd "$input" > "${input_filename}.html"
-#                 pandoc -o "$output" "${input_filename}.html"
-#             fi
-#         fi
-#     fi
-# }
-
-
 # If the current working directory contains less than 65 directories,
 # show the directories of the current working directory via ls
 # ---------------------------------------------
@@ -105,9 +73,6 @@ function mcd () {
 function chpwd () {
     [[ $( ls -l | wc -l ) -lt 65 ]] && ls
 }
-
-## When the shell is invoked -- show the current directories via ls
-[[ $( ls -l | wc -l ) -lt 65 ]] && [[ $( pwd ) == $HOME ]] && ls
 
 # Update git submodules
 # ---------------------------------------------
@@ -213,5 +178,14 @@ function pushd () {
     builtin pushd "$args" > /dev/null
     dirs "$args"
 }
-
 alias popd="popd "$@" > /dev/null; dirs"
+
+function irssi-add () {
+    if [[ ! -f /home/niklas/.config/irssi/scripts/available/"$@".pl ]]; then
+        wget  \
+            -P "$HOME"/.config/irssi/scripts/available/ \
+            https://github.com/irssi/scripts.irssi.org/blob/gh-pages/scripts/"$@".pl \
+            &> /dev/null
+    fi
+}
+
