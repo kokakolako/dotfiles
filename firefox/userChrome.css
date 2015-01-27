@@ -13,7 +13,6 @@ Hide the scrollbar
 
 }
 
-
 /*
  Customize the Firefox UI
 */
@@ -37,16 +36,24 @@ Hide the scrollbar
 
     .tabbrowser-tabs {
         border: none !important;
-        background: #ffffff !important;
+        background: #eeeeee !important;
     }
 
     .tabbrowser-tab {
         height: 30px;
         font-family: "DejaVu Sans Mono" !important;
         font-size: 12px !important;
-        background: #ffffff !important;
+        background: #eeeeee !important;
+        border: none !important;: none !important;
+        margin: 0 0 1px 0 !important;
+        padding: 0 !important;
         color: #000000 !important;
         text-shadow: none !important;
+        -moz-appearance: none !important;
+    }
+
+    .close-button  {
+        display: none !important;
     }
 
     .tabbrowser-tab[selected="true"] {
@@ -55,20 +62,29 @@ Hide the scrollbar
 
     #TabsToolbar {
         background: none !important;
+        border: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
-    .tabbrowser-tab *, .tabs-newtab-button * {
-        background: none !important;
+    #TabsToolbar:not([collapsed="true"]) + #nav-bar {
+        border: none !important;
+    }
+
+    #navbar {
+        border: none !important;
+        margin: 0; padding: 0;
+    }
+
+    .tabbrowser-tab * {
+        background: #eeeeee !important;
         margin: 0 0 0 0 !important;
         padding: 0 0 0 0 !important;
         -moz-appearance: none !important;
+        border: none !important;
     }
 
-    /*
-     Hide the notifications when using ssl and the back and forward buttons
-    */
-
-    #identity-box, #back-button, #forward-button, #notification-popup-box {
+    #private-browsing-indicator #identity-box, #back-button, #forward-button, #notification-popup-box {
         display: none !important;
     }
 

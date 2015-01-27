@@ -1,0 +1,39 @@
+auto-reload "yes"
+browser "firefox -new-tab %u"
+html-renderer "w3m -dump -T text/html"
+player "mpv"
+feed-sort-order name
+notify-program "notify-send"
+notify-format "Newsbeuter: %n unread articles within %f unread feeds"
+
+# Rice
+# ----------------------------------------------------------
+
+#     <element>         <fg>        <bg>         <attr>
+color info              color15     color1       bold
+color listnormal_unread color0      color15
+color listfocus_unread  color1      color15
+color listfocus         color4      color15
+color listnormal        color7      color15
+color article           color0      color15
+
+# highlight feedlist    "^  *[0-9]+  *N  .*"    color1 default
+# highlight articlelist "^  *[0-9]+  *N  .*"    color1 default
+
+highlight article "(^Feed:|^Title:|^Author:|^Link:|^Date:|^Podcast Download URL:)"    color1  default
+
+# Keybindings
+# ----------------------------------------------------------
+
+bind-key j next
+bind-key k prev
+bind-key J next-feed
+bind-key K prev-feed
+bind-key j down article
+bind-key k up article
+bind-key J next article
+bind-key K prev article
+
+macro o set browser open-in-browser
+
+# vim: set ft=config:

@@ -1,9 +1,18 @@
 body {
-    font: 16px "DejaVu Sans Mono";
-    background: url(swirl_pattern/swirl_pattern.png);
+    font: 18px "DejaVu Sans Mono";
+    background: url(bg/lodyas.png);
 }
 
-div {
+a {
+    color: #ff0055;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #303030;
+}
+
+nav {
     margin: 10px auto;
     width: 360px;
 }
@@ -12,17 +21,8 @@ ul {
     float: left;
     margin: 10px; padding: 20px;
     width: 120px; min-height: 120px;
-    background: #ffffff; opacity: 0.8;
+    background: #ffffff;
     list-style: none;
-}
-
-a, h2 > a:hover {
-    color: #ff0055;
-    text-decoration: none;
-}
-
-a:hover, h2 > a {
-    color: #aaaaaa;
 }
 
 h1 {
@@ -33,21 +33,16 @@ h1 {
     text-align: center;
 }
 
-h2 {
-    font-size: 20px;
-    color: #aaaaaa;
-    margin: 0;
-}
-
-.entity {
-    font-size: 32px;
-    line-height: 0.8;
-}
-
 .license {
     font-size: 10px;
     position: absolute;
     bottom: 5px;
     right: 30px;
 }
+.license a {
+    color: #fff;
+}
 
+.license a:hover {
+    color: #ff0055;
+}

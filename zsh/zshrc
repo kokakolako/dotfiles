@@ -1,4 +1,4 @@
-# Prezto
+# prezto configuration
 # ---------------------------------------------
 
 # Categories are now not more ugly yellow
@@ -64,15 +64,13 @@ zstyle ':prezto:module:syntax-highlighting' styles \
   'command' 'bg=blue' \
   'function' 'bg=blue'
 
-# Terminal
-
 # Auto set the tab and window titles.
 zstyle ':prezto:module:terminal' auto-title 'yes'
 
 # Set the window title format.
 zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
 
-# General Configuration
+# general configuration
 # ---------------------------------------------
 
 eval "$( dircolors ~/.config/dircolors/molokai.dircolors )"
@@ -95,7 +93,7 @@ setopt autopushd
 ## Load a Mass Renaming Module
 autoload -U zmv
 
-# Environment Variables
+# environment variables
 # ---------------------------------------------
 
 ## Default Applications
@@ -126,19 +124,16 @@ export MAIL="$HOME/mail"
 export CONF="$HOME/.config"
 export MARKPATH="$HOME/.marks"
 
-# PATH
+# path
 # ---------------------------------------------
 
 ## Adding root-specific programms to $PATH
-export PATH="$PATH:/usr/sbin"
+export PATH="$PATH:/sbin:/usr/sbin"
 
 ## Adding the binfiles to $PATH
 export PATH="$PATH:$HOME/.bin"
 
-## Adding Cabal Packages to $PATH
-export PATH="$PATH:$HOME/.cabal/bin/"
-
-# Misc
+# misc
 # ---------------------------------------------
 
 ## Use Ctr+Z to foreground vim
@@ -154,17 +149,13 @@ fancy-ctrl-z () {
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
-# Autostart Tmux OR a new Xserver
+# autostart tmux or a new xserver
 # ---------------------------------------------
 
-## Check if the user has started X
 if [[ $(tty) == "/dev/tty1" && $HOST == "rayquaza" ]]; then
-    ## Start X (when the user has not start it already)
-	startx $HOME/.config/X11/xinitrc
+	startx $HOME/.config/X11/xinitrc hlwm
 else
-    ## Starting tmux
-    if [[ -z "$TMUX" && $USER == "niklas" ]]; then
+    if [[ -z $TMUX && $USER == "niklas" ]]; then
         ( tmux ls | grep -vq attached && tmux -2 at ) || tmux -2 -f $HOME/.config/tmux/tmux.conf
     fi
 fi
-

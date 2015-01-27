@@ -5,20 +5,22 @@
 super + d
     rofi -bg "#ffffff" \
         -bc "#ff0055" \
-        -bw 5 \
+        -bw 1 \
         -hlbg "#ffffff" \
         -hlfg "#ff0055" \
         -terminal urxvt \
         -location 0 \
         -show run \
         -opacity "100" \
-        -font "DejaVu Sans Mono 12"
+        -font "DejaVu Sans Mono 12" \
+        -width 250 \
+        -disable-history
 
 ## Switch to open window (via rofi)
 super + w
     rofi -bg "#ffffff" \
         -bc "#ff0055" \
-        -bw 5 \
+        -bw 1 \
         -hlbg "#ffffff" \
         -hlfg "#ff0055" \
         -terminal urxvt \
@@ -29,7 +31,7 @@ super + w
 
 ## Start urxvt
 super + Return
-    urxvt
+    st
 
 ## Start emacs
 super + e
@@ -46,38 +48,25 @@ super + o
 # Function Keys
 # ---------------------------------------------
 
-## New wallpaper
+## New random wallpaper
 super + p
-    $HOME/.bin/random-wallpaper
+    hsetroot -full "$( find $HOME/pictures/wallpaper/1920x1080/ -type f | shuf -n 1 )"
 
 ## Next & prev song
 XF86Audio{Next,Prev}
-    {mpc next;\
-        $HOME/.bin/show-key next;\
-        notify-send "$( mpc current )";\
-        echo playlist_next > $HOME/.config/mpv/mpv-control,\
-    mpc prev;\
-        $HOME/.bin/show-key prev;\
-        notify-send "$( mpc current )";\
-        echo playlist_prev > $HOME/.config/mpv/mpv-control}
+    mpc {next,prev} && notify-send "$( mpc current )"
 
 ## Volume control
 XF86Audio{Raise,Lower}Volume
-    {amixer set Master 5%+;\
-        $HOME/.bin/show-key speaker_raise,\
-    amixer set Master 5%-;\
-        $HOME/.bin/show-key speaker_lower}
+    amixer set Master 5%{+,-}
 
 ## Play / pause the current song
 XF86AudioPlay
-    $HOME/.bin/toggle-music
-pp
+    mpc toggle
+
 ## Toggle mute
 XF86AudioMute
-    {amixer set -c 0 Master 0 unmute;\
-        $HOME/.bin/show-key mute,\
-    amixer set Master 50%;\
-        $HOME/.bin/show-key unmute}
+    amixer set Master {0,50}
 
 ## Toggle touchpad on/off
 XF86TouchpadToggle
@@ -90,9 +79,6 @@ Print
 
 ## Brightness
 XF86MonBrightness{Up,Down}
-    {xbacklight -inc 5;\
-        $HOME/.bin/show-key brightness_up,\
-    xbacklight -dec 5;\
-        $HOME/.bin/show-key brightness_down}
+    xbacklight {+,-}5
 
 # vim: set syntax=conf:

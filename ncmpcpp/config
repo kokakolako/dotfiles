@@ -12,7 +12,7 @@ store_lyrics_in_song_dir                      = "yes"
 
 ## Other
 ignore_leading_the                            = "yes"
-mouse_support                                 = "no"
+mouse_support                                 = "yes"
 empty_tag_marker                              = "~"
 
 # UI

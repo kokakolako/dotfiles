@@ -1,6 +1,6 @@
 # UI
 
-set font                      "DejaVu Sans Mono 12"
+set font                      "DejaVu Sans Mono:pixelsize=14"
 set guioptions                ""
 
 # Colors
@@ -10,7 +10,7 @@ set completion-bg             "#ffffff"
 set completion-highlight-fg   "#101010"
 set completion-highlight-bg   "#ffffff"
 set default-fg                "#ffffff"
-set default-bg                "#ffffff"
+set default-bg                "#777777"
 set tabbar-fg                 "#ffffff"
 set tabbar-bg                 "#101010"
 set tabbar-focus-fg           "#ffffff"

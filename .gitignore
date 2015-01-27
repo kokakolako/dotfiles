@@ -7,6 +7,7 @@ libreoffice
 fdm
 chromium
 ncmpcpp/error.log
+vlc
 
 irssi/config
 irssi/cert
@@ -70,3 +71,5 @@ fish/fishd*
 fish/generated_completions
 
 # vim: set ft=config:
+Trolltech.conf
+menus

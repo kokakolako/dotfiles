@@ -1,0 +1,16 @@
+pcm.snd_card {
+    type hw
+    card 0
+    device 0
+}
+
+ctl.snd_card {
+    type hw
+    card 0
+    device 0
+}
+
+pcm.hdmi_card {
+    type plug
+    slave.pcm "hdmi"
+}

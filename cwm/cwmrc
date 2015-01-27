@@ -1,0 +1,42 @@
+# Set default Xft(3) font
+fontname "DejaVu Sans Mono:pixelsize=14:antialias=true:autohint=false,unifont:style=Medium"
+
+# Turn on sticky-group mode
+sticky yes
+
+# Ignore programs by that name by not drawing borders around them.
+ignore XMMS
+ignore xwi
+ignore xapm
+ignore xclock
+
+# Key bindings
+bind 4-r        label
+bind 4-Return   "xterm -e top"
+bind 4-o        unmap
+bind 4-equal    unmap
+bind 4-v        vmaximize
+bind 4-b        hmaximize
+bind 4-1        grouponly1
+bind 4-2        grouponly2
+bind 4-3        grouponly3
+bind 4-4        grouponly4
+bind 4-5        grouponly5
+bind 4-6        grouponly6
+bind 4-7        grouponly7
+bind 4-8        grouponly8
+bind 4-9        grouponly9
+bind 4-0        grouponly0
+bind 4S-1       movetogroup1
+bind 4S-2       movetogroup2
+bind 4S-3       movetogroup3
+bind 4S-4       movetogroup4
+bind 4S-5       movetogroup5
+bind 4S-6       movetogroup
+bind 4S-7       movetogroup7
+bind 4S-8       movetogroup8
+bind 4S-9       movetogroup9
+bind 4S-0       movetogroup0
+
+color activeborder #ff0055
+borderwidth 3

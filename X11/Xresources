@@ -9,14 +9,11 @@ Xft.hintstyle:                 hintsfull
 Xft.lcdfilter:                 lcddefault
 Xft.rgba:                      rgb
 
-xterm.faceName:                DejaVu Sans Mono
-xterm.faceSize:                10
-
 ! URxvt Configuration
 ! ----------------------------------------------
 
 URxvt.termName:                rxvt-unicode
-URxvt.font:                    xft: DejaVu Sans Mono:pixelsize:8, \
+URxvt.font:                    xft:DejaVu Sans Mono:pixelsize:6, \
                                xft:unifont:style=Medium
 
 URxvt.insecure:                false
@@ -39,11 +36,6 @@ URxvt.tabbed.tab-fg:           0
 URxvt.tabbed.tab-bg:           1
 URxvt.tabbed.secondaryScroll:  true
 URxvt.perl-ext-common:         default,clipboard
-
-! Emacs fix font issues
-! ----------------------------------------------
-
-emacs*font:                    7x14
 
 ! URxvt Colors inspired by hemisu
 ! (https://github.com/noahfrederick/vim-hemisu)
