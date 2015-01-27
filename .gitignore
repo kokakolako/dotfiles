@@ -65,6 +65,7 @@ emacs/org-clock-save.el
 emacs/?ido.last?
 emacs/ido.last
 emacs/?init.el?
+emacs
 
 fish/fish_history
 fish/fishd*
