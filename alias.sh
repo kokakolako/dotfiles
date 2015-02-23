@@ -11,7 +11,7 @@ alias zconfig="vim $HOME/.config/zsh/zshrc $HOME/.config/alias.sh +'lcd $HOME/.c
 
 # start program with a customized config-file
 # ---------------------------------------------
-alias abcde="abcde -c $HOME/.config/abcde/abcde.conf\""
+alias abcde="abcde -c $HOME/.config/abcde/abcde.conf"
 alias eclipse="eclipse -nosplash"
 alias emacs="emacsclient -nc &> /dev/null"
 alias ffplay="ffplay -loglevel quiet"
@@ -22,12 +22,15 @@ alias ipv4_addr="curl ipv4.icanhazip.com"
 alias ipv6_addr="curl ipv6.icanhazip.com"
 alias irssi="sudo irssi --nick kokakolako --home /home/niklas/.config/irssi/"
 alias locate="locate --regex"
-alias mpv="mpv --input-file=$HOME/.config/mpv/mpv-control"
+alias mpv="DRI_PRIME=1 mpv --input-file=$HOME/.config/mpv/mpv-control"
 alias ncmpcpp="ncmpcpp -c $HOME/.config/ncmpcpp/config"
 alias tabbed="tabbed -d -c -t \#ffffff -T \#ff0055 -u \#ff0055 -U \#ffffff"
 alias vim="vim -u $HOME/.config/vim/vimrc"
 alias newsbeuter="newsbeuter -u ~/.config/newsbeuter/urls -C ~/.config/newsbeuter/config -r 2> /dev/null"
-alias zathura="tabbed -t '#ffffff' -T '#ff0055' -u '#ff0055' -U '#ffffff' zathura"
+alias zathura="tabbed -t '#ffffff' -T '#ff0055' -u '#ff0055' -U '#ffffff' -e zathura"
+alias redshift="redshift -l 51.43072:7.16941 &> /dev/null &"
+alias minecraft="DRI_PRIME=1 java -jar "$HOME"/.opt/Minecraft.jar"
+alias open_with_amd="DRI_PRIME=1 $@"
 
 # shortcuts
 # ---------------------------------------------
@@ -36,6 +39,13 @@ alias E="emacs"
 alias V="vim"
 alias G="git"
 alias H="herbstclient"
+
+alias commit="git commit"
+alias push="git push"
+alias merge="git merge"
+alias branch="git branch"
+alias checkout="git checkout"
+alias add="git add"
 
 # sudo-shortcuts
 # ---------------------------------------------
@@ -118,9 +128,8 @@ function dirs () {
     ## to use the builtin dirs command the command must be invoked via "builtin"
     local lines=$( builtin dirs -v | wc -l )
     local lines=$(( $lines - 1 ))
-    local args="$@"
+    local color=
     for stack_pos in $( seq 0 $lines ); do
-        local color
         ## do not remove the "-w" parameter of grep, because with "-w" grep
         ## is only searching the first matching
         local dir=$( builtin dirs -v | grep -w "$stack_pos" | cut -c 3- )
@@ -136,11 +145,11 @@ function dirs () {
             color=$(( $color + 1 ))
         fi
         ## when "pushd" is invoked, the pushed directory should be hightlighted
-        case $args in
+        case $@ in
             $HOME )
                 [[ $dir == "~" ]] \
                     && printf "\e[1m%s\t\e[3%sm%s\e[0m\n" "$stack_pos" "$color" "$dir" \
-                    || printf "%s\t\e[3%sm%s\e[0m" "$stack_pos" "$color" "$dir"
+                    || printf "%s\t\e[3%sm%s\e[0m\n" "$stack_pos" "$color" "$dir"
             ;;
             $dir )
                 printf "\e[1m%s\t\e[3%sm%s\e[0m\n" "$stack_pos" "$color" "$dir"
@@ -153,9 +162,8 @@ function dirs () {
 }
 
 function pushd () {
-    local args="$@"
-    builtin pushd "$args" > /dev/null
-    dirs "$args"
+    builtin pushd "$@" > /dev/null
+    dirs "$@"
 }
 
 alias popd="popd "$@" > /dev/null; dirs"

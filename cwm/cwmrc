@@ -10,13 +10,28 @@ ignore xwi
 ignore xapm
 ignore xclock
 
+color activeborder #ff0055
+borderwidth 3
+
+
 # Key bindings
+# -------------------------------
+
 bind 4-r        label
 bind 4-Return   "xterm -e top"
 bind 4-o        unmap
 bind 4-equal    unmap
+bind CM-l       unmap
 bind 4-v        vmaximize
 bind 4-b        hmaximize
+bind 4S-v       vtile
+bind 4S-b       htile
+bind 4-Tab      cycle
+bind 4-f        fullscreen
+bind 4-,        cyclegroup
+bind 4-;        rcyclegroup
+
+# Show specific groups
 bind 4-1        grouponly1
 bind 4-2        grouponly2
 bind 4-3        grouponly3
@@ -27,6 +42,8 @@ bind 4-7        grouponly7
 bind 4-8        grouponly8
 bind 4-9        grouponly9
 bind 4-0        grouponly0
+
+# Move window tou group
 bind 4S-1       movetogroup1
 bind 4S-2       movetogroup2
 bind 4S-3       movetogroup3
@@ -38,5 +55,19 @@ bind 4S-8       movetogroup8
 bind 4S-9       movetogroup9
 bind 4S-0       movetogroup0
 
-color activeborder #ff0055
-borderwidth 3
+# Move Windows
+bind 4-h        bigmoveleft
+bind 4-j        bigmovedown
+bind 4-k        bigmoveup
+bind 4-l        bigmoveright
+bind 4S-h       moveleft
+bind 4S-j       movedown
+bind 4S-k       moveup
+bind 4S-l       moveright
+
+# Resize windows
+bind 4M-h       bigresizeleft
+bind 4M-j       bigresizedown
+bind 4M-k       bigresizeup
+bind 4M-l       bigresizeright
+

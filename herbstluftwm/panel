@@ -13,7 +13,7 @@ fi
 x=${geometry[0]}
 y=${geometry[1]}
 panel_width=${geometry[2]}
-panel_height=30
+panel_height=20
 
 font="DeJaVu Sans Mono-8"
 

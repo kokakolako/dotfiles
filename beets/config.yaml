@@ -4,8 +4,8 @@ threaded: yes
 paths:
     default: $albumartist/$album%aunique{}/$track $title
     singleton: $artist/title
-    comp: compilations/$album%aunique{}/$track $title
-    albumtype:soundtrack: soundtracks/$album/$track $title
+    comp: Compilations/$album%aunique{}/$track $title
+    albumtype:soundtrack: OST/$artist - $album/$track $title
 plugins: chroma mpdupdate
 acoustid:
     apikey: cMh6x0zY

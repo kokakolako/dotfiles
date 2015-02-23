@@ -20,10 +20,12 @@ compton -b &
 gpg-agent --daemon &
 dunst &
 xautolock -time 15 &
+xrandr --setprovideroffloadsink 0x55 0x7e &
 
 session=${1:-hlwm}
 case $session in
     hlwm    )       exec herbstluftwm -c $HOME/.config/herbstluftwm/autostart --locked;;
     cwm     )       exec cwm -c $HOME/.config/cwm/cwmrc;;
+    bspwm   )       exec bspwm -c $HOME/.config/bspwm/bspwmrc;;
     *       )       exec $1;;
 esac

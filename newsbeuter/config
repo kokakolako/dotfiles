@@ -1,5 +1,5 @@
 auto-reload "yes"
-browser "firefox -new-tab %u"
+browser "[[ -n \"$( pgrep firefox )\" ]] && firefox -new-tab %u &> /dev/null || w3m -M %u"
 html-renderer "w3m -dump -T text/html"
 player "mpv"
 feed-sort-order name

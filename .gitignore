@@ -1,4 +1,6 @@
 .*.swp
+Trolltech.conf
+menus
 inkscape
 ImageMagick
 minecraft
@@ -8,6 +10,8 @@ fdm
 chromium
 ncmpcpp/error.log
 vlc
+ssh
+calibre
 
 irssi/config
 irssi/cert
@@ -72,5 +76,3 @@ fish/fishd*
 fish/generated_completions
 
 # vim: set ft=config:
-Trolltech.conf
-menus

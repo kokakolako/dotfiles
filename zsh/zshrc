@@ -73,7 +73,7 @@ zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
 # general configuration
 # ---------------------------------------------
 
-eval "$( dircolors ~/.config/dircolors/molokai.dircolors )"
+# eval "$( dircolors ~/.config/dircolors/molokai.dircolors )"
 
 ## Exorbitant high history-size
 export HISTSIZE=100000000
@@ -122,13 +122,15 @@ export FLASH_ALSA_DEVICE=3
 ## Misc
 export MAIL="$HOME/mail"
 export CONF="$HOME/.config"
-export MARKPATH="$HOME/.marks"
 
 # path
 # ---------------------------------------------
 
 ## Adding root-specific programms to $PATH
 export PATH="$PATH:/sbin:/usr/sbin"
+
+## Adding cabal binaries to $PATH
+export PATH="$PATH:/home/niklas/.cabal/bin"
 
 ## Adding the binfiles to $PATH
 export PATH="$PATH:$HOME/.bin"

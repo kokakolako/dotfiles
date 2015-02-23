@@ -1,3 +1,8 @@
 Host knakrack
     Port 22
     Hostname 178.62.223.161
+
+Host katzenjammer
+    Port 22
+    Hostname vnode0172.pulsedmedia.com
+    User katzenja

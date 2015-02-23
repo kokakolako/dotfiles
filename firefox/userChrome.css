@@ -4,15 +4,15 @@
 Hide the scrollbar
 */
 
-#content browser{
-
-    margin-right:-16px!important;
-    overflow:hidden;
-    overflow-x:hidden;
-    overflow-y:hidden;
-
-}
-
+/* #content browser{ */
+/*  */
+/*     margin-right:-16px!important; */
+/*     overflow:hidden; */
+/*     overflow-x:hidden; */
+/*     overflow-y:hidden; */
+/*  */
+/* } */
+/*  */
 /*
  Customize the Firefox UI
 */
