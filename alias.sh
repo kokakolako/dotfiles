@@ -14,6 +14,7 @@ alias zconfig="vim $HOME/.config/zsh/zshrc $HOME/.config/alias.sh +'lcd $HOME/.c
 alias abcde="abcde -c $HOME/.config/abcde/abcde.conf"
 alias eclipse="eclipse -nosplash"
 alias emacs="emacsclient -nc &> /dev/null"
+alias emerge="emerge --quiet-build=y"
 alias ffplay="ffplay -loglevel quiet"
 alias gimp="gimp --no-splash"
 alias grep="grep --color=auto"
@@ -22,15 +23,27 @@ alias ipv4_addr="curl ipv4.icanhazip.com"
 alias ipv6_addr="curl ipv6.icanhazip.com"
 alias irssi="sudo irssi --nick kokakolako --home /home/niklas/.config/irssi/"
 alias locate="locate --regex"
+alias minecraft="DRI_PRIME=1 java -jar "$HOME"/.opt/Minecraft.jar"
 alias mpv="DRI_PRIME=1 mpv --input-file=$HOME/.config/mpv/mpv-control"
 alias ncmpcpp="ncmpcpp -c $HOME/.config/ncmpcpp/config"
+alias newsbeuter="newsbeuter -u ~/.config/newsbeuter/urls -C ~/.config/newsbeuter/config -r 2> /dev/null"
+alias open_with_amd="DRI_PRIME=1 $@"
+alias redshift="redshift -l 51.43072:7.16941 &> /dev/null &"
 alias tabbed="tabbed -d -c -t \#ffffff -T \#ff0055 -u \#ff0055 -U \#ffffff"
 alias vim="vim -u $HOME/.config/vim/vimrc"
-alias newsbeuter="newsbeuter -u ~/.config/newsbeuter/urls -C ~/.config/newsbeuter/config -r 2> /dev/null"
 alias zathura="tabbed -t '#ffffff' -T '#ff0055' -u '#ff0055' -U '#ffffff' -e zathura"
-alias redshift="redshift -l 51.43072:7.16941 &> /dev/null &"
-alias minecraft="DRI_PRIME=1 java -jar "$HOME"/.opt/Minecraft.jar"
-alias open_with_amd="DRI_PRIME=1 $@"
+
+# git aliases
+# ---------------------------------------------
+alias add="git add"
+alias branch="git branch"
+alias checkout="git checkout"
+alias commit="git commit"
+alias merge="git merge"
+alias pull="git pull"
+alias push="git push"
+alias status="git status"
+alias annex="git annex"
 
 # shortcuts
 # ---------------------------------------------
@@ -39,13 +52,6 @@ alias E="emacs"
 alias V="vim"
 alias G="git"
 alias H="herbstclient"
-
-alias commit="git commit"
-alias push="git push"
-alias merge="git merge"
-alias branch="git branch"
-alias checkout="git checkout"
-alias add="git add"
 
 # sudo-shortcuts
 # ---------------------------------------------
