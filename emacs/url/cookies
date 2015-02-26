@@ -1,15 +1,0 @@
-;; Emacs-W3 HTTP cookies file
-;; Automatically generated file!!! DO NOT EDIT!!!
-
-(setq url-cookie-storage
- '(("www.linuxquestions.org"
-  [url-cookie "bblastvisit" "1418433458" "13-Dec-2015 01:17:38.00 GMT" "/" "www.linuxquestions.org" nil]
-  [url-cookie "bblastactivity" "0" "13-Dec-2015 01:17:38.00 GMT" "/" "www.linuxquestions.org" nil]))
-)
-(setq url-cookie-secure-storage
- 'nil)
-
-;; Local Variables:
-;; version-control: never
-;; no-byte-compile: t
-;; End:
