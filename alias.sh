@@ -12,6 +12,7 @@ alias zconfig="vim $HOME/.config/zsh/zshrc $HOME/.config/alias.sh +'lcd $HOME/.c
 # start program with a customized config-file
 # ---------------------------------------------
 alias abcde="abcde -c $HOME/.config/abcde/abcde.conf"
+alias bc="bc -q"
 alias eclipse="eclipse -nosplash"
 alias emacs="emacsclient -nc &> /dev/null"
 alias emerge="emerge --quiet-build=y"
@@ -24,14 +25,14 @@ alias ipv6_addr="curl ipv6.icanhazip.com"
 alias irssi="sudo irssi --nick kokakolako --home /home/niklas/.config/irssi/"
 alias locate="locate --regex"
 alias minecraft="DRI_PRIME=1 java -jar "$HOME"/.opt/Minecraft.jar"
-alias mpv="DRI_PRIME=1 mpv --input-file=$HOME/.config/mpv/mpv-control"
+alias mpv="mpv --input-file=$HOME/.config/mpv/mpv-control"
 alias ncmpcpp="ncmpcpp -c $HOME/.config/ncmpcpp/config"
 alias newsbeuter="newsbeuter -u ~/.config/newsbeuter/urls -C ~/.config/newsbeuter/config -r 2> /dev/null"
 alias open_with_amd="DRI_PRIME=1 $@"
 alias redshift="redshift -l 51.43072:7.16941 &> /dev/null &"
 alias tabbed="tabbed -d -c -t \#ffffff -T \#ff0055 -u \#ff0055 -U \#ffffff"
-alias vim="vim -u $HOME/.config/vim/vimrc"
-alias zathura="tabbed -t '#ffffff' -T '#ff0055' -u '#ff0055' -U '#ffffff' -e zathura"
+# alias vim="vim -u $HOME/.config/vim/vimrc"
+alias pandoc="~/.cabal/bin/pandoc"
 
 # git aliases
 # ---------------------------------------------
@@ -43,36 +44,32 @@ alias merge="git merge"
 alias pull="git pull"
 alias push="git push"
 alias status="git status"
-alias annex="git annex"
 
 # shortcuts
 # ---------------------------------------------
 alias A="alsamixer"
 alias E="emacs"
-alias V="vim"
-alias G="git"
 alias H="herbstclient"
+alias N="ncmpcpp"
+alias V="vim"
 
 # sudo-shortcuts
 # ---------------------------------------------
 alias blkid="sudo blkid"
 alias emerge="sudo emerge"
+alias layman="sudo layman"
 alias poweroff="sudo poweroff"
 alias reboot="sudo reboot"
 alias shutdown="sudo shutdown"
+alias mount="sudo mount"
+alias umount="sudo umount"
 
 # make directory and cd into it
 # ---------------------------------------------
 function mcd () {
-    mkdir -p "$@"
-    cd "$@"
-}
-
-# if the current working directory contains less than 65 directories,
-# show the directories of the current working directory via ls
-# ---------------------------------------------
-function chpwd () {
-    [[ $( ls -l | wc -l ) -lt 65 ]] && ls
+    args="$@"
+    mkdir -p $args
+    cd $args
 }
 
 # update git submodules
@@ -127,15 +124,14 @@ function sxhkd_reload () {
         || printf "An error occured while trying to reload the sxhkdrc file"
 }
 
-
 # colorized "dirs", "pushd", "popd"
 # ---------------------------------------------
 function dirs () {
     ## to use the builtin dirs command the command must be invoked via "builtin"
     local lines=$( builtin dirs -v | wc -l )
     local lines=$(( $lines - 1 ))
-    local color=
-    for stack_pos in $( seq 0 $lines ); do
+    local color
+    for (( stack_pos = 0; stack_pos <= $lines; stack_pos++ )); do
         ## do not remove the "-w" parameter of grep, because with "-w" grep
         ## is only searching the first matching
         local dir=$( builtin dirs -v | grep -w "$stack_pos" | cut -c 3- )
@@ -173,23 +169,6 @@ function pushd () {
 }
 
 alias popd="popd "$@" > /dev/null; dirs"
-
-# sxiv: move marked files
-# ---------------------------------------------
-function sxiv_mv () {
-    local picture=$1
-    local dest_dir=$2
-    for file in $( sxiv -o $picture ); do
-        mv "$file" "$dest_dir/$file"
-    done
-}
-
-# sxiv: remove marked files
-# ---------------------------------------------
-function sxiv_rm () {
-    local picture=$1
-    sxiv -o "$picture" | xargs rm
-}
 
 # irssi: add a script to irssi
 # ---------------------------------------------

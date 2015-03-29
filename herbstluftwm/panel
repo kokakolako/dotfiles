@@ -16,10 +16,11 @@ panel_width=${geometry[2]}
 panel_height=20
 
 font="DeJaVu Sans Mono-8"
+# font="Terminus Mono-8"
 
-bgcolor='#FFFFFF'
-selbg='#FF0055'
-selfg='#FFFFFF'
+bgcolor='#272822'
+selbg='#f92672'
+selfg='#f8f8f2'
 
 if [[ -d /opt/xftwidth/ ]]; then
     textwidth="/opt/xftwidth/xftwidth"
@@ -72,16 +73,16 @@ hc pad $monitor $panel_height
                     printf "^bg($selbg)^fg($selfg)"
                     ;;
                 '+')
-                    printf "^bg(#000000)^fg(#000000)"
+                    printf "^bg(#f8f8f2)^fg(#000000)"
                     ;;
                 ':')
-                    printf "^bg()^fg(#000000)"
+                    printf "^bg()^fg(#f8f8f2)"
                     ;;
                 '!')
-                    printf "^bg(#000000)^fg(#000000)"
+                    printf "^bg(#f8f8f2)^fg(#000000)"
                     ;;
                 *)
-                    printf "^bg()^fg(#ababab)"
+                    printf "^bg()^fg(#a59f85)"
                     ;;
             esac
             if [ ! -z "$dzen2_svn" ] ; then
@@ -96,24 +97,24 @@ hc pad $monitor $panel_height
             fi
         done
 
-        temp="^fg(#000000)$( i8kctl temp )°"
-        temp_icon="^fg(#FF0055)^i($HOME/.config/herbstluftwm/icons/xbm/temp.xbm)"
+        temp="^fg(#f8f8f2)$( i8kctl temp )°"
+        temp_icon="^fg(#f92672)^i($HOME/.config/herbstluftwm/icons/xbm/temp.xbm)"
 
-        # vol="^fg(#000000)$( $HOME/.bin/print-volume )"
-        # vol_icon="^fg(#FF0055)^i($HOME/.config/herbstluftwm/icons/xbm/cat.xbm)"
+        # vol="^fg(#f8f8f2)$( $HOME/.bin/print-volume )"
+        # vol_icon="^fg(#f92672)^i($HOME/.config/herbstluftwm/icons/xbm/cat.xbm)"
 
-        cpu="^fg(#000000)$( ps -eo pcpu | awk 'BEGIN {sum=0.0f} {sum+=$1} END {print sum}' )"
-        cpu_icon="^fg(#FF0055)^i($HOME/.config/herbstluftwm/icons/xbm/cpu.xbm)"
+        cpu="^fg(#f8f8f2)$( ps -eo pcpu | awk 'BEGIN {sum=0.0f} {sum+=$1} END {print sum}' )"
+        cpu_icon="^fg(#f92672)^i($HOME/.config/herbstluftwm/icons/xbm/cpu.xbm)"
 
-        batt="^fg(#000000)$( $HOME/.bin/battery_status )"
-        batt_icon="^fg(#FF0055)^i($HOME/.config/herbstluftwm/icons/xbm/bat_full_01.xbm)"
+        batt="^fg(#f8f8f2)$( $HOME/.bin/battery_status )"
+        batt_icon="^fg(#f92672)^i($HOME/.config/herbstluftwm/icons/xbm/bat_full_01.xbm)"
 
-        wifi=" ^fg(#000000)$( iwconfig wlp8s0 | grep ESSID | cut -c 33- | tr -d '"' | sed "s/[[:space:]]//g" )"
-        wifi_icon="^fg(#FF0055)^i($HOME/.config/herbstluftwm/icons/xbm/wifi_01.xbm)"
+        wifi=" ^fg(#f8f8f2)$( iwconfig wlp8s0 | grep ESSID | cut -c 33- | tr -d '"' | sed "s/[[:space:]]//g" )"
+        wifi_icon="^fg(#f92672)^i($HOME/.config/herbstluftwm/icons/xbm/wifi_01.xbm)"
 
-        date_icon="^fg(#FF0055)^i($HOME/.config/herbstluftwm/icons/xbm/clock.xbm)^fg(#000000)"
+        date_icon="^fg(#f92672)^i($HOME/.config/herbstluftwm/icons/xbm/clock.xbm)^fg(#f8f8f2)"
 
-        printf "^bg()^fg(#000000) ${windowtitle//^/^^}"
+        printf "^bg()^fg(#f8f8f2) ${windowtitle//^/^^}"
         right="$batt_icon $batt  $temp_icon $temp  $cpu_icon $cpu  $date_icon $date"
         right_text_only=$(echo -n "$right" | sed 's.\^[^(]*([^)]*)..g')
 
@@ -173,6 +174,6 @@ hc pad $monitor $panel_height
     done
 
 } 2> /dev/null | dzen2 -w $panel_width -x $x -y $y -fn "$font" -h $panel_height \
-    -ta l -bg "$bgcolor" -fg '#FF0055' -p
+    -ta l -bg "$bgcolor" -fg '#f92672' -p
 
 #    -e 'button3=;button4=exec:herbstclient use_index -1' ;button5=exec:herbstclient use_index +1

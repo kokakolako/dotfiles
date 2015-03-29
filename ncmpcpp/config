@@ -22,7 +22,6 @@ empty_tag_marker                              = "~"
 # song_list_format                              = "$3{%A}$2{%t}$7{%b}"
 song_list_format                              = "{[.red](%l)[/green]}{%a - }{%t}|{[.white]%f[/white]}"
 song_columns_list_format                      = "(30)[red]{A} (40)[cyan]{t} (30)[green]{b}"
-# media_library_left_column                     = "A"
 
 ## UI-Modi
 user_interface                                = "alternative"
@@ -44,8 +43,8 @@ space_add_mode                                = "add_remove"
 
 ## Progress Bar
 progressbar_look                              = "███"
-progressbar_color                             = "magenta"
-progressbar_elapsed_color                     = "cyan"
+progressbar_color                             = "black"
+progressbar_elapsed_color                     = "green"
 
 ## Colors
 main_window_color                             = "default"
@@ -59,6 +58,6 @@ empty_tag_color                               = "cyan"
 visualizer_sync_interval                      = "5"
 visualizer_fifo_path                          = "/home/niklas/.config/mpd/fifo"
 visualizer_type                               = "spectrum" # (spectrum/wave)
-visualizer_look                               = "◆█"
+visualizer_look                               = "♦●"
 visualizer_color                              = "red"
 visualizer_in_stereo                          = "yes"

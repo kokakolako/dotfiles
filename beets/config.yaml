@@ -6,7 +6,8 @@ paths:
     singleton: $artist/title
     comp: Compilations/$album%aunique{}/$track $title
     albumtype:soundtrack: OST/$artist - $album/$track $title
-plugins: chroma mpdupdate
+plugins: mpdupdate
+# chroma
 acoustid:
     apikey: cMh6x0zY
 copy: no

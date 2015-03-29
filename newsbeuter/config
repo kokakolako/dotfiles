@@ -9,18 +9,31 @@ notify-format "Newsbeuter: %n unread articles within %f unread feeds"
 # Rice
 # ----------------------------------------------------------
 
-#     <element>         <fg>        <bg>         <attr>
-color info              color15     color1       bold
-color listnormal_unread color0      color15
-color listfocus_unread  color1      color15
-color listfocus         color4      color15
-color listnormal        color7      color15
-color article           color0      color15
+# <element>                 <fg>        <bg>         <attr>
+# color info                color15     color1       bold
+# color listnormal_unread   color0      color15
+# color listfocus_unread    color1      color15
+# color listfocus           color4      color15
+# color listnormal          color7      color15
+# color article             color0      color15
+
+# <element>                 <fg>        <bg>         <attr>
+color info                  color15     color1       bold
+color listnormal_unread     color12     color0
+color listfocus_unread      color1      color0
+color listfocus             color4      color0
+color listnormal            color8      color0
+color article               color8      color0
 
 # highlight feedlist    "^  *[0-9]+  *N  .*"    color1 default
 # highlight articlelist "^  *[0-9]+  *N  .*"    color1 default
 
 highlight article "(^Feed:|^Title:|^Author:|^Link:|^Date:|^Podcast Download URL:)"    color1  default
+
+# Blacklist articles
+# ----------------------------------------------------------
+
+ignore-article "http://lwn.net/headlines/rss" "title =~ \"[$]\""
 
 # Keybindings
 # ----------------------------------------------------------

@@ -1,0 +1,12 @@
+history-length: 1000
+ignore-submodules:
+- ~/.rvm
+repositories:
+- ~/documents/projects/G:
+    remotes:
+    - origin: git@github.com/kokakolako/G.git
+submodules:
+- bla:
+    ignore_dirty: false
+- blub:
+    ignore_dirty: true
