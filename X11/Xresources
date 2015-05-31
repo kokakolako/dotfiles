@@ -13,11 +13,11 @@ Xft.rgba:                      rgb
 ! ----------------------------------------------
 
 URxvt.termName:                rxvt-unicode
-URxvt.font:                    xft:DejaVu Sans Mono:pixelsize:6, \
+URxvt.font:                    xft:DejaVu Sans Mono:size=14, \
                                xft:unifont:style=Medium
 
 URxvt.insecure:                false
-URxvt.internalBorder:          15
+URxvt.internalBorder:          10
 URxvt.saveLines:               1000
 URxvt.cursorBlink:             true
 URxvt.scrollBar:               false
@@ -37,42 +37,24 @@ URxvt.tabbed.tab-bg:           1
 URxvt.tabbed.secondaryScroll:  true
 URxvt.perl-ext-common:         default,clipboard
 
-! URxvt Colors inspired by hemisu
-! (https://github.com/noahfrederick/vim-hemisu)
-! ----------------------------------------------
+URxvt.foreground:                   "#f8f8f2"
+URxvt.background:                   "#272822"
+URxvt.cursorColor:                  "#f8f8f2"
 
-URxvt.background:            #ffffff
-URxvt.foreground:            #101010
-URxvt.cursorColor:           #777777
+URxvt.color0:                       "#272822"
+URxvt.color1:                       "#f92672"
+URxvt.color2:                       "#a6e22e"
+URxvt.color3:                       "#f4bf75"
+URxvt.color4:                       "#66d9ef"
+URxvt.color5:                       "#ae81ff"
+URxvt.color6:                       "#a1efe4"
+URxvt.color7:                       "#f8f8f2"
 
-! Black + DarkGrey
-URxvt.color0:                #101010
-URxvt.color8:                #303030
-
-! Red + DarkRed
-URxvt.color1:                #ff0055
-URxvt.color9:                #ed0028
-
-! Green + DarkGreen
-URxvt.color2:                #b1d631
-URxvt.color10:               #739200
-
-! Yellow + DarkYellow
-URxvt.color3:                #fff700
-URxvt.color11:               #ff4000
-
-! Blue + DarkBlue
-URxvt.color4:                #005f87
-URxvt.color12:               #538192
-
-! Magenta + DarkMagenta
-URxvt.color5:                #7e40a5
-URxvt.color13:               #cbe4ee
-
-! Cyan + DarkCyan
-URxvt.color6:                #4eb4fa
-URxvt.color14:               #3579a8
-
-! White+ LightGrey
-URxvt.color7:                #bbbbbb
-URxvt.color15:               #ffffff
+URxvt.color8:                       "#75715e"
+URxvt.color9:                       "#f92672"
+URxvt.color10:                      "#a6e22e"
+URxvt.color11:                      "#f4bf75"
+URxvt.color12:                      "#66d9ef"
+URxvt.color13:                      "#ae81ff"
+URxvt.color14:                      "#a1efe4"
+URxvt.color15:                      "#f9f8f5"

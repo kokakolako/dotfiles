@@ -39,7 +39,7 @@ super + Return
 
 ## Start emacs
 super + e
-    emacsclient -nc
+    emacs
 
 ## Start zathura
 super + z
@@ -55,6 +55,7 @@ super + o
 ## New random wallpaper
 super + p
     hsetroot -full "$( find $HOME/pictures/wallpaper/1920x1080/ -type f | shuf -n 1 )"
+# hsetroot -tile "$( find $HOME/pictures/wallpaper/tiling/ -type f | shuf -n 1 )"
 
 ## Next & prev song
 XF86Audio{Next,Prev}
@@ -88,5 +89,8 @@ XF86MonBrightness{Up,Down}
 ## Clear tmux screen via C-ö
 ctrl + odiaeresis
     tmux send-keys 'C-l'
+
+ctrl + alt + v
+    tmux set-buffer -- \"$( xclip -o -selection clipboard )\"; tmux paste-buffer
 
 # vim: set syntax=conf:

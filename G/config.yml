@@ -6,7 +6,7 @@ repositories:
     remotes:
     - origin: git@github.com/kokakolako/G.git
 submodules:
-- bla:
-    ignore_dirty: false
-- blub:
+- /home/niklas/.zprezto:
+    ignore_dirty: true
+- /home/niklas/.config/vim/plugins/YouCompleteMe/third_party/ycmd/third_party/OmniSharpServer:
     ignore_dirty: true

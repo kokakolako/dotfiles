@@ -1,38 +1,43 @@
 # editing config files
 # ---------------------------------------------
-alias hconfig="vim $HOME/.config/herbstluftwm/autostart $HOME/.config/herbstluftwm/panel +'lcd $HOME/.config/herbstluftwm'"
-alias iconfig="vim $HOME/.config/i3/config +'lcd $HOME/.config/i3'"
-alias nconfig="vim $HOME/.config/ncmpcpp/config +'lcd $HOME/.config/ncmpcpp'"
-alias sconfig="vim $HOME/.config/sxhkd/sxhkdrc +'lcd $HOME/.config/sxhkd'"
-alias tconfig="vim $HOME/.config/tmux/tmux.conf +'lcd $HOME/.config/tmux'"
-alias uconfig="vim $HOME/.config/X11/Xresources +'lcd $HOME/.config/X11'"
-alias vconfig="vim $HOME/.config/vim/vimrc $HOME/.config/vim/extend.vim $HOME/.config/vim/plugins.vim +'lcd $HOME/.config/vim'"
-alias zconfig="vim $HOME/.config/zsh/zshrc $HOME/.config/alias.sh +'lcd $HOME/.config/zsh'"
+alias hconfig="vim -c \"lcd $HOME/.config/herbstluftwm\" $HOME/.config/herbstluftwm/{autostart,panel}"
+alias iconfig="vim -c \"lcd $HOME/.config/i3\" $HOME/.config/i3/config "
+alias nconfig="vim -c \"lcd $HOME/.config/ncmpcpp\" $HOME/.config/ncmpcpp/config"
+alias sconfig="vim -c \"lcd $HOME/.config/sxhkd\" $HOME/.config/sxhkd/sxhkdrc "
+alias tconfig="vim -c \"lcd $HOME/.config/tmux\" $HOME/.config/tmux/tmux.conf"
+alias uconfig="vim -c \"lcd $HOME/.config/X11\" $HOME/.config/X11/Xresources "
+alias vconfig="vim -c \"lcd $HOME/.config/vim\" $HOME/.config/vim/{vimrc,extend.vim}"
+alias zconfig="vim -c \"lcd $HOME/.config/zsh\" $HOME/.config/{alias.sh,zsh/zshrc}"
 
 # start program with a customized config-file
 # ---------------------------------------------
+alias emacs="emacs -nc"   
 alias abcde="abcde -c $HOME/.config/abcde/abcde.conf"
 alias bc="bc -q"
 alias eclipse="eclipse -nosplash"
-alias emacs="emacsclient -nc &> /dev/null"
 alias emerge="emerge --quiet-build=y"
 alias ffplay="ffplay -loglevel quiet"
 alias gimp="gimp --no-splash"
+alias git="LANG=en_us git"
 alias grep="grep --color=auto"
 alias info="info --vi-keys"
 alias ipv4_addr="curl ipv4.icanhazip.com"
 alias ipv6_addr="curl ipv6.icanhazip.com"
+alias ipython="ipython --no-banner --nosep"
 alias irssi="sudo irssi --nick kokakolako --home /home/niklas/.config/irssi/"
+alias la="\ls -A --color"
+alias ll="\ls -Al --color"
 alias locate="locate --regex"
+alias ls="ls --color --ignore __pycache__"
 alias minecraft="DRI_PRIME=1 java -jar "$HOME"/.opt/Minecraft.jar"
-alias mpv="mpv --input-file=$HOME/.config/mpv/mpv-control"
+alias mpv="DRI_PRIME=1 mpv --input-file=$HOME/.config/mpv/mpv-control -vo=opengl-hq"
 alias ncmpcpp="ncmpcpp -c $HOME/.config/ncmpcpp/config"
 alias newsbeuter="newsbeuter -u ~/.config/newsbeuter/urls -C ~/.config/newsbeuter/config -r 2> /dev/null"
 alias open_with_amd="DRI_PRIME=1 $@"
+alias pandoc="~/.cabal/bin/pandoc"
 alias redshift="redshift -l 51.43072:7.16941 &> /dev/null &"
 alias tabbed="tabbed -d -c -t \#ffffff -T \#ff0055 -u \#ff0055 -U \#ffffff"
-# alias vim="vim -u $HOME/.config/vim/vimrc"
-alias pandoc="~/.cabal/bin/pandoc"
+alias vim="vim -u $HOME/.config/vim/vimrc"
 
 # git aliases
 # ---------------------------------------------
@@ -52,6 +57,7 @@ alias E="emacs"
 alias H="herbstclient"
 alias N="ncmpcpp"
 alias V="vim"
+alias G="/home/niklas/documents/projects/G/G/__init__.py"
 
 # sudo-shortcuts
 # ---------------------------------------------
@@ -67,29 +73,9 @@ alias umount="sudo umount"
 # make directory and cd into it
 # ---------------------------------------------
 function mcd () {
-    args="$@"
-    mkdir -p $args
-    cd $args
-}
-
-# update git submodules
-# ---------------------------------------------
-function update_git_submodules () {
-    local curr_dir=$PWD
-    printf "\n\e[34m::\e[0;1m Aktualisieren der git submodules...\e[0m"
-    submodules=("$HOME/.config/vim/")
-    for submodule in $submodules; do
-        cd "$submodule"
-        git stash
-        sudo git submodule foreach git pull origin master
-        if [[ $submodule == "$HOME"/.config/vim/ ]]; then
-            [[ -d "$HOME"/.config/vim/bundle ]] \
-                && git add -A "$HOME"/.config/vim/bundle \
-                && git commit -m "Updating vim submodules"
-        fi
-        git stash apply
-    done
-    cd "$curr_dir"
+    dir="$@"
+    mkdir -p $dir
+    cd $dir
 }
 
 # colorizing man-pages
@@ -105,9 +91,25 @@ function man () {
     man "$@"
 }
 
+# download images from 4chan thread
+# ---------------------------------------------
+function 4chan-dl () {
+    local url="${1}"
+    local thread="$( \
+        curl ${url//boards.4chan/a.4cdn}.json \
+        | jq '.posts[0].sub' \
+        | tr -d '\/\\'
+    )"
+    curl "$url" \
+    | grep -Eo 'href="[^"]*.(jpg|png|gif|webm)' \
+    | sort | uniq \
+    | sed 's/href="/http:/g' \
+    | xargs -I {} wget {} --directory-prefix=${thread//\"/} \
+}
+
 # reload tmux
 # ---------------------------------------------
-function tmux_reload () {
+function tmux-reload () {
     tmux source-file $HOME/.config/tmux/tmux.conf > /dev/null
     [ $? -eq 0 ] \
         && printf "Sucessfully reloaded the tmux.conf file\n" \
@@ -117,7 +119,7 @@ function tmux_reload () {
 
 # reload sxhkd
 # ---------------------------------------------
-function sxhkd_reload () {
+function sxhkd-reload () {
     kill -s USR1 "$( pidof sxhkd )" > /dev/null
     [ $? -eq 0 ] \
         && printf "Sucessfully reloaded the sxhkdrc file" \
@@ -162,12 +164,10 @@ function dirs () {
         esac
     done
 }
-
 function pushd () {
     builtin pushd "$@" > /dev/null
     dirs "$@"
 }
-
 alias popd="popd "$@" > /dev/null; dirs"
 
 # irssi: add a script to irssi

@@ -1,1131 +1,142 @@
-ls
-cd /home/niklas/documents/projects/G/
-ls
-python
-import G
-from G import *
-cd /home/niklas/documents/projects/G/
-from G import *
-count_lines( os.getcwd() + "G.py" )
-count_lines( os.getcwd() + "/G.py" )
-from G import *
-count_lines( os.getcwd() + "/G.py" )
-from G import *
-cd /home/niklas/documents/projects/G/
-from G import *
-count_lines( os.getcwd() + "/G.py" )
-from G import *
-count_lines( os.getcwd() + "/G.py" )
-from G import *
-cd /home/niklas/documents/projects/G/
-from G import *
-count_lines( os.getcwd() + "/G.py" )
-from G import *
-count_lines( os.getcwd() + "/G.py" )
-from G import *
-count_lines( os.getcwd() + "/G.py" )
-from G import *
-count_lines( os.getcwd() + "/G.py" )
-from G import *
-count_lines( os.getcwd() + "/G.py" )
-from G import *
-count_lines( os.getcwd() + "/G.py" )
-from G import *
-count_lines( os.getcwd() + "/G.py" )
-from G import *
-count_lines( os.getcwd() + "/G.py" )
-from G import *
-count_lines( os.getcwd() + "/G.py" )
-from G import *
-count_lines( os.getcwd() + "/G.py" )
-test = ""
-is test
-is test?
-is not ""
-is not ''
-if is '':
-    print( huhu )
-if is test:
-    print( huhu )
-from G import *
-settings
-settings.get( "history-length" )
-settings
-settings.get( "history-length" )
-from G import *
-count_lines( os.getcwd() + "/G.py" ) == settings.get( "history-length" )
-%quickref
-from G import *
-count_lines( os.getcwd() + "/G.py" ) == settings.get( "history-length" )
-settings.get( "history-length" )
-count_lines( os.getcwd() + "/G.py" )
-vim
-ls
-from G import *
-ls
-history_file
-config.history
-os.path.join( "~", "/hihi" )
-os.path.join( "~", "hihi" )
-os.path.expanduser( "~" )
-from G import *
-config.dir()
-from G import *
-config.dir()
-config.file()
-config.history()
-test="hallo/hihi"
-test.split( "/" )
-test
-test2 = test.split( "/" )
-tet2
-test2
-os.path.join( test2 )
-os.path.join( list( test2 ) )
-os.path.join( elem for elem in path )
-os.path.join( elem for elem in test )
-print( os.path.join( elem for elem in test ) )
-list( os.path.join( elem for elem in test ) )
-str( os.path.join( elem for elem in test ) )
-string( os.path.join( elem for elem in test ) )
-String( os.path.join( elem for elem in test ) )
-os.path.join( elem for elem in test )
-from G import *
-is_path( "~/hallo"
-)
-is_path( "~/hallo" )
-from G import *
-is_path( "~/hallo" )
-from G import *
-is_path( "~/hallo" )
-from G import *
-is_path( "~/hallo" )
-from G import *
-is_path( "~/hallo" )
-from G import *
-is_path( "~/hallo" )
-test
-test = "hallo\huhu/hihi\haha"
-re.split( r"[\\\/]", test )
-from G import *
-cd documents/projects/G/
-from G import *
-operands
-operands = get_operands()
-operands = get_operands( [ "@master", "->", "origin" ] )
-operands
-for operator, files in operands:
-    print( files )
-operands
-for operator, files in operands:
-    print( files )
-operands
-for operator, files in operands.iteritems():
-    print( files )
-for operator, files in operands.enumerate()():
-    print( files )
-for operator, files in operands.enumerate()():
-    print( files )
-for k,v in operands.enumerate():
-  print v
-for k,v in operands.enumerate():
-  print( v )
-for k,v in operands.items():
-  print( v )
-for k,v in operands.items():
-  print( v + k )
-from G import *
-cd documents/projects/G/
-from G import *
-operands = get_operands( [ "@master", "->", "origin" ] )
-operator = "push"
-operands = get_operands( [ "@master", "->", "origin" ] )
-get_operands( [ "@master", "->", "origin" ] )
-operands = get_operands( [ "@master", "->", "origin" ] )
-for o, f in operands.items():
-    print (o)
-for o, f in operands.items():
-    print(f)
-is_empty( [] )
-is_empty( ["master"] )
-not is_empty( ["master"] )
-from G import *
-not is_empty( ["master"] )
-main()
-from G import *
-main()
-from G import *
-change_directory( ~/.config )
-change_directory( "~/.config" )
-from G import *
-change_directory( "~/.config" )
-from G import *
-get_operator()
-from G import *
-get_operator( "cd" )
-get_operator( ["cd"] )
-get_user_input( "cd" )
-get_user_input()
-from G import *
-main()
-from G import *
-get_operands( ["cd", "huhu" ] )
-from G import *
-get_operands( ["cd", "huhu" ] )
-from G import *
-get_operands( ["cd", "huhu" ] )
-get_operator( "+" )
-get_operator( "blub" )
-get_operator( "+" ) == True
-get_operator( "+" ) == False
-get_operator( "+" ) == True
-get_operator( "cd" )
-from G import *
-get_operator( "cd" )
-from G import *
-get_operator( "cd" )
-get_operator( "+" )
-from G import *
-get_operator( "+" )
-get_operator( "->" )
-get_operator( ["->"] )
-get_operator( ["cd"] )
-list( [ "hallo, "huh" ] )
-type( [] )
-print( type( [] ) )
-from G import *
-get_operator( "=" )
-get_operator( "->" )
-list( "->" )
-from G import *
-get_operator( "->" )
-get_operator( "cd" )
-from G import *
-get_operator( "cd" )
-change_directory( "~/.config" )
-get_operands()
-get_operands( "@master", "->", "@origin" )
-get_operands( [ "@master", "->", "@origin" ] )
-get_operands( [ "@master", "cd", "@origin" ] )
-get_operands( [ "cd", "huhu" ] )
-from G import *
-get_operator( "ö" )
-get_operator( "ö" ) == True
-if get_operator( "ö" ):
-    print( "ö" )
-if not get_operator( "ö" ):
-    print( "ö" )
-get_operator( "ö" ) == True
-from G import *
-get_operands( [ "@master", "cd", "@origin" ] )
-get_operands( [ "cd", "cd" ] )
-from G import *
-is_path( "$hallo" )
-is_path( "@hallo" )
-is_path( "@" )
-is_path( "~" )
-is_path( "/home/niklas" )
-from G import *
-is_path( "/home/niklas" )
-is_path( "$hallo" )
-from G import *
-add_submodule( "bla", "blub")
-settings
-from G import *
-add_submodule( "bla", "blub")
-from G import *
-add_submodule( "bla", "blub")
-settings
-from G import *
-settings
-add_submodule( "bla", "blub")
-from G import *
-add_submodule( "bla", "blub")
-from manage_submodules import *
-add_submodule("bla", "blub")
-from G import *
-add_submodule("bla", "blub")
-from cli_colors import *
-add_submodule("bla", "blub")
-from G import *
-add_submodule( "bla", "blub" )
-from G import *
-settings
-from G import *
-settings
-from G import *
-settings
-from G import *
-add_submodule( "bla", "blub" )
-from G import *
-add_submodule( "bla", "blub" )
-from G import *
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from G import *
-get_settings()
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from cli_colors import *
-add_submodule( "bla", "blub" )
-from cli_colors import *
-add_submodule( "bla", "blub" )
-get_operator( "cd" )
-from G import *
-add_submodule( "bla", "blub" )
-from cli_colors import *
-fg.red( "hallo" )
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-settings
-os.getcwd()
-for name, path in settings.get( "repositories).items():
-    print path
-for name, path in settings.get( "repositories).items():
-    print( path )
-settings.get( "repositories" )
-for repo in settings.get( "repositories" ):
-    for name, path in repo.items():
-        print( name )
-for repo in settings.get( "repositories" ):
-    for name, path in repo.items():
-        print( path )
-from G import *
-for repo in settings.get( "repositories" ):
-    for name, path in repo.items():
-        print( path )
-from G import *
-for repo in settings.get( "repositories" ):
-    for path in repo.items():
-        print( path )
-for repo in settings.get( "repositories" ):
-    for bla, path in repo.items():
-        print( path )
-    for repository in settings.get( "repositories" ):
-            for path, values in repository.items():
-                    if os.path.expanduser( path ) == cwd:
-                            remotes = values.get( "remotes" )
-for repo in settings.get( "repositories" ):
-    for name, path in repo.items():
-        print( path )
-for repo in settings.get( "repositories" ):
-    for name, path in repo.items():
-        print( path.get( "remotes" ) )
-for repo in settings.get( "repositories" ):
-    for name, path in repo.items():
-        remotes = path.get( "remotes" )
-remotes
-[ remote for remote in remotes ]
-[ remote.items for remote in remotes ]
-[ remote.items() for remote in remotes ]
-[ name, path for remote in remotes.items ]
-[ remote.items() for remote in remotes.items ]
-[ remote for remote in remotes.items ]
-[ remote for remote in remotes.items() ]
-[ remote for remote in remotes ]
-[ remote.items() for remote in remotes ]
-[ remote.keys() for remote in remotes ]
-list( [ remote.keys() for remote in remotes ] )
-[ list( remote.keys() )[0] for remote in remotes ]
-[ remote.keys().string() for remote in remotes ]
-[ remote.keys().join() for remote in remotes ]
-[ list( remote.keys() ).join() for remote in remotes ]
-for repo in settings.get( "repositories" ):
-    for name, path in repo.items():
-        remotes = path.get( "remotes" )
-from G import *
-for repo in settings.get( "repositories" ):
-    for name, path in repo.items():
-        remotes = path.get( "remotes" )
-remotes
-from G import *
-add_remote("bla", "blub")
-from manage_remotes import *
-add_remote("bla", "blub")
-settings
-add_remote("bla", "blub")
-from G import *
-get_user_input()
-args = get_user_input()
-args
-args[0]
-args = get_user_input()
-from G import *
-args = get_user_input()
-print( get_remotes() )
-from manage_remotes import *
-print( get_remotes() )
-settings
-from manage-remotes import *
-from manage_remotes import *
-get_remotes()
-settings
-settings.get( "repositories" )
-repo in settings.get( "repositories" )
-for repo in settings.get( "repositories" ):
-    print( repo )
-from manage_remotes import *
-get_remotes()
-repo in settings.get( "repositories" )
-repo
-repo.items()
-for path, values in repo.items():
-    print( values )
-for repo in settings.get( "repositories" ):
-    return repo
-for repo in settings.get( "repositories" ):
-    print( repo )
-for repo in settings.get( "repositories" ):
-    print( repo.items() )
-for repo in settings.get( "repositories" ):
-    print( list( repo.items() ) )
-for repo in settings.get( "repositories" ):
-    for path, values in repo.items():
-        print( "" + values + path )
-for repo in settings.get( "repositories" ):
-    for path, values in repo.items():
-        print( path )
-print( values )
-for repo in settings.get( "repositories" ):
-    for path, values in repo.items():
-        print( path )
-        print( values )
-from manage_remotes import *
-get_remotes()
-emend_path( "~" )
-from manage_remotes import *
-get_remotes()
-emend_path( "~" )
-from manage_remotes import *
-emend_path( "~" )
-emend_path( "/home/niklas/blub" )
-emend_path( "~/blub" )
-from G import *
-emend_path( "~/blub" )
-get_remotes()
-emend_path( "~/blub" )
-from G import *
-get_remotes()
-print( get_remotes() )
-from G import *
-get_remotes()
-print( get_remotes() )
-get_remotes()
-args = get_user_input()
-len( args )
-args
-args[0]
-args[0] == "@remotes"
-args = get_user_input()
-from G import *
-get_remotes()
- emend_path( os.getcwd() )
-re.split
-re.split( r"[\/\\]", "/hallo/huhu" )
-re.split( r"[\/\\]", "~" )
-emend_path( os.getcwd(~) )
-emend_path( os.getcwd("~") )
-emend_path( os.path.expanduser( "~" ) )
-os.chdir( "/home/niklas" )
-emend_path( "videos" )
-"videos"[1:2]
-"videos"[0:1]
-test="test"
-test
-test = "/" + test
-test
-path = "/home/niklas"
-path = re.split( r"[\/\\]", path )
-path
-print( os.path.join( "\" + *path )
-path
-path = "/" + path
-path
-path.insert(0, "/")
-path
-os.path.join( path )
-os.path.join( *path )
-path = path.insert(0, "/")
-path
-path = re.split( r"[\/\\]", path )
-path = "/home/niklas"
-path = re.split( r"[\/\\]", path )
-path
-path = path.insert(0, "/")
-path
-from G import *
-emend_path( "videos" )
-os.path.getcwd()
-os.getcwd()
-from G import *
-os.getcwd()
-emend_path( "videos" )
-emend_path( "/videos" )
-os.path.expanduser( "videos" )
-os.path.expanduser( "~/videos" )
-os.path.expanduser( "videos" )
-from G import *
-os.path.expanduser( "videos" )
-emend_path( "/videos" )
-emend_path( "videos" )
-split( " ", "hallo du" )
-string.split( " ", "hallo du" )
-from string import split
-re.split( os.sep, "hallo/du" )
-"hallo/du".split()
-"hallo/du".split("/")
-emend_path( "videos" )
-from G import *
-emend_path( "videos" )
-from G import *
-get_remotes()
-from G import *
-get_remotes()
-test = "~/huhu"
-re.match( r"[\/\\]|[^~]", test )
-re.match( r"[\/\\]|[^~]", "~/huhu" )
-re.match( r"[\/\\]|[^\~]", "~/huhu" )
-re.match( r"[\/\\]|[^~]", "~/huhu" )
-re.match( r"([\/\\]|[^~])", "~/huhu" )
-if re.match( r"([\/\\]|[^~])", "~/huhu" ):
-    return True
-if re.match( r"([\/\\]|[^~])", "~/huhu" ):
-    print("ja")
-if re.match( r"([\/\\]|[\^~])", "~/huhu" ):
-    print("ja")
-re.match( r"([\/\\]|[\^~])", "~/huhu" )
-if re.match( r"([\/\\]|[\^~])", "~/huhu" ):
-    print( "ja!!!" )
-not re.match( r"([\/\\]|[^~])", "~/huhu" )
- re.match( r"([\/\\]|[^~])", "~/huhu" )
-re.match( r"([\/\\]|[^~])", "~/huhu" )
-not re.match( r"([\/\\]|[^~])", "~/huhu" )
-not re.match( r"([\/\\]|[^~])", "/huhu" )
- re.match( r"([\/\\]|[^~])", "/huhu" )
-re.match( r"([\/\\]|[^~])", "/huhu" )
-if re.match( r"([\/\\]|[^~])", "/huhu" ):
-    print( "ja!" )
-if re.match( r"([\/\\]|[^~])", "~/huhu" ):
-    print( "ja!" )
-if not re.match( r"([\/\\]|[^~])", "~/huhu" ):
-    print( "ja!" )
-from G import *
-hallo
-get_remotes()
-main()
-get_remotes()
-from G import *
-get_remotes()
-from G import *
-get_remotes()
-main()
-get_remotes()
-main
-main()
-operands
-main()
-from G import *
-main()
-y
-@remotes
-@remote
-@remotes
-@remote
-@remotes
-@submodules
-@remotes
-@submodules
-@remotes
-@submodules
++ G.py
 @master -> @origin
-ls
-cd /home/niklas/documents/projects/G/
-ls
-python
-import G
-from G import *
-cd /home/niklas/documents/projects/G/
-from G import *
-count_lines( os.getcwd() + "G.py" )
-count_lines( os.getcwd() + "/G.py" )
-from G import *
-count_lines( os.getcwd() + "/G.py" )
-from G import *
-cd /home/niklas/documents/projects/G/
-from G import *
-count_lines( os.getcwd() + "/G.py" )
-from G import *
-count_lines( os.getcwd() + "/G.py" )
-from G import *
-cd /home/niklas/documents/projects/G/
-from G import *
-count_lines( os.getcwd() + "/G.py" )
-from G import *
-count_lines( os.getcwd() + "/G.py" )
-from G import *
-count_lines( os.getcwd() + "/G.py" )
-from G import *
-count_lines( os.getcwd() + "/G.py" )
-from G import *
-count_lines( os.getcwd() + "/G.py" )
-from G import *
-count_lines( os.getcwd() + "/G.py" )
-from G import *
-count_lines( os.getcwd() + "/G.py" )
-from G import *
-count_lines( os.getcwd() + "/G.py" )
-from G import *
-count_lines( os.getcwd() + "/G.py" )
-from G import *
-count_lines( os.getcwd() + "/G.py" )
-test = ""
-is test
-is test?
-is not ""
-is not ''
-if is '':
-    print( huhu )
-if is test:
-    print( huhu )
-from G import *
-settings
-settings.get( "history-length" )
-settings
-settings.get( "history-length" )
-from G import *
-count_lines( os.getcwd() + "/G.py" ) == settings.get( "history-length" )
-%quickref
-from G import *
-count_lines( os.getcwd() + "/G.py" ) == settings.get( "history-length" )
-settings.get( "history-length" )
-count_lines( os.getcwd() + "/G.py" )
-vim
-ls
-from G import *
-ls
-history_file
-config.history
-os.path.join( "~", "/hihi" )
-os.path.join( "~", "hihi" )
-os.path.expanduser( "~" )
-from G import *
-config.dir()
-from G import *
-config.dir()
-config.file()
-config.history()
-test="hallo/hihi"
-test.split( "/" )
-test
-test2 = test.split( "/" )
-tet2
-test2
-os.path.join( test2 )
-os.path.join( list( test2 ) )
-os.path.join( elem for elem in path )
-os.path.join( elem for elem in test )
-print( os.path.join( elem for elem in test ) )
-list( os.path.join( elem for elem in test ) )
-str( os.path.join( elem for elem in test ) )
-string( os.path.join( elem for elem in test ) )
-String( os.path.join( elem for elem in test ) )
-os.path.join( elem for elem in test )
-from G import *
-is_path( "~/hallo"
-)
-is_path( "~/hallo" )
-from G import *
-is_path( "~/hallo" )
-from G import *
-is_path( "~/hallo" )
-from G import *
-is_path( "~/hallo" )
-from G import *
-is_path( "~/hallo" )
-from G import *
-is_path( "~/hallo" )
-test
-test = "hallo\huhu/hihi\haha"
-re.split( r"[\\\/]", test )
-from G import *
-cd documents/projects/G/
-from G import *
-operands
-operands = get_operands()
-operands = get_operands( [ "@master", "->", "origin" ] )
-operands
-for operator, files in operands:
-    print( files )
-operands
-for operator, files in operands:
-    print( files )
-operands
-for operator, files in operands.iteritems():
-    print( files )
-for operator, files in operands.enumerate()():
-    print( files )
-for operator, files in operands.enumerate()():
-    print( files )
-for k,v in operands.enumerate():
-  print v
-for k,v in operands.enumerate():
-  print( v )
-for k,v in operands.items():
-  print( v )
-for k,v in operands.items():
-  print( v + k )
-from G import *
-cd documents/projects/G/
-from G import *
-operands = get_operands( [ "@master", "->", "origin" ] )
-operator = "push"
-operands = get_operands( [ "@master", "->", "origin" ] )
-get_operands( [ "@master", "->", "origin" ] )
-operands = get_operands( [ "@master", "->", "origin" ] )
-for o, f in operands.items():
-    print (o)
-for o, f in operands.items():
-    print(f)
-is_empty( [] )
-is_empty( ["master"] )
-not is_empty( ["master"] )
-from G import *
-not is_empty( ["master"] )
-main()
-from G import *
-main()
-from G import *
-change_directory( ~/.config )
-change_directory( "~/.config" )
-from G import *
-change_directory( "~/.config" )
-from G import *
-get_operator()
-from G import *
-get_operator( "cd" )
-get_operator( ["cd"] )
-get_user_input( "cd" )
-get_user_input()
-from G import *
-main()
-from G import *
-get_operands( ["cd", "huhu" ] )
-from G import *
-get_operands( ["cd", "huhu" ] )
-from G import *
-get_operands( ["cd", "huhu" ] )
-get_operator( "+" )
-get_operator( "blub" )
-get_operator( "+" ) == True
-get_operator( "+" ) == False
-get_operator( "+" ) == True
-get_operator( "cd" )
-from G import *
-get_operator( "cd" )
-from G import *
-get_operator( "cd" )
-get_operator( "+" )
-from G import *
-get_operator( "+" )
-get_operator( "->" )
-get_operator( ["->"] )
-get_operator( ["cd"] )
-list( [ "hallo, "huh" ] )
-type( [] )
-print( type( [] ) )
-from G import *
-get_operator( "=" )
-get_operator( "->" )
-list( "->" )
-from G import *
-get_operator( "->" )
-get_operator( "cd" )
-from G import *
-get_operator( "cd" )
-change_directory( "~/.config" )
-get_operands()
-get_operands( "@master", "->", "@origin" )
-get_operands( [ "@master", "->", "@origin" ] )
-get_operands( [ "@master", "cd", "@origin" ] )
-get_operands( [ "cd", "huhu" ] )
-from G import *
-get_operator( "ö" )
-get_operator( "ö" ) == True
-if get_operator( "ö" ):
-    print( "ö" )
-if not get_operator( "ö" ):
-    print( "ö" )
-get_operator( "ö" ) == True
-from G import *
-get_operands( [ "@master", "cd", "@origin" ] )
-get_operands( [ "cd", "cd" ] )
-from G import *
-is_path( "$hallo" )
-is_path( "@hallo" )
-is_path( "@" )
-is_path( "~" )
-is_path( "/home/niklas" )
-from G import *
-is_path( "/home/niklas" )
-is_path( "$hallo" )
-from G import *
-add_submodule( "bla", "blub")
-settings
-from G import *
-add_submodule( "bla", "blub")
-from G import *
-add_submodule( "bla", "blub")
-settings
-from G import *
-settings
-add_submodule( "bla", "blub")
-from G import *
-add_submodule( "bla", "blub")
-from manage_submodules import *
-add_submodule("bla", "blub")
-from G import *
-add_submodule("bla", "blub")
-from cli_colors import *
-add_submodule("bla", "blub")
-from G import *
-add_submodule( "bla", "blub" )
-from G import *
-settings
-from G import *
-settings
-from G import *
-settings
-from G import *
-add_submodule( "bla", "blub" )
-from G import *
-add_submodule( "bla", "blub" )
-from G import *
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from G import *
-get_settings()
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from cli_colors import *
-add_submodule( "bla", "blub" )
-from cli_colors import *
-add_submodule( "bla", "blub" )
-get_operator( "cd" )
-from G import *
-add_submodule( "bla", "blub" )
-from cli_colors import *
-fg.red( "hallo" )
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-from manage_submodules import *
-add_submodule( "bla", "blub" )
-settings
-os.getcwd()
-for name, path in settings.get( "repositories).items():
-    print path
-for name, path in settings.get( "repositories).items():
-    print( path )
-settings.get( "repositories" )
-for repo in settings.get( "repositories" ):
-    for name, path in repo.items():
-        print( name )
-for repo in settings.get( "repositories" ):
-    for name, path in repo.items():
-        print( path )
-from G import *
-for repo in settings.get( "repositories" ):
-    for name, path in repo.items():
-        print( path )
-from G import *
-for repo in settings.get( "repositories" ):
-    for path in repo.items():
-        print( path )
-for repo in settings.get( "repositories" ):
-    for bla, path in repo.items():
-        print( path )
-    for repository in settings.get( "repositories" ):
-            for path, values in repository.items():
-                    if os.path.expanduser( path ) == cwd:
-                            remotes = values.get( "remotes" )
-for repo in settings.get( "repositories" ):
-    for name, path in repo.items():
-        print( path )
-for repo in settings.get( "repositories" ):
-    for name, path in repo.items():
-        print( path.get( "remotes" ) )
-for repo in settings.get( "repositories" ):
-    for name, path in repo.items():
-        remotes = path.get( "remotes" )
-remotes
-[ remote for remote in remotes ]
-[ remote.items for remote in remotes ]
-[ remote.items() for remote in remotes ]
-[ name, path for remote in remotes.items ]
-[ remote.items() for remote in remotes.items ]
-[ remote for remote in remotes.items ]
-[ remote for remote in remotes.items() ]
-[ remote for remote in remotes ]
-[ remote.items() for remote in remotes ]
-[ remote.keys() for remote in remotes ]
-list( [ remote.keys() for remote in remotes ] )
-[ list( remote.keys() )[0] for remote in remotes ]
-[ remote.keys().string() for remote in remotes ]
-[ remote.keys().join() for remote in remotes ]
-[ list( remote.keys() ).join() for remote in remotes ]
-for repo in settings.get( "repositories" ):
-    for name, path in repo.items():
-        remotes = path.get( "remotes" )
-from G import *
-for repo in settings.get( "repositories" ):
-    for name, path in repo.items():
-        remotes = path.get( "remotes" )
-remotes
-from G import *
-add_remote("bla", "blub")
-from manage_remotes import *
-add_remote("bla", "blub")
-settings
-add_remote("bla", "blub")
-from G import *
-get_user_input()
-args = get_user_input()
-args
-args[0]
-args = get_user_input()
-from G import *
-args = get_user_input()
-print( get_remotes() )
-from manage_remotes import *
-print( get_remotes() )
-settings
-from manage-remotes import *
-from manage_remotes import *
-get_remotes()
-settings
-settings.get( "repositories" )
-repo in settings.get( "repositories" )
-for repo in settings.get( "repositories" ):
-    print( repo )
-from manage_remotes import *
-get_remotes()
-repo in settings.get( "repositories" )
-repo
-repo.items()
-for path, values in repo.items():
-    print( values )
-for repo in settings.get( "repositories" ):
-    return repo
-for repo in settings.get( "repositories" ):
-    print( repo )
-for repo in settings.get( "repositories" ):
-    print( repo.items() )
-for repo in settings.get( "repositories" ):
-    print( list( repo.items() ) )
-for repo in settings.get( "repositories" ):
-    for path, values in repo.items():
-        print( "" + values + path )
-for repo in settings.get( "repositories" ):
-    for path, values in repo.items():
-        print( path )
-print( values )
-for repo in settings.get( "repositories" ):
-    for path, values in repo.items():
-        print( path )
-        print( values )
-from manage_remotes import *
-get_remotes()
-emend_path( "~" )
-from manage_remotes import *
-get_remotes()
-emend_path( "~" )
-from manage_remotes import *
-emend_path( "~" )
-emend_path( "/home/niklas/blub" )
-emend_path( "~/blub" )
-from G import *
-emend_path( "~/blub" )
-get_remotes()
-emend_path( "~/blub" )
-from G import *
-get_remotes()
-print( get_remotes() )
-from G import *
-get_remotes()
-print( get_remotes() )
-get_remotes()
-args = get_user_input()
-len( args )
-args
-args[0]
-args[0] == "@remotes"
-args = get_user_input()
-from G import *
-get_remotes()
- emend_path( os.getcwd() )
-re.split
-re.split( r"[\/\\]", "/hallo/huhu" )
-re.split( r"[\/\\]", "~" )
-emend_path( os.getcwd(~) )
-emend_path( os.getcwd("~") )
-emend_path( os.path.expanduser( "~" ) )
-os.chdir( "/home/niklas" )
-emend_path( "videos" )
-"videos"[1:2]
-"videos"[0:1]
-test="test"
-test
-test = "/" + test
-test
-path = "/home/niklas"
-path = re.split( r"[\/\\]", path )
-path
-print( os.path.join( "\" + *path )
-path
-path = "/" + path
-path
-path.insert(0, "/")
-path
-os.path.join( path )
-os.path.join( *path )
-path = path.insert(0, "/")
-path
-path = re.split( r"[\/\\]", path )
-path = "/home/niklas"
-path = re.split( r"[\/\\]", path )
-path
-path = path.insert(0, "/")
-path
-from G import *
-emend_path( "videos" )
-os.path.getcwd()
-os.getcwd()
-from G import *
-os.getcwd()
-emend_path( "videos" )
-emend_path( "/videos" )
-os.path.expanduser( "videos" )
-os.path.expanduser( "~/videos" )
-os.path.expanduser( "videos" )
-from G import *
-os.path.expanduser( "videos" )
-emend_path( "/videos" )
-emend_path( "videos" )
-split( " ", "hallo du" )
-string.split( " ", "hallo du" )
-from string import split
-re.split( os.sep, "hallo/du" )
-"hallo/du".split()
-"hallo/du".split("/")
-emend_path( "videos" )
-from G import *
-emend_path( "videos" )
-from G import *
-get_remotes()
-from G import *
-get_remotes()
-test = "~/huhu"
-re.match( r"[\/\\]|[^~]", test )
-re.match( r"[\/\\]|[^~]", "~/huhu" )
-re.match( r"[\/\\]|[^\~]", "~/huhu" )
-re.match( r"[\/\\]|[^~]", "~/huhu" )
-re.match( r"([\/\\]|[^~])", "~/huhu" )
-if re.match( r"([\/\\]|[^~])", "~/huhu" ):
-    return True
-if re.match( r"([\/\\]|[^~])", "~/huhu" ):
-    print("ja")
-if re.match( r"([\/\\]|[\^~])", "~/huhu" ):
-    print("ja")
-re.match( r"([\/\\]|[\^~])", "~/huhu" )
-if re.match( r"([\/\\]|[\^~])", "~/huhu" ):
-    print( "ja!!!" )
-not re.match( r"([\/\\]|[^~])", "~/huhu" )
- re.match( r"([\/\\]|[^~])", "~/huhu" )
-re.match( r"([\/\\]|[^~])", "~/huhu" )
-not re.match( r"([\/\\]|[^~])", "~/huhu" )
-not re.match( r"([\/\\]|[^~])", "/huhu" )
- re.match( r"([\/\\]|[^~])", "/huhu" )
-re.match( r"([\/\\]|[^~])", "/huhu" )
-if re.match( r"([\/\\]|[^~])", "/huhu" ):
-    print( "ja!" )
-if re.match( r"([\/\\]|[^~])", "~/huhu" ):
-    print( "ja!" )
-if not re.match( r"([\/\\]|[^~])", "~/huhu" ):
-    print( "ja!" )
-from G import *
-hallo
-get_remotes()
-main()
-get_remotes()
-from G import *
-get_remotes()
-from G import *
-get_remotes()
-main()
-get_remotes()
-main
-main()
-operands
-main()
-from G import *
-main()
-y
-@remotes
-@remote
-@remotes
-@remote
-@remotes
-@submodules
-@remotes
-@submodules
-@remotes
-@submodules
++ G.py
++ G.py
+@master -> @origin
++ *.py
++ G.py
+@master -> @origin
++ G.py
++ G.py
+@master -> @origin
+status
++ G.py
+@master -> @origin
++ G.py
++ G.py
+@master -> @origin
+- config.py
++ G.py
+@master -> @origin
++ G.py
++ G.py
+@master -> @origin
++ *.py
++ G.py
+@master -> @origin
++ G.py
++ G.py
+@master -> @origin
+status
++ G.py
+@master -> @origin
++ G.py
++ G.py
+@master -> @origin
+diff HEAD
++ G.py
+@master -> @origin
++ G.py
++ G.py
+@master -> @origin
++ *.py
++ G.py
+@master -> @origin
++ G.py
++ G.py
+@master -> @origin
+status
++ G.py
+@master -> @origin
++ G.py
++ G.py
+@master -> @origin
+@index
++ G.py
+@master -> @origin
++ G.py
++ G.py
+@master -> @origin
++ *.py
++ G.py
+@master -> @origin
++ G.py
++ G.py
+@master -> @origin
+status
++ G.py
+@master -> @origin
++ G.py
++ G.py
+@master -> @origin
++ G.py
+@master -> @origin
++ G.py
++ G.py
+@master -> @origin
++ *.py
++ G.py
+@master -> @origin
++ G.py
++ G.py
+@master -> @origin
+status
++ G.py
+@master -> @origin
++ G.py
++ G.py
+@master -> @origin
+- config.py
++ G.py
+@master -> @origin
++ G.py
++ G.py
+@master -> @origin
++ *.py
++ G.py
+@master -> @origin
++ G.py
++ G.py
+@master -> @origin
+status
++ G.py
+@master -> @origin
++ G.py
++ G.py
+@master -> @origin
+diff HEAD
++ G.py
+@master -> @origin
++ G.py
++ G.py
+@master -> @origin
++ *.py
++ G.py
+@master -> @origin
++ G.py
++ G.py
+@master -> @origin
+status
++ G.py
+@master -> @origin
++ G.py
++ G.py
+@master -> @origin
+@index
++ G.py
+@master -> @origin
++ G.py
++ G.py
+@master -> @origin
++ *.py
++ G.py
+@master -> @origin
++ G.py
++ G.py
+@master -> @origin
+status
++ G.py
+@master -> @origin
++ G.py
++ G.py
+@master -> @origin
