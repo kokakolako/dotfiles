@@ -43,7 +43,8 @@ super + e
 
 ## Start zathura
 super + z
-    tabbed -t '#ffffff' -T '#ff0055' -u '#ff0055' -U '#ffffff' zathura -e
+    zathura
+# tabbed -t '#ffffff' -T '#ff0055' -u '#ff0055' -U '#ffffff' zathura -e
 
 ## Start firefox
 super + o
@@ -92,5 +93,7 @@ ctrl + odiaeresis
 
 ctrl + alt + v
     tmux set-buffer -- \"$( xclip -o -selection clipboard )\"; tmux paste-buffer
+
+
 
 # vim: set syntax=conf:

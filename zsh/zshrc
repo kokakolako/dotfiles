@@ -93,10 +93,7 @@ autoload -U zmv
 
 # environment variables
 # ---------------------------------------------
-
-BASE16_SHELL="$HOME/.config/base16-shell/base16-monokai.dark.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
-
+#
 ## Default Applications
 export TERMINAL="screen-256color"
 export TERM="screen-256color"
@@ -104,6 +101,9 @@ export EDITOR="vim -u $HOME/.config/vim/vimrc"
 export VISUAL="vim -u $HOME/.config/vim/vimrc"
 export GIT_EDITOR="vim -u $HOME/.config/vim/vimrc"
 export BROWSER="firefox"
+
+BASE16_SHELL="$HOME/.config/base16-shell/base16-monokai.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL &> /dev/null
 
 ## Location of my configuration files
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -124,12 +124,6 @@ export FLASH_ALSA_DEVICE=3
 export MAIL="$HOME/mail"
 export CONF="$HOME/.config"
 
-# path
-# ---------------------------------------------
-
-## Adding root-specific programms to $PATH
-PATH=${PATH}:/sbin:/usr/sbin
-
 # misc
 # ---------------------------------------------
 
@@ -149,17 +143,17 @@ bindkey '^Z' fancy-ctrl-z
 ## FZF Autocompletion
 source ~/.fzf.zsh
 
-## RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-PATH+="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
 # autostart tmux or a new xserver
 # ---------------------------------------------
 
-if [[ $(tty) == "/dev/tty1" && $HOST == "rayquaza" ]]; then
-	startx $HOME/.config/X11/xinitrc hlwm
+if [[ ${TTY} == '/dev/tty1' ]]; then
+    [[ keychain_already_cleared == true ]] \
+        || keychain --clear && keychain_already_cleared=true
+    [[ $HOST == 'rayquaza' ]] \
+        && startx $HOME/.config/X11/xinitrc hlwm
+elif [[ -z $TMUX && $USER == 'niklas' ]]; then
+    ( tmux ls | grep -vq attached && tmux -2 at ) || tmux -2 -f $HOME/.config/tmux/tmux.conf
 else
-    if [[ -z $TMUX && $USER == "niklas" ]]; then
-        ( tmux ls | grep -vq attached && tmux -2 at ) || tmux -2 -f $HOME/.config/tmux/tmux.conf
-    fi
+    eval $( keychain --nogui --eval id_dsa )
 fi
+

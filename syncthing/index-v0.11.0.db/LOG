@@ -1,0 +1,8 @@
+=============== Jun 23, 2015 (CEST) ===============
+20:50:54.857442 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+20:50:54.859596 db@open opening
+20:50:54.859748 journal@recovery F·1
+20:50:54.862879 journal@recovery recovering @5
+20:50:54.935062 mem@flush created L0@7 N·86 S·2KiB "\x00or..png,v79":"\x04or..ame,v57"
+20:50:54.964249 db@janitor F·4 G·0
+20:50:54.964295 db@open done T·104.663293ms

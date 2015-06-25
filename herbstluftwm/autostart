@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # this is a simple config for herbstluftwm
 
@@ -88,7 +88,7 @@ hc keybind $Mod-i jumpto urgent
 # theme
 hc attr theme.tiling.reset 1
 hc attr theme.floating.reset 1
-hc set frame_border_active_color '#f92672'
+hc set frame_border_active_color '#a6e22e'
 hc set frame_border_normal_color '#272822'
 hc set frame_bg_normal_color '#383830'
 hc set frame_bg_active_color '#383830'
@@ -102,7 +102,7 @@ bw=1
 tw=1
 hc set_attr theme.tiling.active.border_width $bw
 hc set_attr theme.tiling.active.padding_top $tw
-hc set_attr theme.tiling.active.color '#f92672'
+hc set_attr theme.tiling.active.color '#a6e22e'
 hc set_attr theme.tiling.normal.border_width $bw
 hc set_attr theme.tiling.normal.padding_top $tw
 hc set_attr theme.tiling.normal.color '#383830'
@@ -113,7 +113,7 @@ hc set_attr theme.tiling.urgent.color '#272822'
 hc set_attr theme.floating.active.border_width 1
 hc set_attr theme.floating.normal.border_width 1
 hc set_attr theme.floating.urgent.border_width 1
-hc set_attr theme.floating.active.color '#f92672'
+hc set_attr theme.floating.active.color '#a6e22e'
 hc set_attr theme.floating.normal.color '#272822'
 hc set_attr theme.floating.urgent.color '#272822'
 hc set window_gap 5

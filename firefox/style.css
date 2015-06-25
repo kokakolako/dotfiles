@@ -1,48 +1,94 @@
 body {
     font: 18px "DejaVu Sans Mono";
-    background: url(bg/lodyas.png);
+    background: #272822;
 }
 
 a {
-    color: #ff0055;
+    color: #49483e;
     text-decoration: none;
-}
-
-a:hover {
-    color: #303030;
-}
-
-nav {
-    margin: 10px auto;
-    width: 360px;
-}
-
-ul {
-    float: left;
-    margin: 10px; padding: 20px;
-    width: 120px; min-height: 120px;
-    background: #ffffff;
-    list-style: none;
+    font-size: 0.9em;
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 1.4em;
     font-weight: normal;
-    color: #ff0055;
-    margin: 10px 0;
+    margin: 10px 0 10px 0;
+}
+
+ul {
     text-align: center;
+    padding: 0;
+    list-style: none;
 }
 
-.license {
-    font-size: 10px;
-    position: absolute;
-    bottom: 5px;
-    right: 30px;
-}
-.license a {
-    color: #fff;
+ul:hover {
+    cursor: pointer;
 }
 
-.license a:hover {
-    color: #ff0055;
+ul > li:hover a {
+    transition: color 1.5s ease;
+    color: #f8f8f2;
+}
+
+ul > li a:hover {
+    transition: color 0.2s ease;
+    color: #a59f85;
+}
+
+ul > li:nth-child(1n) h1 {
+    color: #66d9ef;
+}
+
+ul > li:nth-child(2n) h1 {
+    color: #f92671;
+}
+
+ul > li:nth-child(3n) h1 {
+    color: #a6e22e;
+}
+
+ul > li:nth-child(4n) h1 {
+    color: #fd971f;
+}
+
+@media (max-width: 900px) {
+
+    ul li > ul {
+        display: none;
+    }
+
+    ul li:hover ul {
+        display: block;
+    }
+
+}
+
+@media (min-width: 900px) {
+
+    body > ul {
+        width: 800px;
+    }
+
+    body > ul > li {
+        float: left;
+        width: 180px;
+        margin: 0 10px;
+    }
+
+}
+
+@media (max-height: 500px) {
+
+    body > ul {
+        margin: 0 auto;
+    }
+
+}
+
+@media (min-height: 500px) {
+
+    body > ul {
+        margin: 200px auto 0 auto;
+    }
+
 }

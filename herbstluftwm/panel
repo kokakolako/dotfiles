@@ -45,7 +45,7 @@ function draw_tags () {
 for i in "${tags[@]}" ; do
     case ${i:0:1} in
         '#')
-            printf "^fg(#f92672)"
+            printf "^fg(#a6e22e)"
             ;;
         '+')
             printf "^fg(#000000)"
@@ -129,7 +129,7 @@ while true ; do
     left="  $date_icon $date"
     left_text_only=$(echo -n "$right" | sed 's:\^[^(]*([^)]*)::g')
 
-    width=$(( $( $textwidth "$font" "$left_text_only"  "$right_text_only" ) + 22 ))
+    width=$(( $( $textwidth "$font" "$left_text_only"  "$right_text_only" ) + 120 ))
     printf "$left^pa( $(( ( $panel_width ) / 2 - 40 )) )$( draw_tags )^pa( $(( $panel_width - $width )) )${right}"
     echo
 
