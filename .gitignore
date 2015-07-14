@@ -29,6 +29,8 @@ mpd/pid
 mpd/socket
 mpd/state
 
+mpv/watch_later
+
 dwb/settings.*
 dwb/keys.*
 dwb/default/commands.history*

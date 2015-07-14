@@ -1,0 +1,71 @@
+@-moz-document domain("wikipedia.org") {
+
+html, h1, h2 {
+    font-family: "DejaVu Sans Mono" !important;
+}
+
+.firstHeading {
+    font-size: 2.5em !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #f2f2f0 !important;
+    border-bottom: none !important;
+}
+
+#mw-content-text h2:nth-child(1n) > .mw-headline {
+    color: #66d9ef !important;
+}
+
+#mw-content-text h2:nth-child(2n) > .mw-headline {
+    color: #f92671 !important;
+}
+
+#mw-content-text h2:nth-child(3n) > .mw-headline {
+    color: #a6e22e !important;
+}
+
+#mw-content-text h2:nth-child(4n) > .mw-headline {
+    color: #fd971f !important;
+}
+
+.infobox, #toc, .thumbinner, .toccolours {
+    border: none !important;
+    background: #383830 !important;
+    color: #f2f2f0 !important;
+}
+
+#firstHeading {
+    text-align: center !important;
+    margin: 1em 0 1em 0 !important;
+}
+
+#mw-head, #mw-panel, #mw-page-base, #footer, .mbox-small {
+    display: none !important;
+}
+
+.mw-indicators, #siteSub, #contentSub, #section_SpokenWikipedia, .mw-editsection, #toctitle, .summary, .ambox  {
+    display: none !important;
+}
+
+#content {
+    font-family: "DejaVu Sans Mono" !important;
+    margin-left: 0 !important;
+    background-color: #272822 !important;
+    color: #f2f2f0 !important;
+    border: none !important;
+}
+
+#content a {
+    color: #a59f85 !important;
+}
+
+.keyboard-key {
+    color: #272822 !important;
+}
+
+#wm2015register {
+    display: none !important;
+}
+
+}

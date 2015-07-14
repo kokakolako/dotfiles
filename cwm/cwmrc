@@ -43,7 +43,7 @@ bind 4-8        grouponly8
 bind 4-9        grouponly9
 bind 4-0        grouponly0
 
-# Move window tou group
+# Move window to group
 bind 4S-1       movetogroup1
 bind 4S-2       movetogroup2
 bind 4S-3       movetogroup3

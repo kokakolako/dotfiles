@@ -18,8 +18,8 @@ zstyle ':prezto:load' zfunction 'zargs' 'zmv'
 zstyle ':prezto:load' pmodule \
   'environment' \
   'git' \
-  'terminal' \
   'editor' \
+  'terminal' \
   'history' \
   'directory' \
   'spectrum' \
@@ -68,7 +68,9 @@ zstyle ':prezto:module:syntax-highlighting' styles \
 zstyle ':prezto:module:terminal' auto-title 'yes'
 
 # Set the window title format.
-zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
+zstyle ':prezto:module:terminal:window-title' format '%n@%m: %N %s'
+
+source /home/niklas/.config/alias.sh
 
 # General configuration
 # ---------------------------------------------
@@ -93,17 +95,17 @@ autoload -U zmv
 
 # environment variables
 # ---------------------------------------------
-#
+
+BASE16_SHELL="$HOME/.config/base16-shell/base16-monokai.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
 ## Default Applications
-export TERMINAL="screen-256color"
-export TERM="screen-256color"
+# export TERMINAL="screen-256color"
+# export TERM="screen-256color"
 export EDITOR="vim -u $HOME/.config/vim/vimrc"
 export VISUAL="vim -u $HOME/.config/vim/vimrc"
 export GIT_EDITOR="vim -u $HOME/.config/vim/vimrc"
 export BROWSER="firefox"
-
-BASE16_SHELL="$HOME/.config/base16-shell/base16-monokai.dark.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL &> /dev/null
 
 ## Location of my configuration files
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -127,6 +129,16 @@ export CONF="$HOME/.config"
 # misc
 # ---------------------------------------------
 
+function _dtach-interactive() {
+    vared -p "\e[33mName your session:\e[0m\n" -c session-name
+    dtach -A /tmp/${session-name}
+}
+zle -N _dtach-interactive
+bindkey '^q' _dtach-interactive
+
+# misc
+# ---------------------------------------------
+
 ## Use Ctr+Z to foreground vim
 fancy-ctrl-z () {
   if [[ $#BUFFER -eq 0 ]]; then
@@ -143,17 +155,23 @@ bindkey '^Z' fancy-ctrl-z
 ## FZF Autocompletion
 source ~/.fzf.zsh
 
+# set path
+PATH=/bin:/usr/bin:/opt/bin:/usr/local/bin:/sbin:/usr/sbin:/usr/local/sbin:/usr/x86_64-pc-linux-gnu/gcc-bin/4.9.2:/home/niklas/.opt/fzf/bin:/home/niklas/bin
+
 # autostart tmux or a new xserver
 # ---------------------------------------------
-
-if [[ ${TTY} == '/dev/tty1' ]]; then
-    [[ keychain_already_cleared == true ]] \
-        || keychain --clear && keychain_already_cleared=true
-    [[ $HOST == 'rayquaza' ]] \
-        && startx $HOME/.config/X11/xinitrc hlwm
-elif [[ -z $TMUX && $USER == 'niklas' ]]; then
-    ( tmux ls | grep -vq attached && tmux -2 at ) || tmux -2 -f $HOME/.config/tmux/tmux.conf
+#
+if [[ ${TTY} == '/dev/tty1' && $HOST == 'rayquaza' ]]; then
+    startx $HOME/.config/X11/xinitrc
 else
-    eval $( keychain --nogui --eval id_dsa )
+fi
+
+# if [[ -z ${TMUX} && ${USER} == 'niklas' ]]; then
+#     ( tmux ls | grep -vq attached && tmux -2 at ) \
+#         || tmux -2 -f $HOME/.config/tmux/tmux.conf
+# fi
+
+if [[ ! ${TTY} =~ '/dev/tty[0-7]' && -z $( pgrep ssh-agent ) ]]; then
+    eval "$( keychain --eval --agents ssh id_dsa )"
 fi
 

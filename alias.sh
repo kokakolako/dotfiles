@@ -9,7 +9,7 @@ alias uconfig="vim -c \"lcd $HOME/.config/X11\" $HOME/.config/X11/Xresources "
 alias vconfig="vim -c \"lcd $HOME/.config/vim\" $HOME/.config/vim/{vimrc,extend.vim}"
 alias zconfig="vim -c \"lcd $HOME/.config/zsh\" $HOME/.config/{alias.sh,zsh/zshrc}"
 
-# start program with a customized config-file
+# programs
 # ---------------------------------------------
 alias emacs="emacs -nc"
 alias abcde="abcde -c $HOME/.config/abcde/abcde.conf"
@@ -37,8 +37,8 @@ alias newsbeuter="newsbeuter -u ~/.config/newsbeuter/urls -C ~/.config/newsbeute
 alias open_with_amd="DRI_PRIME=1 $@"
 alias pandoc="~/.cabal/bin/pandoc"
 alias redshift="redshift -l 51.43072:7.16941 &> /dev/null &"
-alias tabbed="tabbed -d -c -t \#ffffff -T \#ff0055 -u \#ff0055 -U \#ffffff"
 alias vim="vim -u $HOME/.config/vim/vimrc"
+alias rm="/home/niklas/tra.sh"
 
 # git aliases
 # ---------------------------------------------
@@ -58,7 +58,6 @@ alias E="emacs"
 alias H="herbstclient"
 alias N="ncmpcpp"
 alias V="vim"
-alias G="/home/niklas/documents/projects/G/G/__init__.py"
 
 # sudo-shortcuts
 # ---------------------------------------------
@@ -123,8 +122,8 @@ function tmux-reload () {
 function sxhkd-reload () {
     kill -s USR1 "$( pidof sxhkd )" > /dev/null
     [ $? -eq 0 ] \
-        && printf "Sucessfully reloaded the sxhkdrc file" \
-        || printf "An error occured while trying to reload the sxhkdrc file"
+        && printf "Sucessfully reloaded the sxhkdrc file\n" \
+        || printf "An error occured while trying to reload the sxhkdrc file\n"
 }
 
 # colorized "dirs", "pushd", "popd"

@@ -1,135 +1,89 @@
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 
-/*
-Hide the scrollbar
-*/
-
-/* #content browser{ */
-/*  */
-/*     margin-right:-16px!important; */
-/*     overflow:hidden; */
-/*     overflow-x:hidden; */
-/*     overflow-y:hidden; */
-/*  */
-/* } */
-/*  */
-/*
- Customize the Firefox UI
-*/
-
-@-moz-document url(chrome://browser/content/browser.xul) {
-
-    /*
-     Styling the navigation bar
-    */
-
-    #nav-bar {
-        background: #ffffff !important;
-        margin: 0 0 0 0 !important;
-        bottom: 0;
-
-    }
-
-    /*
-     Styling the Tabs
-    */
-
-    .tabbrowser-tabs {
-        border: none !important;
-        background: #eeeeee !important;
-    }
-
-    .tabbrowser-tab {
-        height: 30px;
-        font-family: "DejaVu Sans Mono" !important;
-        font-size: 12px !important;
-        background: #eeeeee !important;
-        border: none !important;: none !important;
-        margin: 0 0 1px 0 !important;
-        padding: 0 !important;
-        color: #000000 !important;
-        text-shadow: none !important;
-        -moz-appearance: none !important;
-    }
-
-    .close-button  {
-        display: none !important;
-    }
-
-    .tabbrowser-tab[selected="true"] {
-        color: #FF0055 !important;
-    }
-
-    #TabsToolbar {
-        background: none !important;
-        border: none !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    #TabsToolbar:not([collapsed="true"]) + #nav-bar {
-        border: none !important;
-    }
-
-    #navbar {
-        border: none !important;
-        margin: 0; padding: 0;
-    }
-
-    .tabbrowser-tab * {
-        background: #eeeeee !important;
-        margin: 0 0 0 0 !important;
-        padding: 0 0 0 0 !important;
-        -moz-appearance: none !important;
-        border: none !important;
-    }
-
-    #private-browsing-indicator #identity-box, #back-button, #forward-button, #notification-popup-box {
-        display: none !important;
-    }
-
-    /*
-     Customize the url-bar
-    */
-
-    #urlbar {
-        font-family: "DejaVu Sans Mono" !important;
-        font-size: 12px !important;
-        border: none !important;
-        background: #ffffff !important;
-        margin-left: 10px !important;
-        padding: 5px !important;
-        border-radius: 0 !important;
-    }
-
-    /*
-     Hide the tab-throbber
-    */
-
-    .tab-throbber, .tab-background-start, .tab-background-end {
-        display: none !important;
-    }
-
+#page-proxy-favicon, #identity-box, #notification-popup-box,
+#window-controls, #appmenu-toolbar-button, #PanelUI-menu-button,
+#nav-bar, #back-button, #forward-button,
+#plugins-notification-icon,
+statuspanel,
+.tab-close-button, .tab-icon-image, .tab-throbber,
+.tabbrowser-arrowscrollbox > .scrollbutton-up, .tabbrowser-arrowscrollbox > .scrollbutton-down {
+    display: none !important;
 }
 
-/* @namespace url(http://www.w3.org/1999/xhtml); */
-/*  */
-/* /* */
-/*  Customize the new-tab page */
-/* */ */
-/*  */
-/* @-moz-document url("about:newtab") { */
-/*  */
-/*     /* */
-/*     Hide the search-input */
-/*     */ */
-/*  */
-/*     #newtab-search-container { */
-/*         display: none !important; */
-/*         overflow: hidden !important; */
-/*     } */
-/*  */
-/* } */
+tabpanels {
+	-moz-appearance: none !important;
+}
 
+.tabbrowser-tabs {
+    border: none !important;
+	margin-left: -15px !important;
+    height: 20px !important;
+    min-height: 20px !important;
+    max-height: 20px !important;
+    background: #383830 !important;
+}
+
+.tabbrowser-tab {
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 4px 0 4px !important;
+    font: 8pt "DejaVu Sans Mono";
+}
+
+.tabbrowser-tab * {
+    border-radius: 0 !important;
+    height: 20px !important;
+    min-height: 20px !important;
+    max-height: 20px !important;
+}
+
+.tabbrowser-tab:not([selected="true"]) {
+    background-color: #272822 !important;
+    color: #f8f8f2 !important;
+}
+
+.tabbrowser-tab[selected="true"] {
+    background-color: #272822 !important;
+    color: #f92672 !important;
+}
+
+.tab-text {
+	padding: 4px 4px 0 4px !important;
+}
+
+.tab-content {
+	padding: 0 4px 0 4px !important;
+}
+
+.tab-background-end[selected=true]:-moz-locale-dir(ltr):not(:-moz-lwtheme)::before,
+.tab-background-start[selected=true]:-moz-locale-dir(rtl):not(:-moz-lwtheme)::before, .tab-background-start[selected=true]:-moz-locale-dir(ltr):not(:-moz-lwtheme)::before,
+.tab-background-end[selected=true]:-moz-locale-dir(rtl):not(:-moz-lwtheme)::before, .tab-background-start[selected=true]:-moz-locale-dir(ltr):-moz-lwtheme::before,
+.tab-background-end[selected=true]:-moz-locale-dir(rtl):-moz-lwtheme::before, .tab-background-end[selected=true]:-moz-locale-dir(ltr):-moz-lwtheme::before,
+.tab-background-start[selected=true]:-moz-locale-dir(rtl):-moz-lwtheme::before,.tab-background-start[selected=true]:-moz-locale-dir(ltr)::after,
+.tab-background-end[selected=true]:-moz-locale-dir(rtl)::after,.tab-background-end[selected=true]:-moz-locale-dir(ltr)::after,
+.tab-background-start[selected=true]:-moz-locale-dir(rtl)::after, .tab-background-middle[selected=true], .tab-background-middle[selected=true]:-moz-lwtheme, .tab-background-start[selected=true]:-moz-lwtheme::before,
+.tab-background-end[selected=true]:-moz-lwtheme::before, #tabbrowser-tabs::before {
+	background-image: none !important;
+	background-color: transparent !important;
+	background-size: 100% 100%;
+}
+
+.tabbrowser-tab > .tab-stack > .tab-background:not([selected=true]) {
+	background-image: none !important;
+	background-color: #383830 !important;
+	background-size: 100% 100%;
+}
+
+#policeman-toolbarbutton {
+    background: #383830 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+#TabsToolbar .toolbarbutton-icon, #TabsToolbar .toolbarbutton-text, #TabsToolbar .toolbarbutton-badge-container {
+    background: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
 
 /* vim: set ft=css: */

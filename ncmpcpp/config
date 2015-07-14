@@ -38,7 +38,6 @@ centered_cursor                               = "yes"
 default_find_mode                             = "wrapped"
 ask_before_clearing_playlists                 = "no"
 media_library_primary_tag                     = "album_artist"
-default_space_mode                            = "add"
 space_add_mode                                = "add_remove"
 
 ## Progress Bar

@@ -115,7 +115,7 @@ while true ; do
     cpu="^fg(#f8f8f2)$( ps -eo pcpu | awk 'BEGIN {sum=0.0f} {sum+=$1} END {print sum}' )"
     cpu_icon="^fg(#f92672)^i($HOME/.config/herbstluftwm/icons/xbm/cpu.xbm)"
 
-    batt="^fg(#f8f8f2)$( $HOME/.bin/battery_status )"
+    batt="^fg(#f8f8f2)$( $HOME/bin/battery-status.sh )"
     batt_icon="^fg(#f92672)^i($HOME/.config/herbstluftwm/icons/xbm/bat_full_01.xbm)"
 
     wifi="^fg(#f8f8f2)$( iwconfig wlp8s0 | grep ESSID | cut -c 33- | tr -d '"' | sed "s/[[:space:]]//g" )"
@@ -129,7 +129,7 @@ while true ; do
     left="  $date_icon $date"
     left_text_only=$(echo -n "$right" | sed 's:\^[^(]*([^)]*)::g')
 
-    width=$(( $( $textwidth "$font" "$left_text_only"  "$right_text_only" ) + 120 ))
+    width=$(( $( $textwidth "$font" "$left_text_only"  "$right_text_only" ) + 155 ))
     printf "$left^pa( $(( ( $panel_width ) / 2 - 40 )) )$( draw_tags )^pa( $(( $panel_width - $width )) )${right}"
     echo
 

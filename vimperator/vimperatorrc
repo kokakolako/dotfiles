@@ -1,0 +1,81 @@
+" Rice {{{
+
+" Clear the highlighting
+hi clear
+
+" Custom Elements
+hi! Normal color: #a59f85; background: #383830;
+hi! Bell color: #f92672; background: none;
+hi! Null color: #a59f85;
+hi! NonText color: #f8f8f2;
+hi! Number color: #f8f8f2;
+hi! Function color: #f8f8f2;
+hi! Indicator color: #f8f8f2;
+hi! Filter color: #f92672;
+hi! URL color: #f92672;
+hi! Hint color: #f8f8f2; background-color: #f92672; font-size: 8pt; margin: -10px 0 -5px 0;
+hi! HintActive color: #f92672; background-color: #f8f8f2; opacity: 0.7;
+hi! HintElem color: #f8f8f2; background-color: #f92672; opacity: 0.7;
+hi! Question color: #f8f8f2; background-color: #f92672; opacity: 0.7;
+
+" Statusbar
+hi! CmdLine>* background-color: #383830; color: #f8f8f2; font-family: "DejaVu Sans Mono";
+hi! CmdLine background-color: #383830; color: #f8f8f2;
+hi! PromptText background-color: #66d9ef; color: #383830;
+hi! StatusLine background-color: #383830; color: #f8f8f2;
+hi! Title background-color: #383830; color: #f8f8f2;
+
+" Completion Menu
+hi! CompTitle color: #f92672; border: none;
+hi! CompTitle>* color: #f92672; border: none;
+hi! CompItem background-color: #383830; color: #a59f85;
+hi! CompDesc color: #a59f85
+hi! CompItem[selected] background-color: #272822; color: #f8f8f2;
+hi! ContentSeparator border: none;
+
+" Messages
+hi! InfoMsg background-color: #383830; color: #f92672;
+hi! ModeMsg background-color: #383830; color: #f92672;
+hi! MoreMsg background-color: #383830; color: #f92672;
+hi! WarningMsg background-color: #383830; color: #f92672;
+hi! ErrorMsg background-color: #383830; color: #f92672;
+
+" }}}
+" Keymappings {{{
+
+nnoremap h <nop>
+nnoremap j 5<left>
+nnoremap k 5<down>
+nnoremap l 5<up>
+nnoremap ö 4<right>
+
+nnoremap H <nop>
+nnoremap J :back<cr>
+nnoremap K :tabnext<cr>
+nnoremap L :tabprevious<cr>
+nnoremap Ö :forward<cr>
+
+" noremap J :tabnext<cr>
+" noremap K :tabprevious<cr>
+
+nnoremap t <nop>
+nnoremap O :tabopen 
+
+nnoremap } 10j
+nnoremap { 10k
+" nnoremap j 5j
+" nnoremap k 5k
+
+nnoremap <C-r> :source ~/.config/vimperator/vimperatorrc<cr>
+inoremap <C-r> :source ~/.config/vimperator/vimperatorrc<cr>
+
+nnoremap <C-p> <nop>
+nnoremap <C-n> <nop>
+
+" }}}
+" Misc Settings {{{
+
+set newtab=all
+
+" }}}
+" vim: set ft=vim:
